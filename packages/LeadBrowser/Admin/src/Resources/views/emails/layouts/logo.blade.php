@@ -1,0 +1,1 @@
+<img src="{{ asset('themes/default/assets/images/logotyp.svg') }}" alt="{{ config('app.name') }}"/>

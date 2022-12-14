@@ -1,0 +1,25 @@
+{
+    "name": "konstelacja/laravel-cms",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Prashant Singh",
+            "email": "prashant.singh852@leadBrowser.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "LeadBrowser\\CMS\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LeadBrowser\\CMS\\Providers\\CMSServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "minimum-stability": "dev"
+}

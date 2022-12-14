@@ -1,0 +1,28 @@
+{
+    "name": "leadBrowser/laravel-result",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mariusz Malek",
+            "email": "mariusz@leadbrowser.co"
+        }
+    ],
+    "require": {
+        "leadBrowser/laravel-core": "^1.0",
+        "leadBrowser/laravel-user": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "LeadBrowser\\Result\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LeadBrowser\\Result\\Providers\\ResultServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "minimum-stability": "dev"
+}

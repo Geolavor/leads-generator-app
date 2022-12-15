@@ -5,7 +5,7 @@
 </p>
 
 <h1 align="center">LeadBrowser</h1>
-<p align="center">Prospects AI browser Unique AI tool to extract contact details from all over the Internet, from all over the world in the real time. Better alternative to Hunter.io and Snov.io</p>
+<p align="center">Prospects AI browser. Unique AI tool to extract contact details from all over the Internet, from all over the world in the real time. Better alternative to Hunter.io and Snov.io</p>
 <p align="center"><a href="http://leadbrowser.co">Try live demo</a></p>
 <br />
 
@@ -37,14 +37,24 @@ It uses a browser-like interface to search for information, allowing users to ea
 
 Additionally, LeadBrowser can quickly and easily extract data from LinkedIn profiles without the need for any plugins, providing users with ready-to-use data in just a few minutes. Overall, LeadBrowser is a versatile and efficient tool for finding and extracting high-quality data.
 
+<br>
+
+## How to use the LeadBrowser?
+1. You can go to the "Database" tab in search page and buy a finished result that someone else has already found.
+2. You can enter the "Live search" tab in search page and start looking for new companies, by phrase and specific parameters.
+
+<br>
+
 ## Features
 
-* 📁 **AI** (Premium) We classify websites, with the life of AI. This allows us to better match prospects.
+* 📁 **AI** (Soon) We classify websites, with the life of AI. This allows us to better match prospects.
 * 🔄 **Live search** Prospects are searched in real time. That's why LeadBrowser is better than Hunter.io and Snov.io.
-* 🙌 **Linkedin** (Premium) We search for companies first. Then we check that the companies have the right people and only then do we assign the data. Without any extensions.
+* 🙌 **Linkedin** We search for companies first. Then we check that the companies have the right people and only then do we assign the data. Without any extensions.
 * 🚀 **Go to market** The tool is 100% ready to enter the market.
 
 ![alt text](https://github.com/LeadBrowser/app/blob/main/images/dashboard.png?raw=true)
+
+<br>
 
 ## Use-cases
 
@@ -52,11 +62,15 @@ Additionally, LeadBrowser can quickly and easily extract data from LinkedIn prof
 * 📁 **Information about active companies**
 * 📁 **Analyze the market**
 
+<br>
+
 ### Documentation
 
 #### LeadBrowser Documentation [http://leadbrowser.co/docs](http://leadbrowser.co/docs)
 
 ![alt text](https://github.com/LeadBrowser/app/blob/main/images/fnc.png?raw=true)
+
+<br>
 
 ### Requirements
 
@@ -69,12 +83,6 @@ Additionally, LeadBrowser can quickly and easily extract data from LinkedIn prof
 -   **Composer**: 1.6.5 or higher.
 
 ### Installation and Configuration
-
-##### Execute these commands below, in order
-
-```
-composer create-project leadbrowser/app
-```
 
 -   Find **.env** file in root directory and change the **APP_URL** param to your **domain**.
 
@@ -113,6 +121,8 @@ php artisan serve
 email:admin@leadbrowser.co
 password:admin123
 ```
+
+<br>
 
 ### License
 

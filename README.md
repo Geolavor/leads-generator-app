@@ -37,6 +37,14 @@ It uses a browser-like interface to search for information, allowing users to ea
 
 Additionally, LeadBrowser can quickly and easily extract data from LinkedIn profiles without the need for any plugins, providing users with ready-to-use data in just a few minutes. Overall, LeadBrowser is a versatile and efficient tool for finding and extracting high-quality data.
 
+<br>
+
+## How to use the LeadBrowser?
+1. You can go to the "Database" tab in search page and buy a finished result that someone else has already found.
+2. You can enter the "Live search" tab in search page and start looking for new companies, by phrase and specific parameters.
+
+<br>
+
 ## Features
 
 * 📁 **AI** (Premium) We classify websites, with the life of AI. This allows us to better match prospects.
@@ -46,17 +54,23 @@ Additionally, LeadBrowser can quickly and easily extract data from LinkedIn prof
 
 ![alt text](https://github.com/LeadBrowser/app/blob/main/images/dashboard.png?raw=true)
 
+<br>
+
 ## Use-cases
 
 * 📁 **Search for small businesses**
 * 📁 **Information about active companies**
 * 📁 **Analyze the market**
 
+<br>
+
 ### Documentation
 
 #### LeadBrowser Documentation [http://leadbrowser.co/docs](http://leadbrowser.co/docs)
 
 ![alt text](https://github.com/LeadBrowser/app/blob/main/images/fnc.png?raw=true)
+
+<br>
 
 ### Requirements
 
@@ -113,6 +127,8 @@ php artisan serve
 email:admin@leadbrowser.co
 password:admin123
 ```
+
+<br>
 
 ### License
 

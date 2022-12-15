@@ -27,3 +27,6 @@ package-lock.json
 /storage/dcc-data/
 /stubs
 /vendor
+/packages/LeadBrowser/Search/
+/packages/LeadBrowser/Organization/
+/packages/LeadBrowser/Extractor/

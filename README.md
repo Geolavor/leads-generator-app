@@ -84,12 +84,6 @@ Additionally, LeadBrowser can quickly and easily extract data from LinkedIn prof
 
 ### Installation and Configuration
 
-##### Execute these commands below, in order
-
-```
-composer create-project leadbrowser/app
-```
-
 -   Find **.env** file in root directory and change the **APP_URL** param to your **domain**.
 
 -   Also, Configure the **Mail** and **Database** parameters inside **.env** file.

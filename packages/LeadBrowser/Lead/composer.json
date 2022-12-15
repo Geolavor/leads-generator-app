@@ -1,5 +1,5 @@
 {
-    "name": "leadBrowser/laravel-lead",
+    "name": "leadbrowser/laravel-lead",
     "license": "MIT",
     "authors": [
         {
@@ -8,15 +8,15 @@
         }
     ],
     "require": {
-        "leadBrowser/laravel-activity": "^1.0",
-        "leadBrowser/laravel-attribute": "^1.0",
-        "leadBrowser/laravel-contact": "^1.0",
-        "leadBrowser/laravel-core": "^1.0",
-        "leadBrowser/laravel-email": "^1.0",
-        "leadBrowser/laravel-product": "^1.0",
-        "leadBrowser/laravel-quote": "^1.0",
-        "leadBrowser/laravel-tag": "^1.0",
-        "leadBrowser/laravel-user": "^1.0"
+        "leadbrowser/laravel-activity": "^1.0",
+        "leadbrowser/laravel-attribute": "^1.0",
+        "leadbrowser/laravel-contact": "^1.0",
+        "leadbrowser/laravel-core": "^1.0",
+        "leadbrowser/laravel-email": "^1.0",
+        "leadbrowser/laravel-product": "^1.0",
+        "leadbrowser/laravel-quote": "^1.0",
+        "leadbrowser/laravel-tag": "^1.0",
+        "leadbrowser/laravel-user": "^1.0"
     },
     "autoload": {
         "psr-4": {

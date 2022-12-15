@@ -1,5 +1,5 @@
 {
-    "name": "leadBrowser/laravel-user",
+    "name": "leadbrowser/laravel-user",
     "license": "MIT",
     "authors": [
         {
@@ -8,7 +8,7 @@
         }
     ],
     "require": {
-        "leadBrowser/laravel-core": "^1.0"
+        "leadbrowser/laravel-core": "^1.0"
     },
     "autoload": {
         "psr-4": {

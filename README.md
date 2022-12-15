@@ -5,7 +5,7 @@
 </p>
 
 <h1 align="center">LeadBrowser</h1>
-<p align="center">Prospects AI browser Unique AI tool to extract contact details from all over the Internet, from all over the world in the real time. Better alternative to Hunter.io and Snov.io</p>
+<p align="center">Prospects AI browser. Unique AI tool to extract contact details from all over the Internet, from all over the world in the real time. Better alternative to Hunter.io and Snov.io</p>
 <p align="center"><a href="http://leadbrowser.co">Try live demo</a></p>
 <br />
 

@@ -37,11 +37,11 @@ It uses a browser-like interface to search for information, allowing users to ea
 
 Additionally, LeadBrowser can quickly and easily extract data from LinkedIn profiles without the need for any plugins, providing users with ready-to-use data in just a few minutes. Overall, LeadBrowser is a versatile and efficient tool for finding and extracting high-quality data.
 
-## Features 🤩
+## Features
 
-* 📁 **AI** We classify websites, with the life of AI. This allows us to better match prospects.
+* 📁 **AI** (Premium) We classify websites, with the life of AI. This allows us to better match prospects.
 * 🔄 **Live search** Prospects are searched in real time. That's why LeadBrowser is better than Hunter.io and Snov.io.
-* 🙌 **Linkedin** We search for companies first. Then we check that the companies have the right people and only then do we assign the data. Without any extensions.
+* 🙌 **Linkedin** (Premium) We search for companies first. Then we check that the companies have the right people and only then do we assign the data. Without any extensions.
 * 🚀 **Go to market** The tool is 100% ready to enter the market.
 
 ![alt text](https://github.com/LeadBrowser/app/blob/main/images/dashboard.png?raw=true)
@@ -53,3 +53,71 @@ Additionally, LeadBrowser can quickly and easily extract data from LinkedIn prof
 * 📁 **Analyze the market**
 
 ![alt text](https://github.com/LeadBrowser/app/blob/main/images/fnc.png?raw=true)
+
+### Documentation
+
+#### LeadBrowser Documentation [http://leadbrowser.co/docs](http://leadbrowser.co/docs)
+
+### Requirements
+
+-   **SERVER**: Apache 2 or NGINX.
+-   **RAM**: 3 GB or higher.
+-   **PHP**: 7.4 or higher.
+-   **For MySQL users**: 5.7.23 or higher.
+-   **For MariaDB users**: 10.2.7 or Higher.
+-   **Node**: 8.11.3 LTS or higher.
+-   **Composer**: 1.6.5 or higher.
+
+### Installation and Configuration
+
+##### Execute these commands below, in order
+
+```
+composer create-project leadbrowser/app
+```
+
+-   Find **.env** file in root directory and change the **APP_URL** param to your **domain**.
+
+-   Also, Configure the **Mail** and **Database** parameters inside **.env** file.
+
+```
+php artisan leadbrowser:install
+```
+
+**To execute LeadBrowser**:
+
+##### On server:
+
+Warning: Before going into production mode we recommend you uninstall developer dependencies.
+In order to do that, run the command below:
+
+> composer install --no-dev
+
+```
+Open the specified entry point in your hosts file in your browser or make an entry in hosts file if not done.
+```
+
+##### On local:
+
+```
+php artisan route:clear
+php artisan serve
+```
+
+
+**How to log in as admin:**
+
+> _http(s)://example.com/admin/login_
+
+```
+email:admin@leadbrowser.co
+password:admin123
+```
+
+### License
+
+LeadBrowser is a truly opensource framework which will always be free under the [MIT License](https://github.com/LeadBrowser/app/blob/master/LICENSE).
+
+### Security Vulnerabilities
+
+Please don't disclose security vulnerabilities publicly. If you find any security vulnerability in LeadBrowser then please email us: mailto:mariuszmalek.dev@gmail.com.

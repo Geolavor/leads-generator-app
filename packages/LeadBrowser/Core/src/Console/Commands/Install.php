@@ -13,7 +13,7 @@ class Install extends Command
      *
      * @var string
      */
-    protected $signature = 'leadBrowser-crm:install';
+    protected $signature = 'leadbrowser:install';
 
     /**
      * The console command description.
@@ -76,9 +76,9 @@ class Install extends Command
         // final information
         $this->info('-----------------------------');
         $this->info('Congratulations!');
-        $this->info('The installation has been finished and you can now use LeadBrowser CRM.');
+        $this->info('The installation has been finished and you can now use LeadBrowser.');
         $this->info('Go to '. url(config('app.admin_path')) .' and authenticate with:');
-        $this->info('Email: admin@example.com');
+        $this->info('Email: admin@leadbrowser.co');
         $this->info('Password: admin123');
         $this->info('Cheers!');
     }

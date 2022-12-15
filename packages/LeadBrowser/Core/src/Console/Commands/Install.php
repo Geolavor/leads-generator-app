@@ -77,9 +77,6 @@ class Install extends Command
         $this->info('-----------------------------');
         $this->info('Congratulations!');
         $this->info('The installation has been finished and you can now use LeadBrowser.');
-        $this->info('Go to '. url(config('app.admin_path')) .' and authenticate with:');
-        $this->info('Email: admin@leadbrowser.co');
-        $this->info('Password: admin123');
         $this->info('Cheers!');
     }
 

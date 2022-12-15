@@ -106,7 +106,7 @@ class EmailController extends Controller
 
         $email = $this->mailboxRepository->create(array_merge(request()->all(), [
             'source'        => 'web',
-            'from'          => 'admin@example.com',
+            'from'          => 'admin@leadbrowser.co',
             'user_type'     => 'admin',
             'folders'       => request('is_draft') ? ['draft'] : ['outbox'],
             'name'          => auth()->guard()->user()->name,

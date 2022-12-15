@@ -23,7 +23,8 @@ class UsersSeeder extends Seeder
             'status'            => 1,
             'role_id'           => 1,
             'view_permission'   => 'global',
-            'email_verified_at' => date('Y-m-d H:i:s')
+            'email_verified_at' => date('Y-m-d H:i:s'),
+            'bouns_coin'        => '500'
         ]);
 
         /**

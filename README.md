@@ -92,6 +92,9 @@ Additionally, LeadBrowser can quickly and easily extract data from LinkedIn prof
 php artisan leadbrowser:install
 ```
 
+World database:
+https://drive.google.com/file/d/1DKpdMqlMHs2e_Bj5jhNBFtNesiUQI9WI/view?usp=sharing
+
 **To execute LeadBrowser**:
 
 ##### On server:

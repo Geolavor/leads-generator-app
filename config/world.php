@@ -32,6 +32,7 @@ return [
 		'en',
 		'es',
 		'fr',
+		'it',
 		'ja',
 		'kr',
 		'nl',
@@ -39,6 +40,7 @@ return [
 		'pt',
 		'ro',
 		'ru',
+		'tr',
 		'zh',
 	],
 	/*

@@ -1,0 +1,24 @@
+{
+    "name": "leadbrowser/laravel-search",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mariusz Malek",
+            "email": "mariusz@leadbrowser.co"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "LeadBrowser\\Search\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LeadBrowser\\Search\\Providers\\SearchServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "minimum-stability": "dev"
+}

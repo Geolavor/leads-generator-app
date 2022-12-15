@@ -43,6 +43,8 @@ Additionally, LeadBrowser can quickly and easily extract data from LinkedIn prof
 1. You can go to the "Database" tab in search page and buy a finished result that someone else has already found.
 2. You can enter the "Live search" tab in search page and start looking for new companies, by phrase and specific parameters.
 
+<p align="center"><a href="https://youtu.be/QuLQ615UDo0">Check video presentation</a></p>
+
 <br>
 
 ## Features

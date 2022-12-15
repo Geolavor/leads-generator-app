@@ -1,20 +1,48 @@
-
-version: '3.8'
+version: '3'
 services:
-  db:
-    image: mysql:8.0
-    cap_add:
-      - SYS_NICE
-    restart: always
-    environment:
-      - MYSQL_DATABASE=leadbrowser
-      - MYSQL_ROOT_USER=root
-      - MYSQL_ROOT_PASSWORD=password
-    ports:
-      - '3306:3306'
+  
+  #PHP Service
+  # app:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   image: digitalocean.com/php
+  #   container_name: app
+  #   restart: unless-stopped
+  #   tty: true
+  #   environment:
+  #     SERVICE_NAME: app
+  #     SERVICE_TAGS: dev
+  #   working_dir: /var/www
+  #   networks:
+  #     - app-network
+
+  #Nginx Service
+  # webserver:
+  #   image: nginx:alpine
+  #   container_name: webserver
+  #   restart: unless-stopped
+  #   tty: true
+  #   ports:
+  #     - "80:80"
+  #     - "443:443"
+  #   networks:
+  #     - app-network
+
+  #MySQL Service
+  database:
+    platform: linux/x86_64
+    image: mysql:8.0.25
     volumes:
-      - db:/var/lib/mysql
-      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+        - dbdata:/var/lib/mysql
+    environment:
+        MYSQL_DATABASE: ${DB_DATABASE}
+        MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+        MYSQL_PASSWORD: ${DB_PASSWORD}
+        MYSQL_USER: ${DB_USERNAME}
+    ports:
+        - 33061:3306
+
+# Docker Networks
 volumes:
-  db:
-    driver: local
+    dbdata:

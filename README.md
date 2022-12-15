@@ -52,11 +52,11 @@ Additionally, LeadBrowser can quickly and easily extract data from LinkedIn prof
 * 📁 **Information about active companies**
 * 📁 **Analyze the market**
 
-![alt text](https://github.com/LeadBrowser/app/blob/main/images/fnc.png?raw=true)
-
 ### Documentation
 
 #### LeadBrowser Documentation [http://leadbrowser.co/docs](http://leadbrowser.co/docs)
+
+![alt text](https://github.com/LeadBrowser/app/blob/main/images/fnc.png?raw=true)
 
 ### Requirements
 

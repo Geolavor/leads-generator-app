@@ -31,7 +31,7 @@
           </th>
 
           <th scope="col" style="width: 20%;">
-            <img src="{{ asset('vendor/leadBrowser/admin/assets/images/logotyp.svg') }}" style="max-width:150px"/>
+            <img src="{{ asset('vendor/leadBrowser/admin/assets/images/mini-black.png') }}" style="max-width:60px"/>
           </th>
         </tr>
       </thead>
@@ -63,7 +63,7 @@
           <th scope="row" class="text-dark">Free monthly searches</th>
           <td class="table-text-center">25</td>
           <td class="table-text-center">0</td>
-          <td class="table-text-center">50</td>
+          <td class="table-text-center"><i class="bi-check-circle text-success"></i></td>
         </tr>
 
         <tr>
@@ -133,7 +133,7 @@
           <th scope="row" class="text-dark">Free trial</th>
           <td class="table-text-center">25 credits/mo</td>
           <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i>50 credits/mo</td>
-          <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i>100 credits/mo</td>
+          <td class="table-text-center"><i class="bi-check-circle text-success me-2"></i></td>
         </tr>
 
         <tr>

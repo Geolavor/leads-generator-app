@@ -1,12 +1,12 @@
 version: '3'
 services:
   
-  #PHP Service
+  # PHP Service
   # app:
   #   build:
   #     context: .
-  #     dockerfile: Dockerfile
-  #   image: digitalocean.com/php
+  #     dockerfile: ./docker/7.4/Dockerfile
+  #   image: app
   #   container_name: app
   #   restart: unless-stopped
   #   tty: true
@@ -15,9 +15,9 @@ services:
   #     SERVICE_TAGS: dev
   #   working_dir: /var/www
   #   networks:
-  #     - app-network
+  #     - docker_app_network
 
-  #Nginx Service
+  # Nginx Service
   # webserver:
   #   image: nginx:alpine
   #   container_name: webserver
@@ -29,7 +29,7 @@ services:
   #   networks:
   #     - app-network
 
-  #MySQL Service
+  # MySQL Service
   database:
     platform: linux/x86_64
     image: mysql:8.0.28
@@ -52,5 +52,6 @@ volumes:
     external: false
 
 networks:
+  # docker_app_network:
   docker_workspace_network:
     driver: bridge

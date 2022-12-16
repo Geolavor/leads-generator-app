@@ -48,6 +48,7 @@
             'leads'                => 'Leads',
             'quotes'               => 'Quotes',
             'quote'                => 'Quote',
+            'companies'            => 'Companies',
             'mail'                 => [
                 'title'   => 'Mail',
                 'compose' => 'Compose',
@@ -872,6 +873,7 @@
             'risk-value'          => 'Risk value',
             'workers'             => 'Workers',
             'size_range'          => 'Size range',
+            'size'                => 'Size',
             'filters'             => [
                 'yesterday'       => 'Yesterday',
                 'today'           => 'Today',

@@ -32,6 +32,7 @@
             'leads'                => 'يؤدي',
             'quotes'               => 'يقتبس',
             'quote'                => 'اقتبس',
+            'companies'            => 'Companies',
             'mail'                 => [
                 'title'   => 'بريد',
                 'compose' => 'مؤلف موسيقى',
@@ -741,6 +742,7 @@
             'location'            => 'Location',
             'risk-value'          => 'Risk value',
             'workers'             => 'Workers',
+            'size'                => 'Size',
             'filters'             => [
                 'yesterday'       => 'في الامس',
                 'today'           => 'اليوم',

@@ -59,6 +59,7 @@ return [
         'role'                  => 'Role',
         'risk-value'            => 'Risk value',
         'workers'               => 'Workers',
+        'size'                  => 'Size',
         'filter'                => [
             'remove_all'    => 'Remove All',
             'title'         => 'Filter',

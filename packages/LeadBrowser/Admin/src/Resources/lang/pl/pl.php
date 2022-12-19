@@ -563,6 +563,7 @@
                 'global'              => 'Global',
                 'group'               => 'Group',
                 'individual'          => 'Individual',
+                'wallet'              => 'Wallet',
                 'status'              => 'Status',
                 'save-btn-title'      => 'Save as User',
                 'confirm_password'    => 'Confirm password',

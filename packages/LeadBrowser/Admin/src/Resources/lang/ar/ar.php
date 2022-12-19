@@ -462,6 +462,7 @@
                 'global'              => 'عالمي',
                 'group'               => 'مجموعة',
                 'individual'          => 'فرد',
+                'wallet'              => 'Wallet',
                 'status'              => 'حالة',
                 'save-btn-title'      => 'حفظ كمستخدم',
                 'confirm_password'    => 'تأكيد كلمة المرور',

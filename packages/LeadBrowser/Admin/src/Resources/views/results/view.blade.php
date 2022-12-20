@@ -102,7 +102,7 @@
 
                     <div class="row align-items-center gx-2">
                         <div class="col">
-                            <span class="js-counter display-4 text-dark" data-value="24">{{ $result->organization->size_range }}</span>
+                            <span class="js-counter display-4 text-dark" data-value="24">{{ $result->organization->count_workers }}</span>
                             <!-- <span class="text-body fs-5 ms-1">from 22</span> -->
                         </div>
                         <!-- End Col -->

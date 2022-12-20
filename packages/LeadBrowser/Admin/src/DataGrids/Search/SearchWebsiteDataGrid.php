@@ -84,7 +84,7 @@ class SearchWebsiteDataGrid extends DataGrid
             'sortable' => true,
             'closure'  => function ($row) {
                 $websites = explode(",", $row->urls);
-                return count($websites) + 1;
+                return count($websites);
             }
         ]);
 

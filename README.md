@@ -1,3 +1,5 @@
+> :warning: 20% of the software has not yet been published due to market research. Next year the whole thing should be available.
+
 <p align="center">
   <a href="#">
     <img src="https://github.com/LeadBrowser/app/blob/main/images/mini-white.png?raw=true" width="100px" alt="LeadBrowser logo" />

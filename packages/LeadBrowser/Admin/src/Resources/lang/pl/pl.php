@@ -168,7 +168,8 @@
             'details'                  => 'Details',
             'all'                           => 'All',
             'active'                        => 'Active',
-            'finish'                        => 'Finish'
+            'finish'                        => 'Finish',
+            'tag-destroy-success'           => 'Search has been removed',
         ],
 
         'results' => [

@@ -126,6 +126,10 @@
             ],
         ],
 
+        'search' => [
+            'tag-destroy-success'           => 'Search has been removed',
+        ],
+
         'leads' => [
             'title'                    => 'يؤدي',
             'lead'                     => 'قيادة',

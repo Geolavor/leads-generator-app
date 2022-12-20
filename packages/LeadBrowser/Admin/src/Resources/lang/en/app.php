@@ -196,6 +196,7 @@
             'you-dont-have-enough-coins'    => 'You dont have enough coins',
             'you-have-already-this-co'      => 'You already have this company',
             'wrong-file-type'               => 'We do not support such file formats',
+            'tag-destroy-success'           => 'Search has been removed',
             'all'                           => 'All',
             'active'                        => 'Active',
             'finish'                        => 'Finish',

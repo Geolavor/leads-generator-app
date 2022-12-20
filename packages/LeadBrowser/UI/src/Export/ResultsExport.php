@@ -73,14 +73,18 @@ class ResultsExport implements FromQuery, WithMapping, WithHeadings
         $emails_data = implode(', ', $emails_data);
 
         $taxs = [];
-        foreach ($result->organization->taxs as $item) {
-            array_push($taxs, $item->tax);
+        if (isset($result->organization->taxs)) {
+            foreach ($result->organization->taxs as $item) {
+                array_push($taxs, $item->tax);
+            }
         }
         $tax_list = implode(', ', $taxs);
 
         $socials = [];
-        foreach ($result->organization->socials as $item) {
-            array_push($socials, $item->url);
+        if (isset($result->organization->socials)) {
+            foreach ($result->organization->socials as $item) {
+                array_push($socials, $item->url);
+            }
         }
         $socials_data = implode(', ', $socials);
 

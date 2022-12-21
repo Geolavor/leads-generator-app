@@ -16,7 +16,8 @@ return [
             'last_name',
             'email',
             'phone',
-            'website'
+            'website',
+            'url'
         ]
     ],
     'phones' => [

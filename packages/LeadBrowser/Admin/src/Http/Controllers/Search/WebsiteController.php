@@ -9,6 +9,7 @@ use LeadBrowser\Attribute\Http\Requests\AttributeForm;
 use LeadBrowser\Search\Repositories\SearchWebsiteRepository;
 use LeadBrowser\Search\Models\SearchWebsites;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 use Maatwebsite\Excel\Facades\Excel;
 use Maatwebsite\Excel\HeadingRowImport;
@@ -96,14 +97,14 @@ class WebsiteController extends Controller
     {
         $search = SearchWebsites::find($request->csv_data_file_id);
         $csv_data = json_decode($search->csv_data, true);
-        
+
         $urls = '';
 
         foreach ($csv_data as $row) {
             foreach (config('extractor.websites.db_fields') as $index => $field) {
 
                 if(isset($request->fields[$field])) {
-                    if($field == 'website') {
+                    if($field == 'website' || $field == 'url') {
                         $url = str_replace(',', '', $row[$field]);
                         if($url) {
                             $urls .= ($url . ',');
@@ -127,15 +128,20 @@ class WebsiteController extends Controller
             }
         }
 
-        $data['urls'] = $urls;
+        if ($urls) {
+            $data['urls'] = $urls;
+            
+            $currentUser = auth()->guard('user')->user();
+            $data['user_id'] = $currentUser->id;
 
-        $search = $this->searchWebsiteRepository->create($data);
+            $search = $this->searchWebsiteRepository->create($data);
 
-        Event::dispatch('search.create.after', $search);
+            Event::dispatch('search.create.after', $search);
 
-        session()->flash('success', trans('admin::app.search.create-success'));
+            session()->flash('success', trans('admin::app.search.create-success'));
 
-        return redirect()->route('search.websites.view', $search->id);
+            return redirect()->route('search.websites.view', $search->id);
+        }
     }
 
     /**

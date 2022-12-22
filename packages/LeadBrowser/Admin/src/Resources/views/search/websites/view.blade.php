@@ -34,6 +34,19 @@
                 </h1>
             </div>
 
+            @if ($search->status_id == 3)
+                <div class="page-action" style="display: inline-flex;">
+                
+                    <form method="POST" action="{{ route('results.export', ['class' => 'LeadBrowser\Search\Models\SearchWebsites', 'search_id' => $search->id]) }}" @submit.prevent="onSubmit" enctype="multipart/form-data">
+                        @csrf()
+                        <div class="page-action" style="display: inline-flex;">
+                            <button class="btn btn-primary btn-lg">Export results</button>
+                        </div>
+                    </form>
+
+                </div>
+            @endif
+
         </div>
 
         @if($search->status_id == 3)

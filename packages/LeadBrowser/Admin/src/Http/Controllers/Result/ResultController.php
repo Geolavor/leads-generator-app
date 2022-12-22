@@ -372,7 +372,11 @@ class ResultController extends Controller
     public function export()
     {
         $currentUser = auth()->guard('user')->user();
-        $search = SearchLocations::where('user_id', $currentUser->id)->findOrFail(request('search_id'));
+
+        $class = request('class');
+        $instance = new $class();
+        // dd($instance);
+        $search = $instance->where('user_id', $currentUser->id)->findOrFail(request('search_id'));
 
         if(!$search) {
             return;

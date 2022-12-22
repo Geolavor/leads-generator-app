@@ -40,7 +40,7 @@
             @if ($search->status_id == 3)
                 <div class="page-action" style="display: inline-flex;">
                 
-                    <form method="POST" action="{{ route('results.export', ['search_id' => $search->id]) }}" @submit.prevent="onSubmit" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('results.export', ['class' => 'LeadBrowser\Search\Models\SearchLocations', 'search_id' => $search->id]) }}" @submit.prevent="onSubmit" enctype="multipart/form-data">
                         @csrf()
                         <div class="page-action" style="display: inline-flex;">
                             <button class="btn btn-primary btn-lg">Export results</button>

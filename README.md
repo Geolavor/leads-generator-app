@@ -79,7 +79,7 @@ Compared to paid tools, we perform better in almost every field. We want to go f
 
 <br>
 
-### Documentation
+## Documentation
 
 #### LeadBrowser Documentation [http://leadbrowser.co/docs](http://leadbrowser.co/docs)
 
@@ -87,7 +87,7 @@ Compared to paid tools, we perform better in almost every field. We want to go f
 
 <br>
 
-### Requirements
+## Requirements
 
 -   **SERVER**: Apache 2 or NGINX.
 -   **RAM**: 3 GB or higher.
@@ -97,7 +97,7 @@ Compared to paid tools, we perform better in almost every field. We want to go f
 -   **Node**: 8.11.3 LTS or higher.
 -   **Composer**: 1.6.5 or higher.
 
-### Installation and Configuration
+## Installation and Configuration
 
 -   Find **.env** file in root directory and change the **APP_URL** param to your **domain**.
 
@@ -141,7 +141,7 @@ password:admin123
 
 <br>
 
-### License
+## License
 
 LeadBrowser is a truly opensource framework which will always be free under the [MIT License](https://github.com/LeadBrowser/app/blob/master/LICENSE).
 

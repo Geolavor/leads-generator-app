@@ -89,6 +89,11 @@ class Organization extends Model implements ContractsOrganization
     	return $this->hasMany(Tax::class);
     }
 
+    public function technologies()
+    {
+    	return $this->hasMany(Technology::class);
+    }
+
     public function socials()
     {
     	return $this->hasMany(Social::class);

@@ -392,7 +392,7 @@
                                     <div class="label">Technology</div>
 
                                     <div class="value">
-                                        @foreach ($result->organization->technologies as $technology)
+                                        @foreach ($organization->technologies as $technology)
                                             <span class="multi-value">
                                                 <img class="avatar avatar-xss ms-1"
                                                     src="{{ asset('vendor/leadBrowser/admin/assets/images/' . $technology->type . '.svg') }}"
@@ -579,6 +579,41 @@
                     </tab>
 
                     <tab name="{{ __('admin::app.organizations.news') }}" :selected="false">
+                    </tab>
+
+                    <tab name="{{ __('admin::app.organizations.timeline') }}" :selected="false">
+                        <div>
+                            <ul class="list-comment">
+                                @if(count($organization->archive) > 0)
+                                    @foreach ($organization->archive as $item)
+                                        <li class="list-comment-item">
+                                            <!-- Media -->
+                                            <div class="d-flex align-items-center mb-3">
+                                                <div class="flex-grow-1">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <h6>
+                                                            <a href="{{ $item['url'] }}" target="_blank">{{ $item['url'] }}</a>
+                                                        </h6>
+                                                        <span class="d-block"><b>{{ date('d-m-Y', strtotime($item['time']['date'])) }}</b> - {{ $item['time']['timezone'] }}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- End Media -->
+
+                                            <!-- <p>As a Special Education teacher this resonates so well with me. Fighting with gen
+                                                ed teachers to flatten for the students with learning disabilities. It also
+                                                confirms some things for me in my writing.</p> -->
+
+                                            <a class="link" href="{{ $item['url'] }}" target="_blank">Open <i class="bi-chevron-right small ms-1 small ms-1"></i></a>
+                                        </li>
+                                    @endforeach
+                                @else
+                                    <li>
+                                        <h2>We find no historical data</h2>
+                                    </li>
+                                @endif
+                            </ul>
+                        </div>
                     </tab>
 
                 </tabs>

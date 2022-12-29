@@ -79,7 +79,7 @@ class OrganizationController extends Controller
         // $organization = $this->organizationRepository->findOrFail($id);
         $organization = Organization::select(
             'id', 'icon', 'title', 'description',
-            'types', 'country', 'city', 'website',
+            'types', 'country', 'city', 'website', 'archive',
             'international_phone_number', 'size_range', 'year_founded'
         )->with(['persons'])->findOrFail($id);
 

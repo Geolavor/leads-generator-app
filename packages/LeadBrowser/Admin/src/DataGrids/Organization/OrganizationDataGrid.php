@@ -74,6 +74,7 @@ class OrganizationDataGrid extends DataGrid
                 'organizations.types',
                 'organizations.website',
                 'organizations.is_ecommerce',
+                'organizations.archive',
                 'organizations.country',
                 'organizations.city',
                 'organizations.formatted_address as formatted_address',

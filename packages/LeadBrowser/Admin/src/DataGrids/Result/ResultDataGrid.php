@@ -72,6 +72,7 @@ class ResultDataGrid extends DataGrid
                 'organizations.types as organization_types',
                 'organizations.website as organization_website',
                 'organizations.is_ecommerce as organization_is_ecommerce',
+                'organizations.archive as organization_archive',
                 'organizations.city as organization_city',
                 'organizations.formatted_address as organization_formatted_address',
                 'organizations.formatted_phone_number as organization_phone',

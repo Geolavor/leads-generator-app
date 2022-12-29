@@ -85,7 +85,14 @@ class ResultController extends Controller
     public function view($id)
     {
         // $result = $this->resultRepository->findOrFail($id);
-        $result = Result::with(['searchable', 'organization', 'organization.taxs', 'organization.socials', 'organization.reviews', 'organization.persons'])->findOrFail($id);
+        $result = Result::with([
+            'searchable', 'organization', 'organization.taxs', 'organization.socials',
+            'organization.reviews', 'organization.persons'
+        ])->findOrFail($id);
+
+        $result->archive = $result->organization->archive;
+
+        // dd($result->archive[0]);
 
         $emails = Email::where('organization_id', $result->organization_id)->get();
 

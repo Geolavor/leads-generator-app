@@ -42,6 +42,7 @@ class Organization extends Model implements ContractsOrganization
         'keywords',
         'description',
         'is_ecommerce',
+        'archive',
         'types',
         'in_black_list',
         'content',
@@ -60,6 +61,7 @@ class Organization extends Model implements ContractsOrganization
     protected $casts = [
         'address' => 'array',
         'crawled_at' => 'datetime',
+        'archive' => 'array'
     ];
 
     /**

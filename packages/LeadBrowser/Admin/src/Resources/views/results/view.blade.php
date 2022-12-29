@@ -378,27 +378,16 @@
                                     <div class="label">Technology</div>
 
                                     <div class="value">
-                                        <span class="multi-value bg-white border-0">
-                                            <img class="avatar avatar-xss ms-1"
-                                                src="{{ asset('vendor/leadBrowser/admin/assets/images/gtm.svg') }}"
-                                                alt="Top rating" data-toggle="tooltip" data-organizationment="top"
-                                                title="Top profile">
-                                            GTM
-                                        </span>
-                                        <span class="multi-value bg-white border-0">
-                                            <img class="avatar avatar-xss ms-1"
-                                                src="{{ asset('vendor/leadBrowser/admin/assets/images/hotjar.svg') }}"
-                                                alt="Top rating" data-toggle="tooltip" data-organizationment="top"
-                                                title="Top profile">
-                                            Hotjar
-                                        </span>
-                                        <span class="multi-value bg-white border-0">
-                                            <img class="avatar avatar-xss ms-1"
-                                                src="{{ asset('vendor/leadBrowser/admin/assets/images/sentry.svg') }}"
-                                                alt="Top rating" data-toggle="tooltip" data-organizationment="top"
-                                                title="Top profile">
-                                            Sentry
-                                        </span>
+                                        @foreach ($result->organization->technologies as $technology)
+                                            <span class="multi-value">
+                                                <img class="avatar avatar-xss ms-1"
+                                                    src="{{ asset('vendor/leadBrowser/admin/assets/images/' . $technology->type . '.svg') }}"
+                                                    alt="Top rating" data-toggle="tooltip" data-organizationment="top"
+                                                    title="Top profile"
+                                                >
+                                                <span style="cursor:pointer">{{ $technology->type }}</span>
+                                            </span>
+                                        @endforeach
                                     </div>
                                 </div>
 

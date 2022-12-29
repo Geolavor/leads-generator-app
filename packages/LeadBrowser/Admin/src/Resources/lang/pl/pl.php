@@ -884,7 +884,10 @@
                 'this-week'       => 'This Week',
                 'this-month'      => 'This Month',
                 'custom'          => 'Custom',
-            ]
+            ],
+            'domain_created'      => 'Utworzenie domeny',
+            'domain_expires'      => 'Zakończenie domeny',
+            'domain_owner'        => 'Właściciel domeny'
         ],
 
         'response' => [

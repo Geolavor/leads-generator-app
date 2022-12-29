@@ -415,6 +415,30 @@
                                 </div>
                                 @endif
 
+                                <div class="attribute-value-row">
+                                    <div class="label">{{ __('admin::app.datagrid.domain_created') }}</div>
+
+                                    <div class="value">
+                                        {{ date('d-m-Y', strtotime($organization->domain_created)) }}
+                                    </div>
+                                </div>
+
+                                <div class="attribute-value-row">
+                                    <div class="label">{{ __('admin::app.datagrid.domain_expires') }}</div>
+
+                                    <div class="value">
+                                        {{ date('d-m-Y', strtotime($organization->domain_expires)) }}
+                                    </div>
+                                </div>
+
+                                <div class="attribute-value-row">
+                                    <div class="label">{{ __('admin::app.datagrid.domain_owner') }}</div>
+
+                                    <div class="value">
+                                        {{ $organization->domain_owner }}
+                                    </div>
+                                </div>
+
                                 @include('admin::common.custom-attributes.view', [
                                     'customAttributes' =>
                                         app('LeadBrowser\Attribute\Repositories\AttributeRepository')->findWhere([

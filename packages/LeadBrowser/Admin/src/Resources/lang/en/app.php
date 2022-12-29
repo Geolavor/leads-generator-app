@@ -159,7 +159,7 @@
             'workers'        => 'Workers',
             'technology'     => 'Technology',
             'news'           => 'News',
-            'timeline'       => 'Timeline'
+            'timeline'       => 'Timeline',
         ],
 
         'persons' => [
@@ -1115,7 +1115,10 @@
                 'this-week'       => 'This Week',
                 'this-month'      => 'This Month',
                 'custom'          => 'Custom',
-            ]
+            ],
+            'domain_created'      => 'Domain created',
+            'domain_expires'      => 'Domain expires',
+            'domain_owner'        => 'Domain owner'
         ],
 
         'response' => [

@@ -52,12 +52,21 @@ Additionally, LeadBrowser can quickly and easily extract data from LinkedIn prof
 
 <br>
 
-## Features
+## Features 🚀
 
-* 📁 **AI** (Soon) We classify websites, with the life of AI. This allows us to better match prospects.
-* 🔄 **Live search** Prospects are searched in real time. That's why LeadBrowser is better than Hunter.io and Snov.io.
-* 🙌 **Linkedin** We search for companies first. Then we check that the companies have the right people and only then do we assign the data. Without any extensions.
-* 🚀 **Go to market** The tool is 100% ready to enter the market.
+* **AI Classify** We classify websites, with the life of AI. This allows us to better match prospects.
+* **Live search** Prospects are searched in real time. It works similarly to a browser.
+* **Linkedin** We search for employees from Linkedin without any browser plug-in/extension.
+* **Go to market** The tool is 100% ready to enter the market.
+* **DNS** information (who owns it and dates).
+* **Validation** Mail validation.
+* **AI Risk** Risk calculation of contact with a prospect.
+* **Search phrase** You can search for any words on the page before running a search
+* **AI Observer** Your prospects and evaluates future prospects based on what you have generated in the past.
+* **Web Archive** Checking when the site was created and the ability to retrieve past data.
+* **Technology** Catching technologies from website.
+* **ChatGPT** integration.
+
 
 ![alt text](https://github.com/LeadBrowser/app/blob/main/images/dashboard.png?raw=true)
 

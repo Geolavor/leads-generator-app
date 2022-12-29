@@ -22,7 +22,8 @@ class ResultsExport implements FromQuery, WithMapping, WithHeadings
         ini_set('max_execution_time', '18880');
         
         return Result::query()->with([
-            'organization', 'organization.taxs', 'organization.socials', 'organization.emails', 'organization.persons'
+            'organization', 'organization.taxs', 'organization.socials',
+            'organization.technologies', 'organization.emails', 'organization.persons'
         ])->where('searchable_id', request('search_id'));
     }
 
@@ -44,6 +45,7 @@ class ResultsExport implements FromQuery, WithMapping, WithHeadings
             'Taxs',
             'Workers',
             'Socials',
+            'Technology',
             'Date'
         ];
     }
@@ -88,6 +90,14 @@ class ResultsExport implements FromQuery, WithMapping, WithHeadings
         }
         $socials_data = implode(', ', $socials);
 
+        $technologies = [];
+        if (isset($result->organization->technologies)) {
+            foreach ($result->organization->technologies as $item) {
+                array_push($technologies, $item->type);
+            }
+        }
+        $technologies_data = implode(', ', $technologies);
+
         return [
             $result->organization->icon,
             $result->organization->title,
@@ -104,6 +114,7 @@ class ResultsExport implements FromQuery, WithMapping, WithHeadings
             $tax_list,
             $workers_data,
             $socials_data,
+            $technologies_data,
             $result->created_at
         ];
     }

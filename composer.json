@@ -23,6 +23,7 @@
         "flynsarmy/db-blade-compiler": "^9.0",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "io-developer/php-whois": "^4.1",
         "jbroadway/urlify": "^1.2",
         "konekt/concord": "^1.10",
         "laravel/cashier": "^13.11",

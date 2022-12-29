@@ -30,7 +30,7 @@
                 </template>
             </filter-component>
 
-            <table v-if="tableData.records.total" class="table-responsive">
+            <table v-if="tableData.records && tableData.records.total" class="table-responsive">
                 <thead-component></thead-component>
 
                 <tbody-component

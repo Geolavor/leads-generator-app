@@ -158,7 +158,8 @@
             'similar'        => 'Similar companies',
             'workers'        => 'Workers',
             'technology'     => 'Technology',
-            'news'           => 'News'
+            'news'           => 'News',
+            'timeline'       => 'Timeline'
         ],
 
         'persons' => [

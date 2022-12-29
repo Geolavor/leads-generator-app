@@ -46,6 +46,9 @@ class ResultsExport implements FromQuery, WithMapping, WithHeadings
             'Workers',
             'Socials',
             'Technology',
+            'Domain created',
+            'Domain expires',
+            'Domain owner',
             'Date'
         ];
     }
@@ -115,6 +118,9 @@ class ResultsExport implements FromQuery, WithMapping, WithHeadings
             $workers_data,
             $socials_data,
             $technologies_data,
+            $result->organization->domain_created,
+            $result->organization->domain_expires,
+            $result->organization->domain_owner,
             $result->created_at
         ];
     }

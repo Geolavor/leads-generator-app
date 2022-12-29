@@ -432,13 +432,13 @@
                                     </div>
                                 </div>
 
-                                @include('admin::common.custom-attributes.view', [
+                                <!-- @include('admin::common.custom-attributes.view', [
                                 'customAttributes' =>
                                 app('LeadBrowser\Attribute\Repositories\AttributeRepository')->findWhere([
                                 'entity_type' => 'organizations',
                                 ]),
                                 'entity' => $result->organization,
-                                ])
+                                ]) -->
                             </div>
                         </div>
                     </tab>

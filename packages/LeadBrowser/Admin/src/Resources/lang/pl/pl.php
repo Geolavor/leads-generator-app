@@ -131,12 +131,13 @@
             'update-success' => 'Organization updated successfully.',
             'delete-success' => 'Organization deleted successfully.',
             'delete-failed'  => 'Organization can not be deleted.',
-            'details'        => 'Details',
-            'reviews'        => 'Reviews',
-            'similar'        => 'Similar companies',
-            'workers'        => 'Workers',
-            'technology'     => 'Technology',
-            'news'           => 'News'
+            'details'        => 'Szczegóły',
+            'reviews'        => 'Opinie',
+            'similar'        => 'Podobne firmy',
+            'workers'        => 'Pracownicy',
+            'technology'     => 'Technologie',
+            'news'           => 'Wiadomości',
+            'timeline'       => 'Oś czasu'
         ],
 
         'persons' => [

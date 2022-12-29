@@ -80,11 +80,11 @@ Compared to paid tools, we perform better in almost every field. We want to go f
 
 <br>
 
-## Use-cases
+## Use-cases 📁
 
-* 📁 **Search for small businesses**
-* 📁 **Information about active companies**
-* 📁 **Analyze the market**
+* **Search for small businesses**
+* **Information about active companies**
+* **Analyze the market**
 
 <br>
 

@@ -233,6 +233,10 @@ class Dashboard
      */
     public function getLeads($startDateFilter, $endDateFilter, $totalWeeks)
     {
+        if (!bouncer()->hasPermission('leads')) {
+            return 0;
+        }
+
         $labels = $wonLeadsCount = $lostLeadsCount = [];
 
         if ($totalWeeks) {
@@ -292,6 +296,10 @@ class Dashboard
      */
     public function getLeadsStarted($startDateFilter, $endDateFilter, $totalWeeks)
     {
+        if (!bouncer()->hasPermission('leads')) {
+            return 0;
+        }
+
         $labels = $leadsStarted = [];
 
         if ($totalWeeks) {
@@ -512,6 +520,10 @@ class Dashboard
      */
     public function getTopLeads($startDateFilter, $endDateFilter, $totalWeeks)
     {
+        if (!bouncer()->hasPermission('leads')) {
+            return 0;
+        }
+        
         $topLeads = $this->leadRepository
             ->select('leads.id', 'title', 'lead_value as amount', 'leads.created_at', 'status', 'lead_pipeline_stages.name as statusLabel')
             ->leftJoin('lead_pipeline_stages', 'leads.lead_pipeline_stage_id', '=', 'lead_pipeline_stages.id')

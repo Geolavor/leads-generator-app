@@ -56,7 +56,7 @@ trait ProvideTabFilters
     {
         switch ($key) {
             case 'duration':
-                return $this->filterMap['created_at'] ?? 'created_at';
+                return ['schedule_from', 'schedule_to'];
 
             case 'scheduled':
                 return $this->filterMap['schedule_from'] ?? 'schedule_from';
@@ -125,9 +125,9 @@ trait ProvideTabFilters
                                 $dates[1] = Carbon::today()->format('Y-m-d');
                             }
 
-                            $collection->whereDate($column, '>=', $dates[0]);
+                            $collection->whereDate($column[0], '>=', $dates[0]);
 
-                            $collection->whereDate($column, '<=', $dates[1]);
+                            $collection->whereDate($column[1], '<=', $dates[1]);
                         }
                     } else {
                         $collection->where($column, $value);
@@ -150,10 +150,13 @@ trait ProvideTabFilters
         foreach ($this->tabFilters as $filterIndex => $filter) {
             if (in_array($key, $this->customTabFilters)) {
                 foreach ($filter['values'] as $filterValueIndex => $filterValue) {
-                    if (array_keys($info)[0] == 'bw' && $filterValue['key'] == 'custom') {
+                    if (
+                        (array_keys($info)[0] == 'bw' && $filterValue['key'] == 'custom') ||
+                        $filterValue['key'] == array_values($info)[0]
+                    ) {
                         $this->tabFilters[$filterIndex]['values'][$filterValueIndex]['isActive'] = true;
-                    } else {
-                        $this->tabFilters[$filterIndex]['values'][$filterValueIndex]['isActive'] = ($filterValue['key'] == array_values($info)[0]);
+                    } else if ($filterValue['key'] == 'all') {
+                        $this->tabFilters[$filterIndex]['values'][$filterValueIndex]['isActive'] = false;
                     }
                 }
 

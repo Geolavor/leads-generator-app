@@ -20,7 +20,7 @@
 
         @php
             /* main font will be set on locale based */
-            $mainFontFamily = app()->getLocale() === 'ar' ? 'DejaVu Sans' : 'Noto Sans';
+            $mainFontFamily = app()->getLocale() === 'pl' ? 'DejaVu Sans' : 'Noto Sans';
         @endphp
 
         {{-- main css --}}

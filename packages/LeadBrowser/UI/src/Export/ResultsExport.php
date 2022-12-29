@@ -49,6 +49,7 @@ class ResultsExport implements FromQuery, WithMapping, WithHeadings
             'Domain created',
             'Domain expires',
             'Domain owner',
+            'Website Archive',
             'Date'
         ];
     }
@@ -101,6 +102,16 @@ class ResultsExport implements FromQuery, WithMapping, WithHeadings
         }
         $technologies_data = implode(', ', $technologies);
 
+        // TODO
+        // $archives = [];
+        // if (isset($result->organization->archive)) {
+        //     foreach ($result->organization->archive as $item) {
+        //         array_push($archives, $item['time']['date']);
+        //     }
+        // }
+        // $archives_data = implode(', ', $archives);
+
+
         return [
             $result->organization->icon,
             $result->organization->title,
@@ -121,6 +132,7 @@ class ResultsExport implements FromQuery, WithMapping, WithHeadings
             $result->organization->domain_created,
             $result->organization->domain_expires,
             $result->organization->domain_owner,
+            [],//$archives_data,
             $result->created_at
         ];
     }

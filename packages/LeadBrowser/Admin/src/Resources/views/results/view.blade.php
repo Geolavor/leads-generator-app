@@ -621,7 +621,7 @@
                     <tab name="{{ __('admin::app.organizations.timeline') }}" :selected="false">
                         <div>
                             <ul class="list-comment">
-                                @if(count($result->archive) > 0)
+                                @if(isset($result->archive))
                                     @foreach ($result->archive as $item)
                                         <li class="list-comment-item">
                                             <!-- Media -->

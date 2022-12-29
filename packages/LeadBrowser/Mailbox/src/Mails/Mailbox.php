@@ -35,15 +35,16 @@ class Mailbox extends Mailable
      */
     public function build()
     {
-        $this->to($this->mailbox->reply_to)
+        // $this->to($this->mailbox->reply_to)
+        $this->from($this->mailbox->from)
             ->replyTo($this->mailbox->parent_id ? $this->mailbox->parent->unique_id : $this->mailbox->unique_id)
             ->cc($this->mailbox->cc ?? [])
             ->bcc($this->mailbox->bcc ?? [])
             ->subject($this->mailbox->parent_id ? $this->mailbox->parent->subject : $this->mailbox->subject)
             ->html($this->mailbox->reply);
         
-        $this->withSwiftMessage(function ($message) {
-            $message->getHeaders()->addTextHeader('Message-ID', $this->mailbox->message_id);
+        $this->withSymfonyMessage(function ($message) {
+            $message->getHeaders()->addIdHeader('Message-ID', $this->mailbox->message_id);
 
             $message->getHeaders()->addTextHeader('References', $this->mailbox->parent_id
                 ? implode(' ', $this->mailbox->parent->reference_ids)

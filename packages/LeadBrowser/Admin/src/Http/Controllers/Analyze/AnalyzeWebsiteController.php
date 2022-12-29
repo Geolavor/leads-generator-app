@@ -41,25 +41,6 @@ class AnalyzeWebsiteController extends Controller
             $data = (array) $extractor->searchFor($website);
         // }
 
-        // $crawler = Crawler::create();
-
-        // $browsershot = (new Browsershot)->noSandbox()->windowSize(1920, 1080);
-        // // $browsershot->setOption('args', ['--headless=false']);
-
-        // $crawler->setBrowsershot($browsershot);
-
-        // $crawler
-        //     ->executeJavaScript()
-        //     ->setMaximumResponseSize(1024 * 1024 * 3)
-        //     ->setCrawlObserver(new CrawlerObserver(1))
-        //     ->setTotalCrawlLimit(10)
-        //     ->setCurrentCrawlLimit(5)
-        //     ->startCrawling($website);
-
-        // $data = null;
-        // $body = Cache::pull('body');
-        // $dom = new DOM($body);
-
         session()->flash('success', trans('admin::app.search.create-success'));
 
         return view('admin::analyze.website.view', compact('data'));

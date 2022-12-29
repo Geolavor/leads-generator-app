@@ -61,6 +61,13 @@ class Lead extends AbstractEntity
     protected $tagRepository;
 
     /**
+     * Attributes to be sorted
+     * 
+     * @var array  $attributesToBeSorted
+     */
+    protected $attributesToBeSorted = ['lead_pipeline_stages' => 'sort_order'];
+
+    /**
      * Create a new repository instance.
      *
      * @param  \LeadBrowser\Attribute\Repositories\AttributeRepository  $attributeRepository

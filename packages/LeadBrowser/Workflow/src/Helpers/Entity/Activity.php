@@ -54,6 +54,13 @@ class Activity extends AbstractEntity
     protected $activityRepository;
 
     /**
+     * Attributes to be sorted
+     * 
+     * @var array  $attributesToBeSorted
+     */
+    protected $attributesToBeSorted = ['lead_pipeline_stages' => 'sort_order'];
+
+    /**
      * Create a new repository instance.
      *
      * @param  \LeadBrowser\Attribute\Repositories\AttributeRepository  $attributeRepository
@@ -151,6 +158,12 @@ class Activity extends AbstractEntity
                 'name'        => 'User',
                 'lookup_type' => 'users',
                 'options'     => $this->attributeRepository->getLookUpOptions('users'),
+            ], [
+                'id'          => 'is_done',
+                'type'        => 'boolean',
+                'name'        => 'Is done',
+                'lookup_type' => null,
+                'options'     => collect([]),
             ]
         ];
 
@@ -230,7 +243,7 @@ class Activity extends AbstractEntity
             [
                 'id'         => 'update_related_leads',
                 'name'       => __('admin::app.settings.workflows.update-related-leads'),
-                'attributes' => $this->getAttributes('leads'),
+                'attributes' => parent::getAttributes('leads'),
             ], [
                 'id'      => 'send_email_to_sales_owner',
                 'name'    => __('admin::app.settings.workflows.send-email-to-sales-owner'),

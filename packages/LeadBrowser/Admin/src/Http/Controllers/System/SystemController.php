@@ -73,21 +73,6 @@ class SystemController extends Controller
         }
 
         return;
-        // CITIES
-        
-        // $duplicated = DB::table('organizations')
-        // ->select('id', 'website', DB::raw('count(`website`) as occurences'))
-        // ->groupBy('website')
-        // ->having('occurences', '>', 1)
-        // ->pluck('id')
-        // ->toArray();
-
-        // dd($duplicated);
-        // foreach (array_chunk($duplicated, 1000) as $t)  
-        // {
-        //     DB::table('organizations')->whereIn('id', $t)->delete();
-        // }
-        // return;
 
 
         $row = 1;
@@ -122,8 +107,6 @@ class SystemController extends Controller
 
         return;
 
-        // parse_url
-
         // $sw = new SimilarWeb;
         // $res = $sw->fetch($website);
         // dd($res);
@@ -133,9 +116,6 @@ class SystemController extends Controller
         // dd($result);
 
         $data = [];
-
-        // $data = TestEmailValidatorFactory::create('mariusz@konstelacja.co');
-        // dd($data);
     }
 
     /**

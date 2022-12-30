@@ -14,7 +14,7 @@ class AddIsCorrectToEmailsTable extends Migration
     public function up()
     {
         Schema::table('emails', function (Blueprint $table) {
-            $table->boolean('is_correct')->default(0)->after('valid_host');
+            $table->boolean('is_correct')->default(0)->after('spoof_check');
         });
     }
 
@@ -26,7 +26,7 @@ class AddIsCorrectToEmailsTable extends Migration
     public function down()
     {
         Schema::table('emails', function (Blueprint $table) {
-            $table->boolean('is_correct')->default(0)->after('valid_host');
+            $table->boolean('is_correct')->default(0)->after('spoof_check');
         });
     }
 }

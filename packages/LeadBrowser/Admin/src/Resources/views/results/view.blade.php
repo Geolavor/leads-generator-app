@@ -334,12 +334,12 @@
 
                                                 <template #popper>
                                                     <ul class="list-unstyled list-py-1 mb-0 p-2">
-                                                        <li>{{ __('admin::app.analyze.emails.valid_format') }}?
-                                                            {{ $item['valid_format'] == 1 ? 'Yes' : 'No' }} </li>
-                                                        <li>{{ __('admin::app.analyze.emails.valid_mx_records') }}?
-                                                            {{ $item['valid_mx_records'] == 1 ? 'Yes' : 'No' }}</li>
-                                                        <li>{{ __('admin::app.analyze.emails.possible_email_correction') }}?
-                                                            {{ $item['possible_email_correction'] == 1 ? 'Yes' : 'No' }}
+                                                        <li>{{ __('admin::app.analyze.emails.rfc_validation') }}?
+                                                            {{ $item['rfc_validation'] == 1 ? 'Yes' : 'No' }} </li>
+                                                        <li>{{ __('admin::app.analyze.emails.no_rfc_validation') }}?
+                                                            {{ $item['no_rfc_validation'] == 1 ? 'Yes' : 'No' }}</li>
+                                                        <li>{{ __('admin::app.analyze.emails.dns_check') }}?
+                                                            {{ $item['dns_check'] == 1 ? 'Yes' : 'No' }}
                                                         </li>
                                                         <li>{{ __('admin::app.analyze.emails.free_email_provider') }}?
                                                             {{ $item['free_email_provider'] == 1 ? 'Yes' : 'No' }}</li>
@@ -349,8 +349,8 @@
                                                         <li>{{ __('admin::app.analyze.emails.role_or_business_email') }}?
                                                             {{ $item['role_or_business_email'] == 1 ? 'Yes' : 'No' }}
                                                         </li>
-                                                        <li>{{ __('admin::app.analyze.emails.valid_host') }}?
-                                                            <b>{{ $item['valid_host'] == 1 ? 'Yes' : 'No' }}</b></li>
+                                                        <li>{{ __('admin::app.analyze.emails.spoof_check') }}?
+                                                            <b>{{ $item['spoof_check'] == 1 ? 'Yes' : 'No' }}</b></li>
                                                     </ul>
                                                 </template>
                                             </v-menu>
@@ -491,10 +491,10 @@
 
                                                 <template #popper>
                                                     <ul class="list-unstyled list-py-1 mb-0 p-2">
-                                                        <li>{{ __('admin::app.analyze.emails.valid_format') }}? Yes</li>
-                                                        <li>{{ __('admin::app.analyze.emails.valid_mx_records') }}? Yes
+                                                        <li>{{ __('admin::app.analyze.emails.rfc_validation') }}? Yes</li>
+                                                        <li>{{ __('admin::app.analyze.emails.no_rfc_validation') }}? Yes
                                                         </li>
-                                                        <li>{{ __('admin::app.analyze.emails.possible_email_correction') }}?
+                                                        <li>{{ __('admin::app.analyze.emails.dns_check') }}?
                                                             Yes</li>
                                                         <li>{{ __('admin::app.analyze.emails.free_email_provider') }}?
                                                             Yes</li>
@@ -502,7 +502,7 @@
                                                             Yes</li>
                                                         <li>{{ __('admin::app.analyze.emails.role_or_business_email') }}?
                                                             Yes</li>
-                                                        <li>{{ __('admin::app.analyze.emails.valid_host') }}? Yes</li>
+                                                        <li>{{ __('admin::app.analyze.emails.spoof_check') }}? Yes</li>
                                                     </ul>
                                                 </template>
                                             </v-menu>

@@ -26,13 +26,13 @@ class CreateEmailsTable extends Migration
             $table->string('email');
             $table->string('type');
             $table->string('description');
-            $table->boolean('valid_format');
-            $table->boolean('valid_mx_records');
-            $table->boolean('possible_email_correction');
+            $table->boolean('rfc_validation');
+            $table->boolean('no_rfc_validation');
+            $table->boolean('dns_check');
             $table->boolean('free_email_provider');
             $table->boolean('disposable_email_provider');
             $table->boolean('role_or_business_email');
-            $table->boolean('valid_host');
+            $table->boolean('spoof_check');
             $table->timestamps();
         });
     }

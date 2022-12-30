@@ -11,9 +11,9 @@ class Email extends Model
 
     protected $fillable = [
         'id', 'number', 'organization_id', 'name', 'role', 'email', 'type',
-        'valid_format', 'valid_mx_records', 'possible_email_correction',
+        'rfc_validation', 'no_rfc_validation', 'dns_check',
         'free_email_provider', 'disposable_email_provider',
-        'role_or_business_email', 'valid_host', 'is_correct', 'description'
+        'role_or_business_email', 'spoof_check', 'is_correct', 'description'
     ];
 
     protected $casts = [

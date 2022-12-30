@@ -31,5 +31,5 @@ package-lock.json
 /stubs
 /vendor
 /packages/LeadBrowser/Search/
-/packages/LeadBrowser/Organization/
+/packages/LeadBrowser/Organization/Services/
 /packages/LeadBrowser/Extractor/

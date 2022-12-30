@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace LeadBrowser\Admin\Http\Controllers\System;
 
 use App\Classes\GIWY;
+use App\Services\AIClassification;
 use Carbon\Carbon;
 use Carbon\CarbonInterval;
 use Exception;

@@ -61,7 +61,7 @@
                             @endif
 
                             <div class="col-auto">
-                                <span>Category:</span>
+                                <span><i class="bi bi-info-circle"></i> Category:</span>
                                 <a href="#">{{ $organization->types }}</a>
                             </div>
                             <!-- End Col -->
@@ -606,37 +606,41 @@
                     </tab>
 
                     <tab name="{{ __('admin::app.organizations.timeline') }}" :selected="false">
-                        <div>
-                            <ul class="list-comment">
-                                @if($organization->archive)
-                                    @foreach ($organization->archive as $item)
-                                        <li class="list-comment-item">
-                                            <!-- Media -->
-                                            <div class="d-flex align-items-center mb-3">
-                                                <div class="flex-grow-1">
-                                                    <div class="d-flex justify-content-between align-items-center">
-                                                        <h6>
-                                                            <a href="{{ $item['url'] }}" target="_blank">{{ $item['url'] }}</a>
-                                                        </h6>
-                                                        <span class="d-block"><b>{{ date('d-m-Y', strtotime($item['time']['date'])) }}</b> - {{ $item['time']['timezone'] }}</span>
+                        <div class="col">
+                            <div class="card card-bordered h-100">
+                                <div class="card-body">
+                                    <ul class="list-comment">
+                                        @if(isset($organization->archive))
+                                            @foreach ($organization->archive as $item)
+                                                <li class="list-comment-item">
+                                                    <!-- Media -->
+                                                    <div class="d-flex align-items-center mb-3">
+                                                        <div class="flex-grow-1">
+                                                            <div class="d-flex justify-content-between align-items-center">
+                                                                <h6>
+                                                                    <a href="{{ $item['url'] }}" target="_blank">{{ $item['url'] }}</a>
+                                                                </h6>
+                                                                <span class="d-block"><b>{{ date('d-m-Y', strtotime($item['time']['date'])) }}</b> - {{ $item['time']['timezone'] }}</span>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <!-- End Media -->
+                                                    <!-- End Media -->
 
-                                            <!-- <p>As a Special Education teacher this resonates so well with me. Fighting with gen
-                                                ed teachers to flatten for the students with learning disabilities. It also
-                                                confirms some things for me in my writing.</p> -->
+                                                    <!-- <p>As a Special Education teacher this resonates so well with me. Fighting with gen
+                                                        ed teachers to flatten for the students with learning disabilities. It also
+                                                        confirms some things for me in my writing.</p> -->
 
-                                            <a class="link" href="{{ $item['url'] }}" target="_blank">Open <i class="bi-chevron-right small ms-1 small ms-1"></i></a>
-                                        </li>
-                                    @endforeach
-                                @else
-                                    <li>
-                                        <h2>We find no historical data</h2>
-                                    </li>
-                                @endif
-                            </ul>
+                                                    <a class="link" href="{{ $item['url'] }}" target="_blank">Open <i class="bi-chevron-right small ms-1 small ms-1"></i></a>
+                                                </li>
+                                            @endforeach
+                                        @else
+                                            <li class="list-comment-item">
+                                                <h5>We find no historical data</h5>
+                                            </li>
+                                        @endif
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </tab>
 

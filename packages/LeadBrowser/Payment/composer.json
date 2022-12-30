@@ -1,0 +1,27 @@
+{
+    "name": "leadbrowser/laravel-payment",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mariusz Malek",
+            "email": "mariusz@leadbrowser.co"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "LeadBrowser\\Payment\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LeadBrowser\\Payment\\Providers\\PaymentServiceProvider"
+            ],
+            "aliases": {
+                "Bouncer": "LeadBrowser\\Payment\\Facades\\Bouncer"
+            }
+        }
+    },
+    "minimum-stability": "dev"
+}

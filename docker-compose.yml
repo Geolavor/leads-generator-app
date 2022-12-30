@@ -1,0 +1,57 @@
+version: '3'
+services:
+  
+  # PHP Service
+  # app:
+  #   build:
+  #     context: .
+  #     dockerfile: ./docker/7.4/Dockerfile
+  #   image: app
+  #   container_name: app
+  #   restart: unless-stopped
+  #   tty: true
+  #   environment:
+  #     SERVICE_NAME: app
+  #     SERVICE_TAGS: dev
+  #   working_dir: /var/www
+  #   networks:
+  #     - docker_app_network
+
+  # Nginx Service
+  # webserver:
+  #   image: nginx:alpine
+  #   container_name: webserver
+  #   restart: unless-stopped
+  #   tty: true
+  #   ports:
+  #     - "80:80"
+  #     - "443:443"
+  #   networks:
+  #     - app-network
+
+  # MySQL Service
+  database:
+    platform: linux/x86_64
+    image: mysql:8.0.28
+    container_name: mysql-8
+    volumes:
+      - docker_workspace_mysql:/var/lib/mysql
+    networks:
+      - docker_workspace_network
+    environment:
+        MYSQL_DATABASE: ${DB_DATABASE}
+        MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+        MYSQL_PASSWORD: ${DB_PASSWORD}
+        MYSQL_USER: ${DB_USERNAME}
+    ports:
+        - 3307:3306
+
+# Docker Networks
+volumes:
+  docker_workspace_mysql:
+    external: false
+
+networks:
+  # docker_app_network:
+  docker_workspace_network:
+    driver: bridge

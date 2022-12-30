@@ -347,13 +347,13 @@
             'email'                    => 'Email',
             'website'                  => 'Website',
             'emails'                   => [
-                'rfc_validation'                  => 'Valid format',
-                'no_rfc_validation'              => 'Valid mx records',
-                'dns_check'     => 'Possible email correction',
+                'rfc_validation'                => 'RFC Validation',
+                'no_rfc_validation'             => 'No RFC warnings',
+                'dns_check'                     => 'DNS Check',
                 'free_email_provider'           => 'Free provider',
                 'disposable_email_provider'     => 'Disposable provider',
                 'role_or_business_email'        => 'Business email',
-                'spoof_check'                    => 'Valid host'
+                'spoof_check'                   => 'Spoof check'
             ],
             'phone'                    => 'Phone'
         ],

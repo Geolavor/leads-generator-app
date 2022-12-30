@@ -18,7 +18,7 @@ class Version extends Command
      *
      * @var string
      */
-    protected $description = 'Displays current version of LeadBrowser CRM installed';
+    protected $description = 'Displays current version of LeadBrowser installed';
 
     /**
      * Create a new command instance.

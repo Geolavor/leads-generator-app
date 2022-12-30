@@ -1,7 +1,7 @@
 {
     "name": "leadbrowser/laravel-crm",
     "type": "project",
-    "description": "LeadBrowser CRM",
+    "description": "LeadBrowser",
     "keywords": [
         "framework",
         "laravel"

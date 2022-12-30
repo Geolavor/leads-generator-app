@@ -49,7 +49,7 @@ class Install extends Command
         $this->info($migrate);
 
         // running `php artisan db:seed`
-        $this->warn('Step: Seeding basic data for LeadBrowser CRM kickstart...');
+        $this->warn('Step: Seeding basic data for LeadBrowser kickstart...');
         $result = $this->call('db:seed');
         $this->info($result);
 
@@ -136,7 +136,7 @@ class Install extends Command
      */
     protected function addDatabaseDetails()
     {
-        $dbName = $this->ask('What is the database name to be used by LeadBrowser CRM ?');
+        $dbName = $this->ask('What is the database name to be used by LeadBrowser ?');
         $this->envUpdate('DB_DATABASE=', $dbName);
 
         $dbUser = $this->anticipate('What is your database username?', ['root']);

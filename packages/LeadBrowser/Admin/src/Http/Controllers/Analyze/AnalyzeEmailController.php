@@ -40,14 +40,6 @@ class AnalyzeEmailController extends Controller
             session()->flash('warning', 'This email address has been blocked or is not displayed due to GDPR. Please note that we only check business addresses.');
             return redirect()->back();
         }
-
-        $validator = EmailValidator::create($email);
-
-        $data = $validator->getValidationResults()->asArray();
-
-        // Analysis::create([
-        //     'email' => $email
-        // ]);
         
         $status = 'success';
 

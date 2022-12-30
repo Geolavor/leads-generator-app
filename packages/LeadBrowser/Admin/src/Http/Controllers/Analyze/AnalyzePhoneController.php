@@ -63,8 +63,6 @@ class AnalyzePhoneController extends Controller
                 // $value = $googleMapService->generateOrganizationDetail($data['organization_id']);
             // }
         }
-
-        dd($data);
         
 
         /**

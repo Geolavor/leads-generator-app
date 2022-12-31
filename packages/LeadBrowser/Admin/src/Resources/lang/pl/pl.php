@@ -137,7 +137,9 @@
             'workers'        => 'Pracownicy',
             'technology'     => 'Technologie',
             'news'           => 'Wiadomości',
-            'timeline'       => 'Oś czasu'
+            'timeline'       => 'Oś czasu',
+            'services'       => 'Usługi',
+            'clients'        => 'Klienci'
         ],
 
         'persons' => [

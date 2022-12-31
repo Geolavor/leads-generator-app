@@ -648,6 +648,12 @@
                         </div>
                     </tab>
 
+                    <tab name="{{ __('admin::app.organizations.services') }}" :selected="false">
+                    </tab>
+
+                    <tab name="{{ __('admin::app.organizations.clients') }}" :selected="false">
+                    </tab>
+
                 </tabs>
             </div>
         </div>

@@ -160,6 +160,8 @@
             'technology'     => 'Technology',
             'news'           => 'News',
             'timeline'       => 'Timeline',
+            'services'       => 'Services',
+            'clients'        => 'Clients'
         ],
 
         'persons' => [

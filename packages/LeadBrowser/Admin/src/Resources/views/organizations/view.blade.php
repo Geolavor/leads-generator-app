@@ -439,6 +439,20 @@
                                     </div>
                                 </div>
 
+                                @if (isset($organization->external_urls))
+                                    <div class="attribute-value-row">
+                                        <div class="label">{{ __('admin::app.datagrid.external_urls') }}</div>
+
+                                        <div class="value">
+                                            @foreach (json_decode($organization->external_urls) as $url)
+                                                <span class="multi-value">
+                                                    <a href="{{ $url }}" target="_blank" style="cursor:pointer">{{ $url }}</a>
+                                                </span>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                @endif
+
                                 <!-- @include('admin::common.custom-attributes.view', [
                                     'customAttributes' =>
                                         app('LeadBrowser\Attribute\Repositories\AttributeRepository')->findWhere([

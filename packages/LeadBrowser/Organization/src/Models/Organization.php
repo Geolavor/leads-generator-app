@@ -42,6 +42,7 @@ class Organization extends Model implements ContractsOrganization
         'keywords',
         'description',
         'is_ecommerce',
+        'external_urls',
         'archive',
         'domain_created',
         'domain_expires',

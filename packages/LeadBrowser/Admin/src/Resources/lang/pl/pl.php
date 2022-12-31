@@ -889,7 +889,8 @@
             ],
             'domain_created'      => 'Utworzenie domeny',
             'domain_expires'      => 'Zakończenie domeny',
-            'domain_owner'        => 'Właściciel domeny'
+            'domain_owner'        => 'Właściciel domeny',
+            'external_urls'       => 'Zewnętrzne adresy url'
         ],
 
         'response' => [

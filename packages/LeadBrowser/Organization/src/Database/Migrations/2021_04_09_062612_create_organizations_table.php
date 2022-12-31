@@ -43,7 +43,6 @@ class CreateOrganizationsTable extends Migration
             $table->string('keywords');
             $table->string('description');
 
-            // TODO
             $table->boolean('is_ecommerce')->default(0);
             
             $table->string('in_black_list')->default(false);

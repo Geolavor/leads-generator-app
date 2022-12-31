@@ -1122,7 +1122,8 @@
             ],
             'domain_created'      => 'Domain created',
             'domain_expires'      => 'Domain expires',
-            'domain_owner'        => 'Domain owner'
+            'domain_owner'        => 'Domain owner',
+            'external_urls'       => 'External urls'
         ],
 
         'response' => [

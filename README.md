@@ -159,8 +159,8 @@ password:admin123
 ## Contact
 
 Mariusz Malek (author)
-Linkedin: https://www.linkedin.com/in/mariuszmalek/
-Mail: mariuszmalek.dev@gmail.com
+> Linkedin: https://www.linkedin.com/in/mariuszmalek/
+> Mail: mariuszmalek.dev@gmail.com
 
 <br>
 

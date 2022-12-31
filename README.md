@@ -66,6 +66,7 @@ Additionally, LeadBrowser can quickly and easily extract data from LinkedIn prof
 * **Web Archive** integration. Checking when the site was created and the ability to retrieve past data.
 * **Technologies** catching from website.
 * **ChatGPT** integration.
+* **External traffic** monitoring and tracking.
 
 
 ![alt text](https://github.com/LeadBrowser/app/blob/main/images/dashboard.png?raw=true)

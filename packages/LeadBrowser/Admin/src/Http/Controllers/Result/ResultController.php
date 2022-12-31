@@ -92,8 +92,6 @@ class ResultController extends Controller
 
         $result->archive = $result->organization->archive;
 
-        // dd($result->archive[0]);
-
         $emails = Email::where('organization_id', $result->organization_id)->get();
 
         $currentUser = auth()->guard('user')->user();

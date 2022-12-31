@@ -437,9 +437,10 @@
                                         <div class="label">{{ __('admin::app.datagrid.external_urls') }}</div>
 
                                         <div class="value">
-                                            @foreach (json_decode($result->organization->external_urls) as $url)
+                                            @foreach (json_decode($result->organization->external_urls) as $external)
                                                 <span class="multi-value">
-                                                    <a href="{{ $url }}" target="_blank" style="cursor:pointer">{{ $url }}</a>
+                                                    <a href="{{ $external->value }}" target="_blank" style="cursor:pointer">{{ $external->value }}</a>
+                                                    <span>(Does tracking? {{ $external->tracking }})</span>
                                                 </span>
                                             @endforeach
                                         </div>

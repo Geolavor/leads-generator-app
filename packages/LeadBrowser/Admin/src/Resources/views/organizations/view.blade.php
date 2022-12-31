@@ -468,6 +468,7 @@
 
                                                 <div class="flex-grow-1">
                                                     <div class="d-flex align-items-center" style="float: right;">
+
                                                         <span class="small me-2">Correct data?</span>
 
                                                         <div class="d-flex gap-1">
@@ -488,6 +489,9 @@
                                         </div>
 
                                         <div class="card-footer pt-0" style="border-top:none">
+
+                                            <span>Score: {{ $person->score }}</span>
+
                                             <v-menu>
                                                 <span class="email-status email-status-sm email-status-primary"
                                                     style="width: 10px;height: 10px;background: #00cd00;display: inline-block;border-radius:60%"></span>

@@ -468,6 +468,8 @@ Route::group(['middleware' => ['web']], function () {
             Route::delete('{id}', 'PersonController@destroy')->name('persons.delete');
 
             Route::put('mass-destroy', 'PersonController@massDestroy')->name('persons.mass_delete');
+
+            Route::post('score', 'PersonController@score')->name('persons.score');
         });
 
         Route::group([

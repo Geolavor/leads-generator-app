@@ -5,6 +5,7 @@ namespace LeadBrowser\Admin\Http\Controllers\Person;
 use Illuminate\Support\Facades\Event;
 use LeadBrowser\Admin\Http\Controllers\Controller;
 use LeadBrowser\Attribute\Http\Requests\AttributeForm;
+use LeadBrowser\Organization\Models\Person;
 use LeadBrowser\Organization\Repositories\PersonRepository;
 
 class PersonController extends Controller
@@ -178,6 +179,23 @@ class PersonController extends Controller
         return response()->json([
             'message' => trans('admin::app.response.destroy-success', ['name' => trans('admin::app.persons.title')])
         ]);
+    }
+
+    /**
+     * Score the specified resource from storage.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function score()
+    {
+        // $person = $this->personRepository->findOrFail($id);
+
+        $person = Person::findOrFail(request('person_id'));
+        $person->score = request('score');
+        $person->save();
+
+        session()->flash('success', trans('admin::app.persons.changed-score'));
+        return redirect()->back();
     }
 
     /**

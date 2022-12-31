@@ -36,6 +36,11 @@ class SystemController extends Controller
 
     public function index()
     {
+        $t = ['joe@nvmodels.co','chester@nvmodels.co'];
+
+        // Map email names
+        // Check is is a '.' dot in e-mails from website
+
         $search = SearchLocations::findOrFail(1);
 
         $collection = SearchService::getOrganizationsConditions(

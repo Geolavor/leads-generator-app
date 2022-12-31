@@ -175,6 +175,7 @@
             'update-success' => 'Person updated successfully.',
             'delete-success' => 'Person deleted successfully.',
             'delete-failed'  => 'Person can not be deleted.',
+            'changed-score'  => 'The score has been changed',
         ],
 
         'search' => [
@@ -353,7 +354,8 @@
                 'free_email_provider'           => 'Free provider',
                 'disposable_email_provider'     => 'Disposable provider',
                 'role_or_business_email'        => 'Business email',
-                'spoof_check'                   => 'Spoof check'
+                'spoof_check'                   => 'Spoof check',
+                'score'                         => 'E-mail score'
             ],
             'phone'                    => 'Phone'
         ],

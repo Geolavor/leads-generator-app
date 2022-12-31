@@ -460,66 +460,78 @@
 
                                             <div class="flex-grow-1">
                                                 <div class="d-flex align-items-center" style="float: right;">
-                                                    <span class="small me-2">Correct data?</span>
-
-                                                    <div class="d-flex gap-1">
-                                                        <a class="btn btn-white btn-xs" href="javascript:;">
-                                                            <i class="bi-hand-thumbs-up me-1"></i> Yes
-                                                        </a>
-                                                        <a class="btn btn-white btn-xs" href="javascript:;">
-                                                            <i class="bi-hand-thumbs-down me-1"></i> No
-                                                        </a>
-                                                    </div>
+                                                        <span class="small me-2">Correct data?</span>
+                                                        <div class="d-flex gap-1">
+                                                            <form action="{{ route('persons.score', ['person_id' => $person->id, 'score' => 50]) }}" method="post" @submit.prevent="onSubmit" enctype="multipart/form-data">
+                                                                @csrf()
+                                                                <button type="submit" class="btn btn-white btn-xs" name="score" value="50">
+                                                                    <i class="bi-hand-thumbs-up me-1"></i> Yes
+                                                                </button>
+                                                            </form>
+                                                            <form action="{{ route('persons.score', ['person_id' => $person->id, 'score' => 0]) }}" method="post" @submit.prevent="onSubmit" enctype="multipart/form-data">
+                                                                @csrf()
+                                                                <button type="submit" class="btn btn-white btn-xs" name="score" value="0">
+                                                                    <i class="bi-hand-thumbs-down me-1"></i> No
+                                                                </button>
+                                                            </form>
+                                                        </div>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <span class="card-subtitle">{{ $person->role }}</span>
-                                        <h4 class="card-title">{{ $person->name }}</h4>
+                                        <h4 class="card-title">
+                                            {{ $person->name }}
+                                            <span class="ms-2 {{ $person->score >= 50 ? 'badge bg-soft-success text-success' : 'badge bg-soft-danger text-danger' }}">
+                                                Score: {{ $person->score }} / 100
+                                            </span>
+                                        </h4>
                                         <p class="card-text">{{ $person->description ?? '' }}</p>
                                     </div>
 
                                     <div class="card-footer pt-0" style="border-top:none">
+
                                         @foreach ($person->emails as $email)
-                                        <div>
-                                            <v-menu>
-                                                <span class="email-status email-status-sm email-status-primary"
-                                                    style="width: 10px;height: 10px;background: #00cd00;display: inline-block;border-radius:60%"></span>
+                                            <div>
+                                                <v-menu>
+                                                    <span class="email-status email-status-sm email-status-primary"
+                                                        style="width: 10px;height: 10px;background: #00cd00;display: inline-block;border-radius:60%"></span>
 
-                                                <span style="cursor:pointer">{{ $email['value'] }}</span>
-                                                <span>({{ $email['label'] }})</span>
+                                                    <span style="cursor:pointer">{{ $email['value'] }}</span>
+                                                    <span>({{ $email['label'] }})</span>
 
-                                                <template #popper>
-                                                    <ul class="list-unstyled list-py-1 mb-0 p-2">
-                                                        <li>{{ __('admin::app.analyze.emails.rfc_validation') }}? Yes</li>
-                                                        <li>{{ __('admin::app.analyze.emails.no_rfc_validation') }}? Yes
-                                                        </li>
-                                                        <li>{{ __('admin::app.analyze.emails.dns_check') }}?
-                                                            Yes</li>
-                                                        <li>{{ __('admin::app.analyze.emails.free_email_provider') }}?
-                                                            Yes</li>
-                                                        <li>{{ __('admin::app.analyze.emails.disposable_email_provider') }}?
-                                                            Yes</li>
-                                                        <li>{{ __('admin::app.analyze.emails.role_or_business_email') }}?
-                                                            Yes</li>
-                                                        <li>{{ __('admin::app.analyze.emails.spoof_check') }}? Yes</li>
-                                                    </ul>
-                                                </template>
-                                            </v-menu>
-                                        </div>
+                                                    <template #popper>
+                                                        <ul class="list-unstyled list-py-1 mb-0 p-2">
+                                                            <li>{{ __('admin::app.analyze.emails.rfc_validation') }}? Yes</li>
+                                                            <li>{{ __('admin::app.analyze.emails.no_rfc_validation') }}? Yes
+                                                            </li>
+                                                            <li>{{ __('admin::app.analyze.emails.dns_check') }}?
+                                                                Yes</li>
+                                                            <li>{{ __('admin::app.analyze.emails.free_email_provider') }}?
+                                                                Yes</li>
+                                                            <li>{{ __('admin::app.analyze.emails.disposable_email_provider') }}?
+                                                                Yes</li>
+                                                            <li>{{ __('admin::app.analyze.emails.role_or_business_email') }}?
+                                                                Yes</li>
+                                                            <li>{{ __('admin::app.analyze.emails.spoof_check') }}? Yes</li>
+                                                        </ul>
+                                                    </template>
+                                                </v-menu>
+                                            </div>
                                         @endforeach
 
                                         @foreach ($person->social_media as $social)
-                                        <div>
-                                            <span>
-                                                <a href="{{ $social['value'] }}" target="_blank">
-                                                    <img class="avatar avatar-xss ms-1"
-                                                        src="{{ asset('vendor/leadBrowser/admin/assets/images/' . $social['type'] . '.svg') }}"
-                                                        alt="Linkedin profile" data-toggle="tooltip"
-                                                        data-placement="top" title="Linkedin profile">
-                                                </a>
-                                            </span>
-                                        </div>
+                                            <div>
+                                                <span>
+                                                    <a href="{{ $social['value'] }}" target="_blank">
+                                                        <img style="width:25px;margin-top:10px"
+                                                            src="{{ asset('vendor/leadBrowser/admin/assets/images/' . $social['type'] . '.svg') }}"
+                                                            alt="Linkedin profile" data-toggle="tooltip"
+                                                            data-placement="top" title="Linkedin profile">
+                                                    </a>
+                                                </span>
+                                            </div>
                                         @endforeach
                                     </div>
                                 </div>

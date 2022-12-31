@@ -72,6 +72,10 @@ Additionally, LeadBrowser can quickly and easily extract data from LinkedIn prof
 
 <br>
 
+![alt text](https://github.com/LeadBrowser/app/blob/main/images/ai.png?raw=true)
+
+<br>
+
 ## Compare us
 
 Compared to paid tools, we perform better in almost every field. We want to go farther all the time and fully deliver value to our users that they won't find anywhere else. We strongly believe in our functionality.

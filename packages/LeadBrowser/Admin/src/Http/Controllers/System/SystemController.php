@@ -36,17 +36,7 @@ class SystemController extends Controller
 
     public function index()
     {
-        $t = ['joe@nvmodels.co','chester@nvmodels.co'];
-
-        // Map email names
-        // Check is is a '.' dot in e-mails from website
-
-        $search = SearchLocations::findOrFail(1);
-
-        $collection = SearchService::getOrganizationsConditions(
-            null, $search->country->code, $search->locations, $search->expected_items, $search->types, $search->user_id, 'linkedin_at'
-        );
-        // $collection = $this->searchDomainInLinkedin("https://www.interverbumtech.com/", Country::where('name', 'Sweden')->first());
+        $collection = $this->searchDomainInLinkedin("https://www.dmsales.com/");
         dd($collection);
 
         ini_set('memory_limit', '1512M');

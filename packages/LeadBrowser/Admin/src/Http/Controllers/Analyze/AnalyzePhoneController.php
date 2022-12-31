@@ -7,7 +7,7 @@ namespace LeadBrowser\Admin\Http\Controllers\Analyze;
 use App\Services\GoogleMapService;
 use LeadBrowser\Admin\Http\Controllers\Controller;
 use LeadBrowser\Payment\Models\Usage;
-use LeadBrowser\Organization\Services\SerpOrganizationsService;
+use LeadBrowser\Search\Services\SerpOrganizationsService;
 use LeadBrowser\Organization\Traits\Organizationable;
 use LeadBrowser\User\Models\User;
 use Illuminate\Support\Facades\DB;

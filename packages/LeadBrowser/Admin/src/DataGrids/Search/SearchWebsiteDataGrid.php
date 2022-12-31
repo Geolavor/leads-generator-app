@@ -78,17 +78,6 @@ class SearchWebsiteDataGrid extends DataGrid
         ]);
 
         $this->addColumn([
-            'index'    => 'count',
-            'label'    => trans('admin::app.datagrid.count'),
-            'type'     => 'string',
-            'sortable' => true,
-            'closure'  => function ($row) {
-                $websites = explode(",", $row->urls);
-                return count($websites);
-            }
-        ]);
-
-        $this->addColumn([
             'index'    => 'status_id',
             'label'    => trans('admin::app.datagrid.status'),
             'type'     => 'string',

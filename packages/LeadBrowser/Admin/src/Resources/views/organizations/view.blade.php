@@ -490,8 +490,6 @@
 
                                         <div class="card-footer pt-0" style="border-top:none">
 
-                                            <span>Score: {{ $person->score }}</span>
-
                                             <v-menu>
                                                 <span class="email-status email-status-sm email-status-primary"
                                                     style="width: 10px;height: 10px;background: #00cd00;display: inline-block;border-radius:60%"></span>

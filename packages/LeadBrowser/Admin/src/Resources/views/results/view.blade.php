@@ -432,7 +432,7 @@
                                     </div>
                                 </div>
 
-                                @if (isset($result->organization->external_urls))
+                                @if ($result->organization->external_urls && isset($result->organization->external_urls))
                                     <div class="attribute-value-row">
                                         <div class="label">{{ __('admin::app.datagrid.external_urls') }}</div>
 

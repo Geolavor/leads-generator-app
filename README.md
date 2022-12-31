@@ -110,6 +110,8 @@ Compared to paid tools, we perform better in almost every field. We want to go f
 -   **Node**: 8.11.3 LTS or higher.
 -   **Composer**: 1.6.5 or higher.
 
+<br>
+
 ## Installation and Configuration
 
 -   Find **.env** file in root directory and change the **APP_URL** param to your **domain**.
@@ -154,10 +156,18 @@ password:admin123
 
 <br>
 
+## Contact
+
+Mariusz Malek (author)
+Linkedin: https://www.linkedin.com/in/mariuszmalek/
+Mail: mariuszmalek.dev@gmail.com
+
+<br>
+
 ## License
 
 LeadBrowser is a truly opensource framework which will always be free under the [MIT License](https://github.com/LeadBrowser/app/blob/master/LICENSE).
 
-### Security Vulnerabilities
+Security Vulnerabilities
 
 Please don't disclose security vulnerabilities publicly. If you find any security vulnerability in LeadBrowser then please email us: mailto:mariuszmalek.dev@gmail.com.

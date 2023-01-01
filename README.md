@@ -11,7 +11,8 @@
 
 <h1 align="center">LeadBrowser</h1>
 <p align="center">Prospects AI browser. Unique AI tool to extract contact details from all over the Internet, from all over the world in the real time. Better alternative to Hunter.io and Snov.io</p>
-<p align="center"><a href="http://leadbrowser.co" target="_blank">Try live demo</a> | <a href="https://mariuszmalek.notion.site/313cf5e7333a44df8f934dbf7b3432ca?v=1e910d54ee3c4008892a266328280a92" target="_blank">Documentation</a></p>
+<p align="center"><a href="http://leadbrowser.co" target="_blank">Try live demo</a> | <a href="https://mariuszmalek.notion.site/313cf5e7333a44df8f934dbf7b3432ca?v=1e910d54ee3c4008892a266328280a92" target="_blank">Documentation</a> | <a href="https://mariuszmalek.notion.site/1908b69787e24e5c8d4d5d83392495a3?v=7f1b76e330154b59a9ae49a08f3cc4ca" target="_blank">FAQ</a></p>
+
 <br />
 
 <p align="center">

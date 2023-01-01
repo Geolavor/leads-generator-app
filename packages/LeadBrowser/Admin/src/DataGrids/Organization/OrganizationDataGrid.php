@@ -134,17 +134,6 @@ class OrganizationDataGrid extends DataGrid
             'sortable' => true,
         ]);
 
-        // $this->addColumn([
-        //     'index'    => 'description',
-        //     'label'    => trans('admin::app.datagrid.description'),
-        //     'type'     => 'string',
-        //     'sortable' => true,
-        //     // 'closure'   => function ($row) {
-        //     //     $description = strlen($row->description) > 35 ? substr($row->description, 0, 35) . '...' : $row->description;
-        //     //     return "<small>" . $description . "</small>";
-        //     // }
-        // ]);
-
         $this->addColumn([
             'index'    => 'types',
             'label'    => trans('admin::app.datagrid.types'),

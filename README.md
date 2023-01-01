@@ -15,18 +15,7 @@
 <br />
 
 <p align="center">
-  <a href="https://www.npmjs.org/package/@leadbrowser/leadbrowser">
-    <img src="https://img.shields.io/npm/v/@leadbrowser/leadbrowser/latest.svg" alt="NPM Version" />
-  </a>
-  <a href="https://github.com/leadbrowser/app/actions/workflows/tests.yml">
-    <img src="https://github.com/leadbrowser/app/actions/workflows/tests.yml/badge.svg?branch=main" alt="Tests" />
-  </a>
-  <a href="https://discord.leadbrowser.io">
-    <img src="https://img.shields.io/discord/811989166782021632?label=Discord" alt="LeadBrowser on Discord" />
-  </a>
-  <a href="https://github.com/leadbrowser/app/actions/workflows/nightly.yml">
-    <img src="https://github.com/leadbrowser/app/actions/workflows/nightly.yml/badge.svg" alt="LeadBrowser Release Build Status" />
-  </a>
+  [![Open Source Helpers](https://www.codetriage.com/leadbrowser/leads-generator-app/badges/users.svg)](https://www.codetriage.com/leadbrowser/leads-generator-app)
 </p>
 
 <br>

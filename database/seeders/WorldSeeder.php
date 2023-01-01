@@ -3,14 +3,16 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Nnjeim\World\Actions\SeedAction;
+use Illuminate\Support\Facades\DB;
 
 class WorldSeeder extends Seeder
 {
 	public function run()
 	{
-		$this->call([
-			SeedAction::class,
-		]);
+		ini_set('memory_limit', '152M');
+
+		$path = public_path('/database/world.sql');
+        $sql = file_get_contents($path);
+        DB::unprepared($sql);
 	}
 }

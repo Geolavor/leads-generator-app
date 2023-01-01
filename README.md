@@ -15,7 +15,10 @@
 <br />
 
 <p align="center">
-  [![Open Source Helpers](https://www.codetriage.com/leadbrowser/leads-generator-app/badges/users.svg)](https://www.codetriage.com/leadbrowser/leads-generator-app)
+  
+  <a href="https://www.codetriage.com/leadbrowser/leads-generator-app" target="_blank">
+    <img src="https://www.codetriage.com/leadbrowser/leads-generator-app/badges/users.svg" alt="LeadBrowser on codetriage" />
+  </a>
 </p>
 
 <br>

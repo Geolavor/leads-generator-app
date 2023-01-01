@@ -48,9 +48,6 @@ class ResultEventSubscriber
                  * If user has bonus coin
                  */
                 if ($user->bonus_coin > 0) {
-                    // $user->update([
-                    //     'bonus_coin' => DB::raw('bonus_coin - 1'),
-                    // ]);
                     $user->decrement('bonus_coin');
                 }
 

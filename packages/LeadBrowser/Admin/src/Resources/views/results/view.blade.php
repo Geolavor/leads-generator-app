@@ -63,7 +63,7 @@
 
                             <div class="col-auto">
                                 <span><i class="bi bi-info-circle"></i> Category:</span>
-                                <a href="#">{{ $result->organization->types }}</a>
+                                <a href="#">{{ $result->organization->category }}</a>
                             </div>
                             <!-- End Col -->
 
@@ -432,7 +432,7 @@
                                     </div>
                                 </div>
 
-                                @if ($result->organization->external_urls && isset($result->organization->external_urls))
+                                @if (json_decode($result->organization->external_urls))
                                     <div class="attribute-value-row">
                                         <div class="label">{{ __('admin::app.datagrid.external_urls') }}</div>
 

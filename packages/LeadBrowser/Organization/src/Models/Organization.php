@@ -48,6 +48,7 @@ class Organization extends Model implements ContractsOrganization
         'domain_expires',
         'domain_owner',
         'types',
+        'classification',
         'in_black_list',
         'content',
         'price',
@@ -140,6 +141,10 @@ class Organization extends Model implements ContractsOrganization
     //         $url = 'https'
     //     }
     // }
+    public function getCategoryAttribute()
+    {
+        return $this->types ?: $this->classification;
+    }
 
     public function scopeOpenResult()
     {

@@ -62,7 +62,7 @@
 
                             <div class="col-auto">
                                 <span><i class="bi bi-info-circle"></i> Category:</span>
-                                <a href="#">{{ $organization->types }}</a>
+                                <a href="#">{{ $organization->category }}</a>
                             </div>
                             <!-- End Col -->
 

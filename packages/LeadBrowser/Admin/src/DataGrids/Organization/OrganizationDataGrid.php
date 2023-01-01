@@ -72,6 +72,7 @@ class OrganizationDataGrid extends DataGrid
                 // 'organizations.description',
                 'organizations.rating',
                 'organizations.types',
+                'organizations.classification',
                 'organizations.website',
                 'organizations.is_ecommerce',
                 'organizations.archive',
@@ -148,7 +149,10 @@ class OrganizationDataGrid extends DataGrid
             'index'    => 'types',
             'label'    => trans('admin::app.datagrid.types'),
             'type'     => 'string',
-            'sortable' => true
+            'sortable' => true,
+            'closure'  => function ($row) {
+                return $row->types ?: $row->classification;
+            }
         ]);
 
         $this->addColumn([

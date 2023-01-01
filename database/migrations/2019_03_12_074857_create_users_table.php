@@ -41,8 +41,9 @@ class CreateUsersTable extends Migration
             $table->string('country')->nullable();
             $table->string('postal_code')->nullable();
 
-            $table->integer('bouns_coin')->default(0);
             $table->timestamp('email_verified_at')->nullable();
+
+            $table->unsignedSmallInteger('bonus_coin');
 
             $table->rememberToken();
             $table->timestamps();

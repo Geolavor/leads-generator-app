@@ -36,57 +36,26 @@ class SystemController extends Controller
 
     public function index()
     {
-        $collection = $this->searchDomainInLinkedin("https://www.dmsales.com/");
-        dd($collection);
-
         ini_set('memory_limit', '1512M');
         ini_set('max_execution_time', '18880');
 
-        // CITIES
         $row = 1;
-        if (($handle = fopen("/Users/mariusz/Desktop/leadbrowser/Application/geonames-all-cities-with-a-population-1000.csv", "r")) !== FALSE) {
-            while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-
-                // if ($row == 1) continue;
-
-                $position = $data;
-
-                if (isset($position[13]) && $position[13] != '') {
-
-                    // dd($position[13]);
-                    
-                    $city = City::where('name', $position[1])->orWhere('name', $position[2])->orWhere('name', $position[3])->first();
-
-                    if ($city) {
-                        $city->population = $position[13];
-                        $city->save();
-                    }
-                }
-
-                $row++;
-            }
-            fclose($handle);
-        }
-
-        return;
-
-
-        $row = 1;
-        if (($handle = fopen("/Users/mariusz/Desktop/leadbrowser/Application/companies_sorted.csv", "r")) !== FALSE) {
+        if (($handle = fopen("/Users/mariusz/Desktop/0.csv", "r")) !== FALSE) {
             while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
 
                 $position = $data;
                 $address = explode(",", $position[6]);
 
                 if (isset($position[7]) && $position[7] != '' && isset($position[2]) && $position[2] != '') {
-                    
+
                     $country = Country::where('name', $position[7])->first();
 
-                    DB::table('organizations')->insertOrIgnore([
+                    $organization_id = DB::table('organizations')->insertOrIgnore([
+                        'id' => $position[0],
                         'title' => $position[1],
                         'website' => $position[2],
                         'year_founded' => $position[3],
-                        'types' => $position[4],
+                        'classification' => $position[4],
                         'size_range' => $position[5],
                         'formatted_address' => $position[6],
                         'city' => $address[0] ?? '',
@@ -94,7 +63,17 @@ class SystemController extends Controller
                         'country' => $country->code ?? '',
                         'current_employee_number' => $position[9],
                     ]);
+
+                    if ($position[8]) {
+                        DB::table('socials')->insertOrIgnore([
+                            'organization_id' => $position[0],
+                            'url' => $position[8],
+                            'type' => 'linkedin'
+                        ]);
+                    }
                 }
+
+                echo "Organization: " . $row;
 
                 $row++;
             }
@@ -106,10 +85,6 @@ class SystemController extends Controller
         // $sw = new SimilarWeb;
         // $res = $sw->fetch($website);
         // dd($res);
-
-        // $ai = new GIWY("5ma-l22mal-1mzOAzmaa1022-Xaa2");
-        // $result = $ai->fetch($website);
-        // dd($result);
 
         $data = [];
     }

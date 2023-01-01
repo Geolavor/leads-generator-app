@@ -24,7 +24,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('command:crawled-places-websites')->everyFiveMinutes();
+        // $schedule->command('command:crawled-organizations-website')->everyFiveMinutes();
     }
 
     /**

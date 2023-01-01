@@ -152,7 +152,7 @@ php artisan serve
 
 ```
 email:admin@leadbrowser.co
-password:admin123
+password:password
 ```
 
 <br>

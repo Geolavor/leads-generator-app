@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 use LeadBrowser\Extractor\Jobs\WebsiteCrawlerData;
 use LeadBrowser\Organization\Models\Organization;
 
-class CrawlWebsitesCommand extends Command
+class CrawlOrganizationsWebsiteCommand extends Command
 {
     /**
      * The name and signature of the console command.

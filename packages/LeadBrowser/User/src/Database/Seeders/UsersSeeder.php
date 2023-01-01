@@ -17,32 +17,14 @@ class UsersSeeder extends Seeder
             'id'                => 1,
             'name'              => 'Mariusz Malek',
             'email'             => 'admin@leadbrowser.co',
-            'password'          => bcrypt('admin123'),
+            'password'          => bcrypt('password'),
             'created_at'        => date('Y-m-d H:i:s'),
             'updated_at'        => date('Y-m-d H:i:s'),
             'status'            => 1,
             'role_id'           => 1,
             'view_permission'   => 'global',
             'email_verified_at' => date('Y-m-d H:i:s'),
-            // 'bouns_coin'        => '500'
+            'bouns_coin'        => '500'
         ]);
-
-        /**
-         * Testing user
-         */
-        // for ($i=0; $i < 20; $i++) { 
-        //     $user = new User();
-        //     $user->name        = 'Test User' . Str::random(5);
-        //     $user->email       = Str::random(5) . '@konstelacja.co';
-        //     $user->password    = bcrypt('password');
-        //     $user->created_at  = date('Y-m-d H:i:s');
-        //     $user->updated_at  = date('Y-m-d H:i:s');
-        //     $user->status      = 1;
-        //     $user->role_id     = 2;
-        //     $user->view_permission = 'individual';
-        //     $user->save();
-
-        //     // $user->deposit(20);
-        // }
     }
 }

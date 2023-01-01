@@ -14,7 +14,7 @@ class AddPriceToOrganizationsTable extends Migration
     public function up()
     {
         Schema::table('organizations', function (Blueprint $table) {
-            $table->string('price');
+            $table->float('price')->after('is_sponsored');
         });
     }
 
@@ -26,7 +26,7 @@ class AddPriceToOrganizationsTable extends Migration
     public function down()
     {
         Schema::table('organizations', function (Blueprint $table) {
-            $table->string('price');
+            $table->float('price')->after('is_sponsored');
         });
     }
 }

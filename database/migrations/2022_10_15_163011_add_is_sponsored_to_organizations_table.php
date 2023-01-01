@@ -14,7 +14,7 @@ class AddIsSponsoredToOrganizationsTable extends Migration
     public function up()
     {
         Schema::table('organizations', function (Blueprint $table) {
-            $table->boolean('is_sponsored')->default(0);
+            $table->boolean('is_sponsored')->default(0)->after('place_id');
         });
     }
 
@@ -26,7 +26,7 @@ class AddIsSponsoredToOrganizationsTable extends Migration
     public function down()
     {
         Schema::table('organizations', function (Blueprint $table) {
-            $table->boolean('is_sponsored')->default(0);
+            $table->boolean('is_sponsored')->default(0)->after('place_id');
         });
     }
 }

@@ -14,9 +14,9 @@ class AddNewColumnsToOrganizationsTable extends Migration
     public function up()
     {
         Schema::table('organizations', function (Blueprint $table) {
-            $table->string('year_founded');
-            $table->integer('size_range')->default(0);
-            $table->integer('current_employee_number')->default(0);
+            $table->string('year_founded')->after('domain_owner');
+            $table->integer('size_range')->default(0)->after('year_founded');
+            $table->integer('current_employee_number')->default(0)->after('size_range');
         });
     }
 
@@ -28,9 +28,9 @@ class AddNewColumnsToOrganizationsTable extends Migration
     public function down()
     {
         Schema::table('organizations', function (Blueprint $table) {
-            $table->string('year_founded');
-            $table->integer('size_range')->default(0);
-            $table->integer('current_employee_number')->default(0);
+            $table->string('year_founded')->after('domain_owner');
+            $table->integer('size_range')->default(0)->after('year_founded');
+            $table->integer('current_employee_number')->default(0)->after('size_range');
         });
     }
 }

@@ -14,7 +14,7 @@ class AddLinkedinAtToOrganizations extends Migration
     public function up()
     {
         Schema::table('organizations', function (Blueprint $table) {
-            $table->datetime('linkedin_at')->nullable();
+            $table->datetime('linkedin_at')->nullable()->after('crawled_at');
         });
     }
 
@@ -26,7 +26,7 @@ class AddLinkedinAtToOrganizations extends Migration
     public function down()
     {
         Schema::table('organizations', function (Blueprint $table) {
-            $table->datetime('linkedin_at')->nullable();
+            $table->datetime('linkedin_at')->nullable()->after('crawled_at');
         });
     }
 }

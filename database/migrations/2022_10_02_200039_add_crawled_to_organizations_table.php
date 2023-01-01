@@ -14,7 +14,7 @@ class AddCrawledToOrganizationsTable extends Migration
     public function up()
     {
         Schema::table('organizations', function (Blueprint $table) {
-            $table->datetime('crawled_at')->nullable();
+            $table->datetime('crawled_at')->nullable()->after('in_black_list');
         });
     }
 
@@ -26,7 +26,7 @@ class AddCrawledToOrganizationsTable extends Migration
     public function down()
     {
         Schema::table('organizations', function (Blueprint $table) {
-            $table->datetime('crawled_at')->nullable();
+            $table->datetime('crawled_at')->nullable()->after('in_black_list');
         });
     }
 }

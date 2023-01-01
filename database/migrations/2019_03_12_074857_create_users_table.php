@@ -43,7 +43,7 @@ class CreateUsersTable extends Migration
 
             $table->timestamp('email_verified_at')->nullable();
 
-            $table->unsignedSmallInteger('bonus_coin');
+            $table->unsignedSmallInteger('bonus_coin')->default(0);
 
             $table->rememberToken();
             $table->timestamps();

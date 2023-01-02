@@ -106,7 +106,7 @@
           </th>
 
           <th scope="col" style="width: 20%;">
-            <img src="{{ asset('vendor/leadBrowser/admin/assets/images/logotyp.svg') }}" style="max-width:150px"/>
+            <img src="{{ asset('vendor/leadBrowser/admin/assets/images/mini-black.png') }}" style="max-width:150px"/>
           </th>
         </tr>
       </thead>

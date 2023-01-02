@@ -61,7 +61,7 @@
                     <!-- List Checked -->
                     <ul class="list-checked list-checked-primary mb-0">
                         <li class="list-checked-item">Unlimited users</li>
-                        <li class="list-checked-item">Front plan features</li>
+                        <li class="list-checked-item">Plan features</li>
                         <li class="list-checked-item">1 app</li>
                     </ul>
                     <!-- End List Checked -->
@@ -105,7 +105,7 @@
                     <!-- List Checked -->
                     <ul class="list-checked list-checked-primary mb-0">
                         <li class="list-checked-item">3 users</li>
-                        <li class="list-checked-item">Front plan features</li>
+                        <li class="list-checked-item">Plan features</li>
                         <li class="list-checked-item">3 apps</li>
                         <li class="list-checked-item">Product support</li>
                     </ul>
@@ -150,7 +150,7 @@
                     <!-- List Checked -->
                     <ul class="list-checked list-checked-primary mb-0">
                         <li class="list-checked-item">Unlimited users</li>
-                        <li class="list-checked-item">Front plan features</li>
+                        <li class="list-checked-item">Plan features</li>
                         <li class="list-checked-item">Unlimited apps</li>
                         <li class="list-checked-item">Product support</li>
                     </ul>

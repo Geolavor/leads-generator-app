@@ -10,7 +10,7 @@
         <div class="container content-space-t-2 content-space-t-md-3 content-space-3 content-space-b-lg-5">
             <div class="w-lg-50">
                 <h1>You're in good company.</h1>
-                <h2 class="h1 text-primary">Join millions of businesses on Front.</h2>
+                <h2 class="h1 text-primary">Join millions of businesses.</h2>
             </div>
         </div>
 
@@ -78,7 +78,7 @@
 <div class="container content-space-2 content-space-lg-3">
   <!-- Heading -->
   <div class="w-md-75 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
-    <h2>Front makes designing easy and performance fast</h2>
+    <h2>Makes designing easy and performance fast</h2>
   </div>
   <!-- End Heading -->
 

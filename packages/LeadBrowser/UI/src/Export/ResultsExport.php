@@ -67,7 +67,7 @@ class ResultsExport implements FromQuery, WithMapping, WithHeadings
             foreach ($item->emails as $e) {
                 array_push($w_emails, $e['value']);
             }
-            $w_emails_data = implode(', ', $w_emails);
+            $w_emails_data = implode('| ', $w_emails);
             array_push($workers_data, $item->name . '|' . $item->role . '|' . $w_emails_data);
         }
         $workers_data = implode(', ', $workers_data);

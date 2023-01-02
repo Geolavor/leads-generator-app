@@ -1,1 +1,1 @@
-<img src="{{ asset('themes/default/assets/images/logotyp.svg') }}" alt="{{ config('app.name') }}"/>
+<img src="{{ asset('themes/default/assets/images/mini-black.png') }}" alt="{{ config('app.name') }}"/>

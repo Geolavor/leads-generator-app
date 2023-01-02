@@ -39,6 +39,20 @@
       <tbody>
 
         <tr>
+          <th scope="row" class="text-dark">AI Classification+</th>
+          <td class="table-text-center"><i class="bi-x-circle text-warning"></i></td>
+          <td class="table-text-center"><i class="bi-x-circle text-warning"></i></td>
+          <td class="table-text-center"><i class="bi-check-circle text-success"></i></td>
+        </tr>
+
+        <tr>
+          <th scope="row" class="text-dark">AI Risk</th>
+          <td class="table-text-center"><i class="bi-x-circle text-warning"></i></td>
+          <td class="table-text-center"><i class="bi-x-circle text-warning"></i></td>
+          <td class="table-text-center"><i class="bi-check-circle text-success"></i></td>
+        </tr>
+
+        <tr>
           <th scope="row" class="text-dark">Live search*</th>
           <td class="table-text-center"><i class="bi-x-circle text-warning"></i></td>
           <td class="table-text-center"><i class="bi-x-circle text-warning"></i></td>
@@ -53,16 +67,23 @@
         </tr>
 
         <tr>
-          <th scope="row" class="text-dark">Free e-mail verifications</th>
-          <td class="table-text-center">50</td>
+          <th scope="row" class="text-dark">Website history</th>
           <td class="table-text-center"><i class="bi-x-circle text-warning"></i></td>
-          <td class="table-text-center"><span class="badge bg-soft-primary text-primary rounded-pill">Unlimited</span></td>
+          <td class="table-text-center"><i class="bi-x-circle text-warning"></i></td>
+          <td class="table-text-center"><i class="bi-check-circle text-success"></i></td>
         </tr>
 
         <tr>
-          <th scope="row" class="text-dark">Free monthly searches</th>
-          <td class="table-text-center">25</td>
-          <td class="table-text-center">0</td>
+          <th scope="row" class="text-dark">External traffics</th>
+          <td class="table-text-center"><i class="bi-x-circle text-warning"></i></td>
+          <td class="table-text-center"><i class="bi-x-circle text-warning"></i></td>
+          <td class="table-text-center"><i class="bi-check-circle text-success"></i></td>
+        </tr>
+
+        <tr>
+          <th scope="row" class="text-dark">Free e-mail verifications</th>
+          <td class="table-text-center">50</td>
+          <td class="table-text-center"><i class="bi-x-circle text-warning"></i></td>
           <td class="table-text-center"><i class="bi-check-circle text-success"></i></td>
         </tr>
 

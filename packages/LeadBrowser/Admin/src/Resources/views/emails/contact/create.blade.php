@@ -2,7 +2,7 @@
     @slot('header')
         <div>
             <a href="{{ config('app.url') }}">
-                <img src="{{ asset('vendor/leadBrowser/admin/assets/images/logotyp.svg') }}" alt="{{ config('app.name') }}"/>
+                <img src="{{ asset('vendor/leadBrowser/admin/assets/images/mini-black.png') }}" alt="{{ config('app.name') }}"/>
             </a>
         </div>
     @endslot

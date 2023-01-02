@@ -8,7 +8,7 @@
             <img class="navbar-brand-logo-mini logo-mini-border" src="{{ asset('vendor/leadBrowser/admin/assets/images/logotyp-mini.svg') }}" alt="{{ config('app.name') }}"/>
         </a>
         <!-- <a class="navbar-brand" href="{{ route('landing.home') }}">
-          <img class="navbar-brand-logo" src="{{ asset('vendor/leadBrowser/admin/assets/images/logotyp.svg') }}" alt="{{ config('app.name') }}"/>
+          <img class="navbar-brand-logo" src="{{ asset('vendor/leadBrowser/admin/assets/images/mini-black.png') }}" alt="{{ config('app.name') }}"/>
         </a> -->
         <!-- End Default Logo -->
 

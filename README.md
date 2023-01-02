@@ -16,7 +16,8 @@
 <br />
 
 <p align="center">
-  
+  [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
+  ![Repo Size](https://img.shields.io/github/repo-size/LeadBrowser/leads-generator-app)
   <a href="https://www.codetriage.com/leadbrowser/leads-generator-app" target="_blank">
     <img src="https://www.codetriage.com/leadbrowser/leads-generator-app/badges/users.svg" alt="LeadBrowser on codetriage" />
   </a>

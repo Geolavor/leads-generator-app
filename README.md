@@ -87,7 +87,7 @@ Compared to paid tools, we perform better in almost every field. We want to go f
 
 ## Documentation
 
-#### LeadBrowser Documentation [https://mariuszmalek.notion.site/313cf5e7333a44df8f934dbf7b3432ca?v=1e910d54ee3c4008892a266328280a92](https://mariuszmalek.notion.site/313cf5e7333a44df8f934dbf7b3432ca?v=1e910d54ee3c4008892a266328280a92)
+#### LeadBrowser Documentation: [https://mariuszmalek.notion.site/313cf5e7333a44df8f934dbf7b3432ca?v=1e910d54ee3c4008892a266328280a92](Open documentation)
 
 ![alt text](https://github.com/LeadBrowser/app/blob/main/images/fnc.png?raw=true)
 

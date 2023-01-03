@@ -104,10 +104,10 @@
                     <i class="icon bi bi-grip-vertical"></i>
                 </div>
 
-                <div class="lead-person">
-                    <i class="icon bi-person"></i>
-                        <a :href="`${personIndexUrl}?id[eq]=${block.person_id}`">
-                            @{{ block.person_name }}
+                <div class="lead-employee">
+                    <i class="icon bi-employee"></i>
+                        <a :href="`${employeeIndexUrl}?id[eq]=${block.employee_id}`">
+                            @{{ block.employee_name }}
                         </a>
                 </div>
 
@@ -164,7 +164,7 @@
                     debounce: null,
 
                     totalCounts: [],
-                    personIndexUrl: "{{ route('persons.index') }}",
+                    employeeIndexUrl: "{{ route('employees.index') }}",
                 }
             },
 

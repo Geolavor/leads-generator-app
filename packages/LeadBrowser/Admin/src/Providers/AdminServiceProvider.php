@@ -38,7 +38,7 @@ class AdminServiceProvider extends ServiceProvider
         Relation::morphMap([
             'leads'         => 'LeadBrowser\Lead\Models\Lead',
             'products'      => 'LeadBrowser\Product\Models\Product',
-            'persons'       => 'LeadBrowser\Organization\Models\Person',
+            'employees'       => 'LeadBrowser\Organization\Models\Employee',
             'organizations' => 'LeadBrowser\Organization\Models\Organization',
             'quotes'        => 'LeadBrowser\Quote\Models\Quote',
         ]);

@@ -8,7 +8,7 @@ use LeadBrowser\Admin\Notifications\Common;
 use LeadBrowser\Attribute\Repositories\AttributeRepository;
 use LeadBrowser\EmailTemplate\Repositories\EmailTemplateRepository;
 use LeadBrowser\Lead\Repositories\LeadRepository;
-use LeadBrowser\Organization\Repositories\PersonRepository;
+use LeadBrowser\Organization\Repositories\EmployeeRepository;
 use LeadBrowser\Activity\Repositories\ActivityRepository;
 
 class Activity extends AbstractEntity
@@ -40,11 +40,11 @@ class Activity extends AbstractEntity
     protected $leadRepository;
 
     /**
-     * PersonRepository object
+     * EmployeeRepository object
      *
-     * @var \LeadBrowser\Organization\Repositories\PersonRepository
+     * @var \LeadBrowser\Organization\Repositories\EmployeeRepository
      */
-    protected $personRepository;
+    protected $employeeRepository;
 
     /**
      * ActivityRepository object
@@ -66,7 +66,7 @@ class Activity extends AbstractEntity
      * @param  \LeadBrowser\Attribute\Repositories\AttributeRepository  $attributeRepository
      * @param  \LeadBrowser\EmailTemplate\Repositories\EmailTemplateRepository  $emailTemplateRepository
      * @param  \LeadBrowser\Lead\Repositories\LeadRepository  $leadRepository
-     * @param \LeadBrowser\Organization\Repositories\PersonRepository  $personRepository
+     * @param \LeadBrowser\Organization\Repositories\EmployeeRepository  $employeeRepository
      * @param \LeadBrowser\Activity\Repositories\ActivityRepository  $activityRepository
      * @return void
      */
@@ -74,7 +74,7 @@ class Activity extends AbstractEntity
         AttributeRepository $attributeRepository,
         EmailTemplateRepository $emailTemplateRepository,
         LeadRepository $leadRepository,
-        PersonRepository $personRepository,
+        EmployeeRepository $employeeRepository,
         ActivityRepository $activityRepository
     )
     {
@@ -84,7 +84,7 @@ class Activity extends AbstractEntity
 
         $this->leadRepository = $leadRepository;
 
-        $this->personRepository = $personRepository;
+        $this->employeeRepository = $employeeRepository;
 
         $this->activityRepository = $activityRepository;
     }
@@ -202,7 +202,7 @@ class Activity extends AbstractEntity
         $value = '<ul style="padding-left: 18px;margin: 0;">';
 
         foreach ($entity->participants as $participant) {
-            $value .= '<li>' . ($participant->user ? $participant->user->name : $participant->person->name) . '</li>';
+            $value .= '<li>' . ($participant->user ? $participant->user->name : $participant->employee->name) . '</li>';
         }
 
         $value .= '</ul>';
@@ -320,7 +320,7 @@ class Activity extends AbstractEntity
                             Mail::queue(new Common([
                                 'to'          => $participant->user
                                                 ? $participant->user->email
-                                                : data_get($participant->person->emails, '*.value'),
+                                                : data_get($participant->employee->emails, '*.value'),
                                 'subject'     => $this->replacePlaceholders($activity, $emailTemplate->subject),
                                 'body'        => $this->replacePlaceholders($activity, $emailTemplate->content),
                                 'attachments' => [
@@ -362,13 +362,13 @@ class Activity extends AbstractEntity
         foreach ($activity->participants as $participant) {
             $emails = $participant->user
                 ? [$participant->user->email]
-                : data_get($participant->person->emails, '*.value');
+                : data_get($participant->employee->emails, '*.value');
 
             if ($participant->user) {
                 $content[] = 'ATTENDEE;ROLE=REQ-PARTICIPANT;CN=' . $participant->user->name . ';PARTSTAT=NEEDS-ACTION:MAILTO:' . $participant->user->email;
             } else {
-                foreach (data_get($participant->person->emails, '*.value') as $email) {
-                    $content[] = 'ATTENDEE;ROLE=REQ-PARTICIPANT;CN=' . $participant->person->name . ';PARTSTAT=NEEDS-ACTION:MAILTO:' . $email;
+                foreach (data_get($participant->employee->emails, '*.value') as $email) {
+                    $content[] = 'ATTENDEE;ROLE=REQ-PARTICIPANT;CN=' . $participant->employee->name . ';PARTSTAT=NEEDS-ACTION:MAILTO:' . $email;
                 }
             }
         }

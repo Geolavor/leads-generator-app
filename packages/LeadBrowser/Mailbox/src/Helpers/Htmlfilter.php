@@ -592,7 +592,7 @@ class Htmlfilter
              * Now let's run checks on the attvalues.
              * I don't expect anyone to comprehend this. If you do,
              * get in touch with me so I can drive to where you live and
-             * shake your hand personally. :)
+             * shake your hand employeeally. :)
              */
             foreach ($bad_attvals as $matchtag => $matchattrs) {
                 if (preg_match($matchtag, $tagname)) {

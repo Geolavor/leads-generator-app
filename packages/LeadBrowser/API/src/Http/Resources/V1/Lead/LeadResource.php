@@ -3,7 +3,7 @@
 namespace LeadBrowser\API\Http\Resources\V1\Lead;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-use LeadBrowser\API\Http\Resources\V1\Organization\PersonResource;
+use LeadBrowser\API\Http\Resources\V1\Organization\EmployeeResource;
 use LeadBrowser\API\Http\Resources\V1\Setting\UserResource;
 
 class LeadResource extends JsonResource
@@ -25,7 +25,7 @@ class LeadResource extends JsonResource
             'lost_reason'            => $this->lost_reason,
             'closed_at'              => $this->closed_at,
             'user'                   => new UserResource($this->user),
-            'person_id'              => new PersonResource($this->person),
+            'employee_id'              => new EmployeeResource($this->employee),
             'lead_source_id'         => $this->lead_source_id,
             'lead_type_id'           => $this->lead_type_id,
             'lead_pipeline_id'       => $this->lead_pipeline_id,

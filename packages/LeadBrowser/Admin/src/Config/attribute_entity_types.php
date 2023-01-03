@@ -6,9 +6,9 @@ return [
         'repository' => 'LeadBrowser\Lead\Repositories\LeadRepository',
     ],
 
-    'persons'       => [
-        'name'       => 'Person',
-        'repository' => 'LeadBrowser\Organization\Repositories\PersonRepository',
+    'employees'       => [
+        'name'       => 'Employee',
+        'repository' => 'LeadBrowser\Organization\Repositories\EmployeeRepository',
     ],
 
     'organizations' => [

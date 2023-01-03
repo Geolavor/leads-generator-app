@@ -460,7 +460,7 @@
 
                     <tab name="{{ __('admin::app.organizations.employees') }}" :selected="false">
                         <div class="row row-cols-1 row-cols-md-2 g-4">
-                            @foreach ($result->organization->persons as $person)
+                            @foreach ($result->organization->employees as $employee)
                             <div class="col">
                                 <div class="card card-transition h-100">
                                     <div class="card-body">
@@ -477,13 +477,13 @@
                                                 <div class="d-flex align-items-center" style="float: right;">
                                                         <span class="small me-2">Correct data?</span>
                                                         <div class="d-flex gap-1">
-                                                            <form action="{{ route('persons.score', ['person_id' => $person->id, 'score' => 50]) }}" method="post" @submit.prevent="onSubmit" enctype="multipart/form-data">
+                                                            <form action="{{ route('employees.score', ['employee_id' => $employee->id, 'score' => 50]) }}" method="post" @submit.prevent="onSubmit" enctype="multipart/form-data">
                                                                 @csrf()
                                                                 <button type="submit" class="btn btn-white btn-xs" name="score" value="50">
                                                                     <i class="bi-hand-thumbs-up me-1"></i> Yes
                                                                 </button>
                                                             </form>
-                                                            <form action="{{ route('persons.score', ['person_id' => $person->id, 'score' => 0]) }}" method="post" @submit.prevent="onSubmit" enctype="multipart/form-data">
+                                                            <form action="{{ route('employees.score', ['employee_id' => $employee->id, 'score' => 0]) }}" method="post" @submit.prevent="onSubmit" enctype="multipart/form-data">
                                                                 @csrf()
                                                                 <button type="submit" class="btn btn-white btn-xs" name="score" value="0">
                                                                     <i class="bi-hand-thumbs-down me-1"></i> No
@@ -495,19 +495,19 @@
                                             </div>
                                         </div>
 
-                                        <span class="card-subtitle">{{ $person->role }}</span>
+                                        <span class="card-subtitle">{{ $employee->role }}</span>
                                         <h4 class="card-title">
-                                            {{ $person->name }}
-                                            <span class="ms-2 {{ $person->score >= 50 ? 'badge bg-soft-success text-success' : 'badge bg-soft-danger text-danger' }}">
-                                                Score: {{ $person->score }} / 100
+                                            {{ $employee->name }}
+                                            <span class="ms-2 {{ $employee->score >= 50 ? 'badge bg-soft-success text-success' : 'badge bg-soft-danger text-danger' }}">
+                                                Score: {{ $employee->score }} / 100
                                             </span>
                                         </h4>
-                                        <p class="card-text">{{ $person->description ?? '' }}</p>
+                                        <p class="card-text">{{ $employee->description ?? '' }}</p>
                                     </div>
 
                                     <div class="card-footer pt-0" style="border-top:none">
 
-                                        @foreach ($person->emails as $email)
+                                        @foreach ($employee->emails as $email)
                                             <div>
                                                 <v-menu>
                                                     <span class="email-status email-status-sm email-status-primary"
@@ -536,7 +536,7 @@
                                             </div>
                                         @endforeach
 
-                                        @foreach ($person->social_media as $social)
+                                        @foreach ($employee->social_media as $social)
                                             <div>
                                                 <span>
                                                     <a href="{{ $social['value'] }}" target="_blank">

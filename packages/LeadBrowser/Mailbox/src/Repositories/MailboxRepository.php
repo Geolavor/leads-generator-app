@@ -126,7 +126,7 @@ class MailboxRepository extends Repository
             'name'          => $fromNameParts[0]['display'] == $fromNameParts[0]['address']
                                ? current(explode('@', $fromNameParts[0]['display']))
                                : $fromNameParts[0]['display'],
-            'user_type'     => 'person',
+            'user_type'     => 'employee',
             'message_id'    => $this->mailboxParser->getHeader('message-id') ?? time() . '@' . config('mail.domain'),
             'reference_ids' => htmlspecialchars_decode($this->mailboxParser->getHeader('references')),
             'in_reply_to'   => htmlspecialchars_decode($this->mailboxParser->getHeader('in-reply-to')),
@@ -166,7 +166,7 @@ class MailboxRepository extends Repository
                 'reply'         => $reply, //$this->htmlFilter->HTMLFilter($reply, ''),
                 'unique_id'     => time() . '@' . config('mail.domain'),
                 'reference_ids' => [$headers['message_id']],
-                'user_type'     => 'person',
+                'user_type'     => 'employee',
             ]));
         } else {
             $this->update([
@@ -176,7 +176,7 @@ class MailboxRepository extends Repository
             $this->create(array_merge($headers, [
                 'reply'         => $this->htmlFilter->HTMLFilter($reply, ''),
                 'parent_id'     => $mailbox->id,
-                'user_type'     => 'person',
+                'user_type'     => 'employee',
             ]));
         }
     }

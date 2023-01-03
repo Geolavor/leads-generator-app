@@ -6,9 +6,9 @@ use Illuminate\Support\Facades\Event;
 use LeadBrowser\Admin\Http\Controllers\Controller;
 use LeadBrowser\Attribute\Http\Requests\AttributeForm;
 use LeadBrowser\Organization\Models\Organization;
-use LeadBrowser\Organization\Models\Person;
+use LeadBrowser\Organization\Models\Employee;
 use LeadBrowser\Organization\Repositories\OrganizationRepository;
-use LeadBrowser\Organization\Repositories\PersonRepository;
+use LeadBrowser\Organization\Repositories\EmployeeRepository;
 use LeadBrowser\Organization\Models\Email;
 use LeadBrowser\Result\Models\Result;
 use LeadBrowser\Result\Repositories\ResultRepository;
@@ -35,29 +35,29 @@ class ResultController extends Controller
     protected $organizationRepository;
 
     /**
-     * Person repository instance.
+     * Employee repository instance.
      *
-     * @var \LeadBrowser\Organization\Repositories\PersonRepository
+     * @var \LeadBrowser\Organization\Repositories\EmployeeRepository
      */
-    protected $personRepository;
+    protected $employeeRepository;
 
     /**
      * Create a new controller instance.
      *
      * @param \LeadBrowser\Result\Repositories\ResultRepository  $resultRepository
      * @param \LeadBrowser\Product\Repositories\OrganizationRepository  $organizationRepository
-     * @param \LeadBrowser\Organization\Repositories\PersonRepository  $personRepository
+     * @param \LeadBrowser\Organization\Repositories\EmployeeRepository  $employeeRepository
      * 
      * @return void
      */
     public function __construct(
         ResultRepository $resultRepository,
         OrganizationRepository $organizationRepository,
-        PersonRepository $personRepository)
+        EmployeeRepository $employeeRepository)
     {
         $this->resultRepository = $resultRepository;
         $this->organizationRepository = $organizationRepository;
-        $this->personRepository = $personRepository;
+        $this->employeeRepository = $employeeRepository;
 
         request()->request->add(['entity_type' => 'results']);
     }
@@ -87,7 +87,7 @@ class ResultController extends Controller
         // $result = $this->resultRepository->findOrFail($id);
         $result = Result::with([
             'searchable', 'organization', 'organization.taxs', 'organization.socials',
-            'organization.reviews', 'organization.persons'
+            'organization.reviews', 'organization.employees'
         ])->findOrFail($id);
 
         $result->archive = $result->organization->archive;
@@ -300,8 +300,8 @@ class ResultController extends Controller
                 array_push($emails, ["label" => "work", "value" => $value->email]);
                 array_push($phones, ["label" => "work", "value" => '']);
     
-                $this->personRepository->create([
-                    'entity_type' => 'persons',
+                $this->employeeRepository->create([
+                    'entity_type' => 'employees',
                     'name' => ucfirst($name[0]),
                     'emails' => $emails,
                     'contact_numbers' => $phones,
@@ -355,8 +355,8 @@ class ResultController extends Controller
             array_push($emails, ["label" => "work", "value" => $value->email]);
             array_push($phones, ["label" => "work", "value" => '']);
 
-            $this->personRepository->create([
-                'entity_type' => 'persons',
+            $this->employeeRepository->create([
+                'entity_type' => 'employees',
                 'name' => ucfirst($name[0]),
                 'emails' => $emails,
                 'contact_numbers' => $phones,
@@ -366,7 +366,7 @@ class ResultController extends Controller
 
         }
 
-        session()->flash('success', trans('admin::app.persons.create-success'));
+        session()->flash('success', trans('admin::app.employees.create-success'));
 
         return redirect()->back()->with('message','Operation Successful !');
     }

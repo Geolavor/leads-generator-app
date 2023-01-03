@@ -70,12 +70,12 @@ class QuoteDataGrid extends DataGrid
                 'quotes.grand_total',
                 'quotes.created_at',
                 'users.id as user_id',
-                'users.name as sales_person',
-                'persons.id as person_id',
-                'persons.name as person_name'
+                'users.name as sales_employee',
+                'employees.id as employee_id',
+                'employees.name as employee_name'
             )
             ->leftJoin('users', 'quotes.user_id', '=', 'users.id')
-            ->leftJoin('persons', 'quotes.person_id', '=', 'persons.id');
+            ->leftJoin('employees', 'quotes.employee_id', '=', 'employees.id');
 
         $currentUser = auth()->guard('user')->user();
 
@@ -89,8 +89,8 @@ class QuoteDataGrid extends DataGrid
 
         $this->addFilter('id', 'quotes.id');
         $this->addFilter('user', 'quotes.user_id');
-        $this->addFilter('sales_person', 'quotes.user_id');
-        $this->addFilter('person_name', 'persons.name');
+        $this->addFilter('sales_employee', 'quotes.user_id');
+        $this->addFilter('employee_name', 'employees.name');
         $this->addFilter('expired_at', 'quotes.expired_at');
         $this->addFilter('created_at', 'quotes.created_at');
 
@@ -112,27 +112,27 @@ class QuoteDataGrid extends DataGrid
         ]);
 
         $this->addColumn([
-            'index'            => 'sales_person',
-            'label'            => trans('admin::app.datagrid.sales-person'),
+            'index'            => 'sales_employee',
+            'label'            => trans('admin::app.datagrid.sales-employee'),
             'type'             => 'dropdown',
             'dropdown_options' => $this->getUserDropdownOptions(),
             'sortable'         => true,
             'closure'          => function ($row) {
                 $route = urldecode(route('settings.users.index', ['id[eq]' => $row->user_id]));
 
-                return "<a href='" . $route . "'>" . $row->sales_person . "</a>";
+                return "<a href='" . $route . "'>" . $row->sales_employee . "</a>";
             },
         ]);
 
         $this->addColumn([
-            'index'    => 'person_name',
-            'label'    => trans('admin::app.datagrid.person'),
+            'index'    => 'employee_name',
+            'label'    => trans('admin::app.datagrid.employee'),
             'type'     => 'string',
             'sortable' => true,
             'closure'  => function ($row) {
-                $route = urldecode(route('persons.index', ['id[eq]' => $row->person_id]));
+                $route = urldecode(route('employees.index', ['id[eq]' => $row->employee_id]));
 
-                return "<a href='" . $route . "'>" . $row->person_name . "</a>";
+                return "<a href='" . $route . "'>" . $row->employee_name . "</a>";
             },
         ]);
 

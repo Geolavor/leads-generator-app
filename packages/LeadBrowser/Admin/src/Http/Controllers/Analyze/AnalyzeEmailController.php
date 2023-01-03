@@ -81,8 +81,8 @@ class AnalyzeEmailController extends Controller
         //     array_push($emails, ["label" => "work", "value" => $value->email]);
         //     array_push($phones, ["label" => "work", "value" => '']);
 
-        //     $this->personRepository->create([
-        //         'entity_type' => 'persons',
+        //     $this->employeeRepository->create([
+        //         'entity_type' => 'employees',
         //         'name' => ucfirst($name[0]),
         //         'emails' => $emails,
         //         'contact_numbers' => $phones,
@@ -92,7 +92,7 @@ class AnalyzeEmailController extends Controller
 
         // }
 
-        // session()->flash('success', trans('admin::app.persons.create-success'));
+        // session()->flash('success', trans('admin::app.employees.create-success'));
 
         // return redirect()->back()->with('message','Operation Successful !');
     }

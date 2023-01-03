@@ -12,8 +12,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'person.create.after' => [
-            'LeadBrowser\Admin\Listeners\Person@linkToEmail'
+        'employee.create.after' => [
+            'LeadBrowser\Admin\Listeners\Employee@linkToEmail'
         ],
 
         'lead.create.after' => [

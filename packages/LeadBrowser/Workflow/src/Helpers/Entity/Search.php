@@ -8,7 +8,7 @@ use LeadBrowser\Attribute\Repositories\AttributeRepository;
 use LeadBrowser\EmailTemplate\Repositories\EmailTemplateRepository;
 use LeadBrowser\Lead\Repositories\LeadRepository;
 use LeadBrowser\Activity\Repositories\ActivityRepository;
-use LeadBrowser\Organization\Repositories\PersonRepository;
+use LeadBrowser\Organization\Repositories\EmployeeRepository;
 use LeadBrowser\Tag\Repositories\TagRepository;
 
 class Search extends AbstractEntity
@@ -47,11 +47,11 @@ class Search extends AbstractEntity
     protected $activityRepository;
 
     /**
-     * PersonRepository object
+     * EmployeeRepository object
      *
-     * @var \LeadBrowser\Organization\Repositories\PersonRepository
+     * @var \LeadBrowser\Organization\Repositories\EmployeeRepository
      */
-    protected $personRepository;
+    protected $employeeRepository;
 
     /**
      * TagRepository object
@@ -67,7 +67,7 @@ class Search extends AbstractEntity
      * @param  \LeadBrowser\EmailTemplate\Repositories\EmailTemplateRepository  $emailTemplateRepository
      * @param  \LeadBrowser\Lead\Repositories\LeadRepository  $leadRepository
      * @param \LeadBrowser\Activity\Repositories\ActivityRepository  $activityRepository
-     * @param \LeadBrowser\Organization\Repositories\PersonRepository  $personRepository
+     * @param \LeadBrowser\Organization\Repositories\EmployeeRepository  $employeeRepository
      * @param  \LeadBrowser\Tag\Repositories\TagRepository  $tagRepository
      * @return void
      */
@@ -76,7 +76,7 @@ class Search extends AbstractEntity
         EmailTemplateRepository $emailTemplateRepository,
         LeadRepository $leadRepository,
         ActivityRepository $activityRepository,
-        PersonRepository $personRepository,
+        EmployeeRepository $employeeRepository,
         TagRepository $tagRepository
     )
     {
@@ -88,7 +88,7 @@ class Search extends AbstractEntity
 
         $this->activityRepository = $activityRepository;
 
-        $this->personRepository = $personRepository;
+        $this->employeeRepository = $employeeRepository;
 
         $this->tagRepository = $tagRepository;
     }
@@ -123,12 +123,12 @@ class Search extends AbstractEntity
                 'name'       => __('admin::app.settings.workflows.update-lead'),
                 'attributes' => $this->getAttributes('leads'),
             ], [
-                'id'         => 'update_person',
-                'name'       => __('admin::app.settings.workflows.update-person'),
-                'attributes' => $this->getAttributes('persons'),
+                'id'         => 'update_employee',
+                'name'       => __('admin::app.settings.workflows.update-employee'),
+                'attributes' => $this->getAttributes('employees'),
             ], [
-                'id'      => 'send_email_to_person',
-                'name'    => __('admin::app.settings.workflows.send-email-to-person'),
+                'id'      => 'send_email_to_employee',
+                'name'    => __('admin::app.settings.workflows.send-email-to-employee'),
                 'options' => $emailTemplates,
             ], [
                 'id'      => 'send_email_to_sales_owner',

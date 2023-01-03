@@ -3,7 +3,7 @@
 namespace LeadBrowser\Mailbox\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use LeadBrowser\Organization\Models\PersonProxy;
+use LeadBrowser\Organization\Models\EmployeeProxy;
 use LeadBrowser\Lead\Models\LeadProxy;
 use LeadBrowser\Mailbox\Contracts\Mailbox as MailboxContract;
 
@@ -42,7 +42,7 @@ class Mailbox extends Model implements MailboxContract
         'message_id',
         'reference_ids',
         'reply',
-        'person_id',
+        'employee_id',
         'parent_id',
         'lead_id',
     ];
@@ -72,11 +72,11 @@ class Mailbox extends Model implements MailboxContract
     }
 
     /**
-     * Get the person that owns the thread.
+     * Get the employee that owns the thread.
      */
-    public function person()
+    public function employee()
     {
-        return $this->belongsTo(PersonProxy::modelClass());
+        return $this->belongsTo(EmployeeProxy::modelClass());
     }
 
     /**

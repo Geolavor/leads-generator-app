@@ -71,7 +71,7 @@
                     <ul class="list-unstyled list-py-1 mb-5">
                         <li><a class="link-sm link-secondary" href="#"><i class="bi-question-circle-fill me-1"></i>
                                 Help</a></li>
-                        <li><a class="link-sm link-secondary" href="{{ route('claim.create') }}"><i class="bi-person-circle me-1"></i> Claim</a></li>
+                        <li><a class="link-sm link-secondary" href="{{ route('claim.create') }}"><i class="bi-employee-circle me-1"></i> Claim</a></li>
                     </ul>
                     <!-- End List -->
                 </div>

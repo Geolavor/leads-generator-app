@@ -5,7 +5,7 @@ namespace LeadBrowser\Lead\Models;
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
 use LeadBrowser\Activity\Models\ActivityProxy;
-use LeadBrowser\Organization\Models\PersonProxy;
+use LeadBrowser\Organization\Models\EmployeeProxy;
 use LeadBrowser\User\Models\UserProxy;
 use LeadBrowser\Mailbox\Models\MailboxProxy;
 use LeadBrowser\Quote\Models\QuoteProxy;
@@ -36,7 +36,7 @@ class Lead extends Model implements LeadContract
         'expected_close_date',
         'closed_at',
         'user_id',
-        'person_id',
+        'employee_id',
         'lead_source_id',
         'lead_type_id',
         'lead_pipeline_id',
@@ -52,11 +52,11 @@ class Lead extends Model implements LeadContract
     }
 
     /**
-     * Get the person that owns the lead.
+     * Get the employee that owns the lead.
      */
-    public function person()
+    public function employee()
     {
-        return $this->belongsTo(PersonProxy::modelClass());
+        return $this->belongsTo(EmployeeProxy::modelClass());
     }
 
     /**

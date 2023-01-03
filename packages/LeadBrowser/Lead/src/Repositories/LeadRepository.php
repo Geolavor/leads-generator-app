@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
 use LeadBrowser\Core\Eloquent\Repository;
-use LeadBrowser\Organization\Repositories\PersonRepository;
+use LeadBrowser\Organization\Repositories\EmployeeRepository;
 use LeadBrowser\Attribute\Repositories\AttributeValueRepository;
 
 class LeadRepository extends Repository
@@ -20,11 +20,11 @@ class LeadRepository extends Repository
     protected $stageRepository;
 
     /**
-     * PersonRepository object
+     * EmployeeRepository object
      *
-     * @var \LeadBrowser\Organization\Repositories\PersonRepository
+     * @var \LeadBrowser\Organization\Repositories\EmployeeRepository
      */
-    protected $personRepository;
+    protected $employeeRepository;
 
     /**
      * ProductRepository object
@@ -44,7 +44,7 @@ class LeadRepository extends Repository
      * Create a new repository instance.
      *
      * @param  \LeadBrowser\Lead\Repositories\StageRepository  $stageRepository
-     * @param  \LeadBrowser\Organization\Repositories\PersonRepository  $personRepository
+     * @param  \LeadBrowser\Organization\Repositories\EmployeeRepository  $employeeRepository
      * @param  \LeadBrowser\Lead\Repositories\ProductRepository  $productRepository
      * @param  \LeadBrowser\Attribute\Repositories\AttributeValueRepository  $attributeValueRepository
      * @param  \Illuminate\Container\Container  $container
@@ -52,14 +52,14 @@ class LeadRepository extends Repository
      */
     public function __construct(
         StageRepository $stageRepository,
-        PersonRepository $personRepository,
+        EmployeeRepository $employeeRepository,
         ProductRepository $productRepository,
         AttributeValueRepository $attributeValueRepository,
         Container $container
     ) {
         $this->stageRepository = $stageRepository;
 
-        $this->personRepository = $personRepository;
+        $this->employeeRepository = $employeeRepository;
 
         $this->productRepository = $productRepository;
 
@@ -92,14 +92,14 @@ class LeadRepository extends Repository
                     'leads.created_at as created_at',
                     'title',
                     'lead_value',
-                    'persons.name as person_name',
-                    'leads.person_id as person_id',
+                    'employees.name as employee_name',
+                    'leads.employee_id as employee_id',
                     'lead_pipelines.id as lead_pipeline_id',
                     'lead_pipeline_stages.name as status',
                     'lead_pipeline_stages.id as lead_pipeline_stage_id'
                 )
                 ->addSelect(\DB::raw('DATEDIFF(leads.created_at + INTERVAL lead_pipelines.rotten_days DAY, now()) as rotten_days'))
-                ->leftJoin('persons', 'leads.person_id', '=', 'persons.id')
+                ->leftJoin('employees', 'leads.employee_id', '=', 'employees.id')
                 ->leftJoin('lead_pipelines', 'leads.lead_pipeline_id', '=', 'lead_pipelines.id')
                 ->leftJoin('lead_pipeline_stages', 'leads.lead_pipeline_stage_id', '=', 'lead_pipeline_stages.id')
                 ->where("title", 'like', "%$term%")
@@ -127,20 +127,20 @@ class LeadRepository extends Repository
      */
     public function create(array $data)
     {
-        if (isset($data['person']['id'])) {
-            $person = $this->personRepository->update(array_merge($data['person'], [
-                'entity_type' => 'persons',
-            ]), $data['person']['id']);
+        if (isset($data['employee']['id'])) {
+            $employee = $this->employeeRepository->update(array_merge($data['employee'], [
+                'entity_type' => 'employees',
+            ]), $data['employee']['id']);
         } else {
-            $person = $this->personRepository->create(array_merge($data['person'], [
-                'entity_type' => 'persons',
+            $employee = $this->employeeRepository->create(array_merge($data['employee'], [
+                'entity_type' => 'employees',
             ]));
         }
 
         $stage = $this->stageRepository->find($data['lead_pipeline_stage_id']);
 
         $lead = parent::create(array_merge([
-            'person_id'              => $person->id,
+            'employee_id'              => $employee->id,
             'lead_pipeline_id'       => 1,
             'lead_pipeline_stage_id' => 1,
         ], $data));
@@ -167,19 +167,19 @@ class LeadRepository extends Repository
      */
     public function update(array $data, $id, $attribute = "id")
     {
-        if (isset($data['person'])) {
-            if (isset($data['person']['id'])) {
-                $person = $this->personRepository->update(array_merge($data['person'], [
-                    'entity_type' => 'persons',
-                ]), $data['person']['id']);
+        if (isset($data['employee'])) {
+            if (isset($data['employee']['id'])) {
+                $employee = $this->employeeRepository->update(array_merge($data['employee'], [
+                    'entity_type' => 'employees',
+                ]), $data['employee']['id']);
             } else {
-                $person = $this->personRepository->create(array_merge($data['person'], [
-                    'entity_type' => 'persons',
+                $employee = $this->employeeRepository->create(array_merge($data['employee'], [
+                    'entity_type' => 'employees',
                 ]));
             }
 
             $data = array_merge([
-                'person_id' => $person->id,
+                'employee_id' => $employee->id,
             ], $data);
         }
 

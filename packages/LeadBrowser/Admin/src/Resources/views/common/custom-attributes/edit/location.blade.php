@@ -11,6 +11,21 @@
     <script type="text/x-template" id="address-component-template">
         <div :class="[errors.has(attribute['code'] + '[country]') || errors.has(attribute['code'] + '[state]') ? 'has-error' : '']">
 
+
+            <div class="row">
+                <div class="col-12">
+                    <input
+                        type="text"
+                        :name="attribute['code'] + '[city]'"
+                        class="control"
+                        v-model="city"
+                        placeholder="{{ __('admin::app.common.city') }}"
+                        v-validate="validations"
+                        data-vv-as="&quot;{{ __('admin::app.common.city') }}&quot;"
+                    />
+                </div>
+            </div>
+
             <div class="row">
 
                 <div class="col-12" v-if="haveStates()">
@@ -86,7 +101,8 @@
                     country: this.data ? this.data['country'] : '',
                     toggle_state: false,
                     state: this.data ? this.data['state'] : '',
-                    countryStates: @json(core()->groupedStatesByCountries())
+                    countryStates: @json(core()->groupedStatesByCountries()),
+                    city: this.data ? this.data['city'] : ''
                 }
             },
             methods: {
@@ -102,7 +118,7 @@
                         return true;
                     }
                     return false;
-                },
+                }
             }
         });
     </script>

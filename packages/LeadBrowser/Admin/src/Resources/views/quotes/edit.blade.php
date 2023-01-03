@@ -59,7 +59,7 @@
                                                         'subject',
                                                         'description',
                                                         'expired_at',
-                                                        'person_id',
+                                                        'employee_id',
                                                     ]);
                                             })->get(),
                                         'customValidations'      => [

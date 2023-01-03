@@ -182,14 +182,14 @@
                                             </li>
                                         </ul>
 
-                                        <label>{{ __('admin::app.leads.persons') }}</label>
+                                        <label>{{ __('admin::app.leads.employees') }}</label>
 
                                         <ul>
-                                            <li v-for='(participant, index) in searched_participants.persons' @click="addParticipant('persons', participant)">
+                                            <li v-for='(participant, index) in searched_participants.employees' @click="addParticipant('employees', participant)">
                                                 <span>@{{ participant.name }}</span>
                                             </li>
 
-                                            <li v-if='! searched_participants.persons.length && search_term.length && ! is_searching'>
+                                            <li v-if='! searched_participants.employees.length && search_term.length && ! is_searching'>
                                                 <span>{{ __('admin::app.common.no-result-found') }}</span>
                                             </li>
                                         </ul>
@@ -205,10 +205,10 @@
                                         <i class="icon close-icon"  @click="removeParticipant('users', participant)"></i>
                                     </span>
 
-                                    <span class="badge badge-sm badge-pill badge-warning-outline persons" v-for='(participant, index) in participants.persons'>
-                                        <input type="hidden" name="participants[persons][]" :value="participant.id"/>
+                                    <span class="badge badge-sm badge-pill badge-warning-outline employees" v-for='(participant, index) in participants.employees'>
+                                        <input type="hidden" name="participants[employees][]" :value="participant.id"/>
                                         @{{ participant.name }}
-                                        <i class="icon close-icon"  @click="removeParticipant('persons', participant)"></i>
+                                        <i class="icon close-icon"  @click="removeParticipant('employees', participant)"></i>
                                     </span>
                                 </div>
                             </div>
@@ -437,13 +437,13 @@
                     searched_participants: {
                         'users': [],
 
-                        'persons': []
+                        'employees': []
                     },
 
                     participants: {
                         'users': [],
 
-                        'persons': []
+                        'employees': []
                     },
                 }
             },
@@ -484,7 +484,7 @@
                         this.searched_participants = {
                             'users': [],
 
-                            'persons': []
+                            'employees': []
                         };
 
                         this.is_searching = false;
@@ -496,7 +496,7 @@
                         .then (response => {
                             var self = this;
 
-                            ['users', 'persons'].forEach(function(userType) {
+                            ['users', 'employees'].forEach(function(userType) {
                                 self.participants[userType].forEach(function(addedUser) {
 
                                     response.data[userType].forEach(function(user, index) {
@@ -523,7 +523,7 @@
                     this.searched_participants = {
                         'users': [],
 
-                        'persons': []
+                        'employees': []
                     };
 
                     this.participants[type].push(participant);

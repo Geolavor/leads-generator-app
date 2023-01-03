@@ -22,8 +22,8 @@ class CreateActivityParticipantsTable extends Migration
             $table->integer('user_id')->nullable()->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             
-            $table->integer('person_id')->nullable()->unsigned();
-            $table->foreign('person_id')->references('id')->on('persons')->onDelete('cascade');
+            $table->integer('employee_id')->nullable()->unsigned();
+            $table->foreign('employee_id')->references('id')->on('employees')->onDelete('cascade');
         });
     }
 

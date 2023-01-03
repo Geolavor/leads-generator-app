@@ -3,7 +3,7 @@
 namespace LeadBrowser\UI\Export;
 
 use LeadBrowser\Organization\Models\Email;
-use LeadBrowser\Organization\Models\Person;
+use LeadBrowser\Organization\Models\Employee;
 use LeadBrowser\Result\Models\Result;
 use Illuminate\Support\Facades\Date;
 use Maatwebsite\Excel\Concerns\Exportable;
@@ -23,7 +23,7 @@ class ResultsExport implements FromQuery, WithMapping, WithHeadings
         
         return Result::query()->with([
             'organization', 'organization.taxs', 'organization.socials',
-            'organization.technologies', 'organization.emails', 'organization.persons'
+            'organization.technologies', 'organization.emails', 'organization.employees'
         ])->where('searchable_id', request('search_id'));
     }
 
@@ -60,7 +60,7 @@ class ResultsExport implements FromQuery, WithMapping, WithHeadings
     */
     public function map($result): array
     {
-        $employees = Person::where('organization_id', $result->organization_id)->get();
+        $employees = Employee::where('organization_id', $result->organization_id)->get();
         $employees_data = [];
         foreach ($employees as $item) {
             $w_emails = [];

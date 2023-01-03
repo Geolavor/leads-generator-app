@@ -57,7 +57,7 @@ class AttributeValue extends Model implements AttributeValueContract
     }
 
     /**
-     * Get the parent entity model (leads, products, persons or organizations).
+     * Get the parent entity model (leads, products, employees or organizations).
      */
     public function entity()
     {

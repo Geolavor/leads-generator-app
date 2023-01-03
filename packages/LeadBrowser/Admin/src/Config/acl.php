@@ -73,39 +73,39 @@ return [
     ],
     /*
     |--------------------------------------------------------------------------
-    | Persons
+    | Employees
     |--------------------------------------------------------------------------
     |
-    | All ACLs related to persons will be placed here.
+    | All ACLs related to employees will be placed here.
     |
     */
     [
-        'key'   => 'search.database.persons',
-        'name'  => 'admin::app.acl.persons',
-        'route' => 'persons.index',
+        'key'   => 'search.database.employees',
+        'name'  => 'admin::app.acl.employees',
+        'route' => 'employees.index',
         'sort'  => 3,
     ],  [
-        'key'   => 'search.database.persons.view',
+        'key'   => 'search.database.employees.view',
         'name'  => 'admin::app.acl.view',
-        'route' => 'persons.view',
+        'route' => 'employees.view',
         'sort'  => 2,
     ], [
-        'key'   => 'search.database.persons.create',
+        'key'   => 'search.database.employees.create',
         'name'  => 'admin::app.acl.create',
-        'route' => ['persons.create', 'persons.store'],
+        'route' => ['employees.create', 'employees.store'],
         'sort'  => 2,
     ], [
-        'key'   => 'search.database.persons.edit',
+        'key'   => 'search.database.employees.edit',
         'name'  => 'admin::app.acl.edit',
-        'route' => ['persons.edit', 'persons.update'],
+        'route' => ['employees.edit', 'employees.update'],
         'sort'  => 3,
     ], [
-        'key'   => 'search.database.persons.delete',
+        'key'   => 'search.database.employees.delete',
         'name'  => 'admin::app.acl.delete',
-        'route' => ['persons.delete', 'persons.mass_delete'],
+        'route' => ['employees.delete', 'employees.mass_delete'],
         'sort'  => 4,
     ], [
-        'key'   => 'search.database.persons.export',
+        'key'   => 'search.database.employees.export',
         'name'  => 'admin::app.acl.export',
         'route' => 'ui.datagrid.export',
         'sort'  => 4,

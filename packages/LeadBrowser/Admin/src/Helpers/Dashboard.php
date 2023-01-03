@@ -5,7 +5,7 @@ namespace LeadBrowser\Admin\Helpers;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use LeadBrowser\Activity\Repositories\ActivityRepository;
-use LeadBrowser\Organization\Repositories\PersonRepository;
+use LeadBrowser\Organization\Repositories\EmployeeRepository;
 use LeadBrowser\Mailbox\Repositories\MailboxRepository;
 use LeadBrowser\Lead\Repositories\LeadRepository;
 use LeadBrowser\Lead\Repositories\PipelineRepository;
@@ -67,11 +67,11 @@ class Dashboard
     protected $productRepository;
 
     /**
-     * Person repository instance.
+     * Employee repository instance.
      *
-     * @var \LeadBrowser\Organization\Repositories\PersonRepository
+     * @var \LeadBrowser\Organization\Repositories\EmployeeRepository
      */
-    protected $personRepository;
+    protected $employeeRepository;
 
     /**
      * Activity repository instance.
@@ -103,7 +103,7 @@ class Dashboard
      * @param  \LeadBrowser\Lead\Repositories\ProductRepository  $leadProductRepository
      * @param  \LeadBrowser\Quote\Repositories\QuoteRepository  $quoteRepository
      * @param  \LeadBrowser\Product\Repositories\ProductRepository  $productRepository
-     * @param  \LeadBrowser\Product\Repositories\PersonRepository  $personRepository
+     * @param  \LeadBrowser\Product\Repositories\EmployeeRepository  $employeeRepository
      * @param  \LeadBrowser\Product\Repositories\ActivityRepository  $activityRepository
      * @param  \LeadBrowser\Product\Repositories\UserRepository  $userRepository
      * @param  \LeadBrowser\Mailbox\Repositories\MailboxRepository  $mailboxRepository
@@ -116,7 +116,7 @@ class Dashboard
         LeadProductRepository $leadProductRepository,
         QuoteRepository $quoteRepository,
         ProductRepository $productRepository,
-        PersonRepository $personRepository,
+        EmployeeRepository $employeeRepository,
         ActivityRepository $activityRepository,
         UserRepository $userRepository,
         MailboxRepository $mailboxRepository
@@ -133,7 +133,7 @@ class Dashboard
 
         $this->productRepository = $productRepository;
 
-        $this->personRepository = $personRepository;
+        $this->employeeRepository = $employeeRepository;
 
         $this->activityRepository = $activityRepository;
 
@@ -427,11 +427,11 @@ class Dashboard
                 ]);
 
                 // get customers count
-                array_push($customersCount, $this->personRepository->getCustomerCount($startDate, $endDate));
+                array_push($customersCount, $this->employeeRepository->getCustomerCount($startDate, $endDate));
             }
         } else {
             $labels = [__("admin::app.dashboard.week") . "1"];
-            $customersCount = [$this->personRepository->getCustomerCount($startDateFilter, $endDateFilter)];
+            $customersCount = [$this->employeeRepository->getCustomerCount($startDateFilter, $endDateFilter)];
         }
 
         if (! empty(array_filter($customersCount))) {
@@ -678,10 +678,10 @@ class Dashboard
     public function getTopCustomers($startDateFilter, $endDateFilter, $totalWeeks)
     {
         $topCustomers = $this->leadRepository
-            ->select('persons.id as personId', 'persons.name as label', DB::raw("(COUNT(*)) as count"))
-            ->leftJoin('persons', 'leads.person_id', '=', 'persons.id')
+            ->select('employees.id as employeeId', 'employees.name as label', DB::raw("(COUNT(*)) as count"))
+            ->leftJoin('employees', 'leads.employee_id', '=', 'employees.id')
             ->whereBetween('leads.created_at', [$startDateFilter, $endDateFilter])
-            ->groupBy('person_id')
+            ->groupBy('employee_id')
             ->orderBy('lead_value', 'desc')
             ->limit(6)
             ->orderBy('count', 'desc')

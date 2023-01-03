@@ -37,9 +37,9 @@ return [
         'repository'   => 'LeadBrowser\Organization\Repositories\OrganizationRepository',
     ],
 
-    'persons' => [
-        'name'         => 'Persons',
-        'repository'   => 'LeadBrowser\Organization\Repositories\PersonRepository',
+    'employees' => [
+        'name'         => 'Employees',
+        'repository'   => 'LeadBrowser\Organization\Repositories\EmployeeRepository',
     ],
 
     'countries' => [

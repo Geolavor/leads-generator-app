@@ -8,7 +8,7 @@ use Carbon\Carbon;
 use LeadBrowser\Activity\Repositories\ActivityRepository;
 use LeadBrowser\Activity\Repositories\FileRepository;
 use LeadBrowser\Admin\Http\Controllers\Controller;
-use LeadBrowser\Organization\Repositories\PersonRepository;
+use LeadBrowser\Organization\Repositories\EmployeeRepository;
 use LeadBrowser\Lead\Repositories\LeadRepository;
 use LeadBrowser\User\Repositories\UserRepository;
 
@@ -43,11 +43,11 @@ class ActivityController extends Controller
     protected $userRepository;
 
     /**
-     * PersonRepository object
+     * EmployeeRepository object
      *
-     * @var \LeadBrowser\Organization\Repositories\PersonRepository
+     * @var \LeadBrowser\Organization\Repositories\EmployeeRepository
      */
-    protected $personRepository;
+    protected $employeeRepository;
 
     /**
      * Create a new controller instance.
@@ -56,7 +56,7 @@ class ActivityController extends Controller
      * @param \LeadBrowser\Activity\Repositories\FileRepository  $fileRepository
      * @param \LeadBrowser\Activity\Repositories\LeadRepository  $leadRepository
      * @param \LeadBrowser\User\Repositories\UserRepository  $userRepository
-     * @param \LeadBrowser\Organization\Repositories\PersonRepository  $personRepository
+     * @param \LeadBrowser\Organization\Repositories\EmployeeRepository  $employeeRepository
      *
      * @return void
      */
@@ -65,7 +65,7 @@ class ActivityController extends Controller
         FileRepository $fileRepository,
         LeadRepository $leadRepository,
         UserRepository $userRepository,
-        PersonRepository $personRepository
+        EmployeeRepository $employeeRepository
     ) {
         $this->activityRepository = $activityRepository;
 
@@ -75,7 +75,7 @@ class ActivityController extends Controller
 
         $this->userRepository = $userRepository;
 
-        $this->personRepository = $personRepository;
+        $this->employeeRepository = $employeeRepository;
     }
 
     /**
@@ -163,10 +163,10 @@ class ActivityController extends Controller
                 }
             }
 
-            if (is_array(request('participants.persons'))) {
-                foreach (request('participants.persons') as $personId) {
+            if (is_array(request('participants.employees'))) {
+                foreach (request('participants.employees') as $employeeId) {
                     $activity->participants()->create([
-                        'person_id' => $personId,
+                        'employee_id' => $employeeId,
                     ]);
                 }
             }
@@ -221,10 +221,10 @@ class ActivityController extends Controller
                 }
             }
 
-            if (is_array(request('participants.persons'))) {
-                foreach (request('participants.persons') as $personId) {
+            if (is_array(request('participants.employees'))) {
+                foreach (request('participants.employees') as $employeeId) {
                     $activity->participants()->create([
-                        'person_id' => $personId,
+                        'employee_id' => $employeeId,
                     ]);
                 }
             }
@@ -296,13 +296,13 @@ class ActivityController extends Controller
             ['name', 'like', '%' . urldecode(request()->input('query')) . '%']
         ]);
 
-        $persons = $this->personRepository->findWhere([
+        $employees = $this->employeeRepository->findWhere([
             ['name', 'like', '%' . urldecode(request()->input('query')) . '%']
         ]);
 
         return response()->json([
             'users'   => $users,
-            'persons' => $persons,
+            'employees' => $employees,
         ]);
     }
 

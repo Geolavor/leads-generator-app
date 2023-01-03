@@ -5,8 +5,8 @@ namespace LeadBrowser\Admin\Http\Controllers\Organization;
 use Illuminate\Support\Facades\Event;
 use LeadBrowser\Admin\Http\Controllers\Controller;
 use LeadBrowser\Attribute\Http\Requests\AttributeForm;
-use LeadBrowser\Organization\Models\Person;
-use LeadBrowser\Organization\Repositories\PersonRepository;
+use LeadBrowser\Organization\Models\Employee;
+use LeadBrowser\Organization\Repositories\EmployeeRepository;
 use LeadBrowser\Organization\Models\Email;
 use LeadBrowser\Organization\Models\Organization;
 use LeadBrowser\Organization\Repositories\OrganizationRepository;
@@ -28,28 +28,28 @@ class OrganizationController extends Controller
     protected $organizationRepository;
 
     /**
-     * Person repository instance.
+     * Employee repository instance.
      *
-     * @var \LeadBrowser\Organization\Repositories\PersonRepository
+     * @var \LeadBrowser\Organization\Repositories\EmployeeRepository
      */
-    protected $personRepository;
+    protected $employeeRepository;
 
     /**
      * Create a new controller instance.
      *
      * @param \LeadBrowser\Organization\Repositories\OrganizationRepository  $organizationRepository
      * @param \LeadBrowser\Product\Repositories\OrganizationRepository  $organizationRepository
-     * @param \LeadBrowser\Organization\Repositories\PersonRepository  $personRepository
+     * @param \LeadBrowser\Organization\Repositories\EmployeeRepository  $employeeRepository
      * 
      * @return void
      */
     public function __construct(
         OrganizationRepository $organizationRepository,
-        PersonRepository $personRepository)
+        EmployeeRepository $employeeRepository)
     {
         $this->organizationRepository = $organizationRepository;
         $this->organizationRepository = $organizationRepository;
-        $this->personRepository = $personRepository;
+        $this->employeeRepository = $employeeRepository;
 
         request()->request->add(['entity_type' => 'organizations']);
     }
@@ -81,7 +81,7 @@ class OrganizationController extends Controller
             'id', 'icon', 'title', 'description',
             'types', 'country', 'city', 'website', 'archive',
             'international_phone_number', 'size_range', 'year_founded'
-        )->with(['persons'])->findOrFail($id);
+        )->with(['employees'])->findOrFail($id);
 
         $similars = DB::table('organizations')
         ->addSelect(
@@ -371,8 +371,8 @@ class OrganizationController extends Controller
             array_push($emails, ["label" => "work", "value" => $value->email]);
             array_push($phones, ["label" => "work", "value" => '']);
 
-            $this->personRepository->create([
-                'entity_type' => 'persons',
+            $this->employeeRepository->create([
+                'entity_type' => 'employees',
                 'name' => ucfirst($name[0]),
                 'emails' => $emails,
                 'contact_numbers' => $phones,
@@ -382,7 +382,7 @@ class OrganizationController extends Controller
 
         }
 
-        session()->flash('success', trans('admin::app.persons.create-success'));
+        session()->flash('success', trans('admin::app.employees.create-success'));
 
         return redirect()->back()->with('message','Operation Successful !');
     }

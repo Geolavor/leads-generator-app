@@ -145,22 +145,22 @@ Breadcrumbs::for('activities.edit', function (BreadcrumbTrail $trail, $activity)
 });
 
 
-// Dashboard > Persons
-Breadcrumbs::for('persons', function (BreadcrumbTrail $trail) {
+// Dashboard > Employees
+Breadcrumbs::for('employees', function (BreadcrumbTrail $trail) {
     $trail->parent('dashboard');
-    $trail->push(trans('admin::app.layouts.persons'), route('persons.index'));
+    $trail->push(trans('admin::app.layouts.employees'), route('employees.index'));
 });
 
-// Dashboard > Persons > Create
-Breadcrumbs::for('persons.create', function (BreadcrumbTrail $trail) {
-    $trail->parent('persons');
-    $trail->push(trans('admin::app.persons.create-title'), route('persons.create'));
+// Dashboard > Employees > Create
+Breadcrumbs::for('employees.create', function (BreadcrumbTrail $trail) {
+    $trail->parent('employees');
+    $trail->push(trans('admin::app.employees.create-title'), route('employees.create'));
 });
 
-// Dashboard > Persons > Edit
-Breadcrumbs::for('persons.edit', function (BreadcrumbTrail $trail, $person) {
-    $trail->parent('persons');
-    $trail->push(trans('admin::app.persons.edit-title'), route('persons.edit', $person->id));
+// Dashboard > Employees > Edit
+Breadcrumbs::for('employees.edit', function (BreadcrumbTrail $trail, $employee) {
+    $trail->parent('employees');
+    $trail->push(trans('admin::app.employees.edit-title'), route('employees.edit', $employee->id));
 });
 
 

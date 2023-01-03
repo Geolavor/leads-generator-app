@@ -112,11 +112,11 @@ class Organization extends Model implements ContractsOrganization
     }
 
     /**
-     * Get the persons.
+     * Get the employees.
      */
-    public function persons()
+    public function employees()
     {
-        return $this->hasMany(PersonProxy::modelClass());
+        return $this->hasMany(EmployeeProxy::modelClass());
     }
 
     /**
@@ -215,17 +215,17 @@ class Organization extends Model implements ContractsOrganization
 
     public function getPreparedCountEmployeesAttribute()
     {
-        $persons = $this->persons()->count();
+        $employees = $this->employees()->count();
 
-        $text = '+' . $persons;
+        $text = '+' . $employees;
 
-        return $persons ? "<span class='badge badge-primary'><small>" . $text . "</small></span>" : null;
+        return $employees ? "<span class='badge badge-primary'><small>" . $text . "</small></span>" : null;
     }
 
 
     public function getCountEmployeesAttribute()
     {
-        return $this->persons()->count();
+        return $this->employees()->count();
     }
 
     public function getPreparedCountEmailsAttribute()

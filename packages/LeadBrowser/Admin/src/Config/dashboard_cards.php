@@ -60,7 +60,7 @@ return [
         "card_id"       => "customers",
         "sort"          => 8,
         "card_type"     => "line_chart",
-        "view_url"      => "persons.index",
+        "view_url"      => "employees.index",
         "label"         => 'admin::app.dashboard.customers',
     ], [
         "selected"      => true,

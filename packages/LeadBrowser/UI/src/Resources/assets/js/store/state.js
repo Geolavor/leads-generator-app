@@ -28,11 +28,11 @@ var state = {
             type: 'integer_range',
             values: ['1000', '50000'],
         },
-        contact_person: {
-            label: 'Contact Person',
+        contact_employee: {
+            label: 'Contact Employee',
             type: 'add',
-            placeholder: 'Add Person',
-            input_field_placeholder: 'Enter Person',
+            placeholder: 'Add Employee',
+            input_field_placeholder: 'Enter Employee',
             values: ['Shubham', 'LeadBrowser'],
         },
         date_range: {

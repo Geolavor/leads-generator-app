@@ -448,28 +448,28 @@ Route::group(['middleware' => ['web']], function () {
 
         // Contacts Routes
         Route::group([
-            'prefix'    => 'persons',
-            'namespace' => 'LeadBrowser\Admin\Http\Controllers\Person'
+            'prefix'    => 'employees',
+            'namespace' => 'LeadBrowser\Admin\Http\Controllers\Employee'
         ], function () {
-            Route::get('', 'PersonController@index')->name('persons.index');
+            Route::get('', 'EmployeeController@index')->name('employees.index');
 
-            Route::get('create', 'PersonController@create')->name('persons.create');
+            Route::get('create', 'EmployeeController@create')->name('employees.create');
 
-            Route::post('create', 'PersonController@store')->name('persons.store');
+            Route::post('create', 'EmployeeController@store')->name('employees.store');
 
-            Route::get('view/{id?}', 'PersonController@view')->name('persons.view');
+            Route::get('view/{id?}', 'EmployeeController@view')->name('employees.view');
 
-            Route::get('edit/{id?}', 'PersonController@edit')->name('persons.edit');
+            Route::get('edit/{id?}', 'EmployeeController@edit')->name('employees.edit');
 
-            Route::put('edit/{id}', 'PersonController@update')->name('persons.update');
+            Route::put('edit/{id}', 'EmployeeController@update')->name('employees.update');
 
-            Route::get('search', 'PersonController@search')->name('persons.search');
+            Route::get('search', 'EmployeeController@search')->name('employees.search');
 
-            Route::delete('{id}', 'PersonController@destroy')->name('persons.delete');
+            Route::delete('{id}', 'EmployeeController@destroy')->name('employees.delete');
 
-            Route::put('mass-destroy', 'PersonController@massDestroy')->name('persons.mass_delete');
+            Route::put('mass-destroy', 'EmployeeController@massDestroy')->name('employees.mass_delete');
 
-            Route::post('score', 'PersonController@score')->name('persons.score');
+            Route::post('score', 'EmployeeController@score')->name('employees.score');
         });
 
         Route::group([

@@ -2,15 +2,15 @@
     <script type="text/x-template" id="contact-component-template">
         <div class="contact-controls">
             
-            <div class="form-group" :class="[errors.has('{!! $formScope ?? '' !!}person[name]') ? 'has-error' : '']">
-                <label for="person[name]" class="required">{{ __('admin::app.leads.name') }}</label>
+            <div class="form-group" :class="[errors.has('{!! $formScope ?? '' !!}employee[name]') ? 'has-error' : '']">
+                <label for="employee[name]" class="required">{{ __('admin::app.leads.name') }}</label>
 
                 <input
                     type="text"
-                    name="person[name]"
+                    name="employee[name]"
                     class="control"
-                    id="person[name]"
-                    v-model="person.name"
+                    id="employee[name]"
+                    v-model="employee.name"
                     autocomplete="off"
                     placeholder="{{ __('admin::app.common.start-typing') }}"
                     v-validate="'required'"
@@ -20,24 +20,24 @@
 
                 <input
                     type="hidden"
-                    name="person[id]"
-                    v-model="person.id"
+                    name="employee[id]"
+                    v-model="employee.id"
                     v-validate="'required'"
                     data-vv-as="&quot;{{ __('admin::app.leads.name') }}&quot;"
-                    v-if="person.id"
+                    v-if="employee.id"
                 />
 
                 <div class="lookup-results" v-if="state == ''">
                     <ul>
-                        <li v-for='(person, index) in persons' @click="addPerson(person)">
-                            <span>@{{ person.name }}</span>
+                        <li v-for='(employee, index) in employees' @click="addEmployee(employee)">
+                            <span>@{{ employee.name }}</span>
                         </li>
 
-                        <li v-if="! persons.length && person['name'].length && ! is_searching">
+                        <li v-if="! employees.length && employee['name'].length && ! is_searching">
                             <span>{{ __('admin::app.common.no-result-found') }}</span>
                         </li>
 
-                        <li class="action" v-if="person['name'].length && ! is_searching" @click="addAsNew()">
+                        <li class="action" v-if="employee['name'].length && ! is_searching" @click="addAsNew()">
                             <span>
                                 + {{ __('admin::app.common.add-as') }}
                             </span> 
@@ -45,31 +45,31 @@
                     </ul>
                 </div>
 
-                <span class="control-error" v-if="errors.has('{!! $formScope ?? '' !!}person[name]')">
-                    @{{ errors.first('{!! $formScope ?? '' !!}person[name]') }}
+                <span class="control-error" v-if="errors.has('{!! $formScope ?? '' !!}employee[name]')">
+                    @{{ errors.first('{!! $formScope ?? '' !!}employee[name]') }}
                 </span>
             </div>
 
             <div class="form-group email">
-                <label for="person[emails]" class="required">{{ __('admin::app.leads.email') }}</label>
+                <label for="employee[emails]" class="required">{{ __('admin::app.leads.email') }}</label>
 
                 @include('admin::common.custom-attributes.edit.email', ['formScope' => $formScope ?? ''])
                     
                 <email-component
-                    :attribute="{'code': 'person[emails]', 'name': 'Email'}"
-                    :data="person.emails"
+                    :attribute="{'code': 'employee[emails]', 'name': 'Email'}"
+                    :data="employee.emails"
                     validations="required|email"
                 ></email-component>
             </div>
 
             <div class="form-group contact-numbers">
-                <label for="person[contact_numbers]">{{ __('admin::app.leads.contact-numbers') }}</label>
+                <label for="employee[contact_numbers]">{{ __('admin::app.leads.contact-numbers') }}</label>
 
                 @include('admin::common.custom-attributes.edit.phone', ['formScope' => $formScope ?? ''])
                     
                 <phone-component
-                    :attribute="{'code': 'person[contact_numbers]', 'name': 'Contact Numbers'}"
-                    :data="person.contact_numbers"
+                    :attribute="{'code': 'employee[contact_numbers]', 'name': 'Contact Numbers'}"
+                    :data="employee.contact_numbers"
                 ></phone-component>
             </div>
 
@@ -78,18 +78,18 @@
 
                 @php
                     $organizationAttribute = app('LeadBrowser\Attribute\Repositories\AttributeRepository')->findOneWhere([
-                        'entity_type' => 'persons',
+                        'entity_type' => 'employees',
                         'code'        => 'organization_id'
                     ]);
 
-                    $organizationAttribute->code = 'person[' . $organizationAttribute->code . ']';
+                    $organizationAttribute->code = 'employee[' . $organizationAttribute->code . ']';
                 @endphp
 
                 @include('admin::common.custom-attributes.edit.lookup')
 
                 <lookup-component
                     :attribute='@json($organizationAttribute)'
-                    :data="person.organization"
+                    :data="employee.organization"
                 ></lookup-component>
             </div>
         </div>
@@ -110,11 +110,11 @@
 
                     state: this.data ? 'old': '',
 
-                    person: this.data ? this.data : {
+                    employee: this.data ? this.data : {
                         'name': ''
                     },
 
-                    persons: [],
+                    employees: [],
                 }
             },
 
@@ -122,14 +122,14 @@
                 search: debounce(function () {
                     this.state = '';
 
-                    this.person = {
-                        'name': this.person['name']
+                    this.employee = {
+                        'name': this.employee['name']
                     };
 
                     this.is_searching = true;
 
-                    if (this.person['name'].length < 2) {
-                        this.persons = [];
+                    if (this.employee['name'].length < 2) {
+                        this.employees = [];
 
                         this.is_searching = false;
 
@@ -138,9 +138,9 @@
 
                     var self = this;
                     
-                    this.$http.get("{{ route('persons.search') }}", {params: {query: this.person['name']}})
+                    this.$http.get("{{ route('employees.search') }}", {params: {query: this.employee['name']}})
                         .then (function(response) {
-                            self.persons = response.data;
+                            self.employees = response.data;
 
                             self.is_searching = false;
                         })
@@ -149,10 +149,10 @@
                         })
                 }, 500),
 
-                addPerson: function(result) {
+                addEmployee: function(result) {
                     this.state = 'old';
 
-                    this.person = result;
+                    this.employee = result;
                 },
 
                 addAsNew: function() {

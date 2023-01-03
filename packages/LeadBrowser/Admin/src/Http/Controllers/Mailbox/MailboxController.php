@@ -92,7 +92,7 @@ class MailboxController extends Controller
     public function view()
     {
         $mailbox = $this->mailboxRepository
-                ->with(['mailboxs', 'attachments', 'mailboxs.attachments', 'lead', 'person'])
+                ->with(['mailboxs', 'attachments', 'mailboxs.attachments', 'lead', 'employee'])
                 ->findOrFail(request('id'));
 
         if (request('route') == 'draft') {

@@ -24,7 +24,7 @@ class SearchPhoneDataGrid extends DataGrid
     {
         parent::__construct();
 
-        $this->export = bouncer()->hasPermission('crm.persons.export') ? true : false;
+        $this->export = bouncer()->hasPermission('crm.employees.export') ? true : false;
     }
     /**
      * Prepare query builder.

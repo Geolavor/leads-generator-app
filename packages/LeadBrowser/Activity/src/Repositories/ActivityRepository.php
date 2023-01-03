@@ -85,8 +85,8 @@ class ActivityRepository extends Repository
                     $query->orWhereIn('activity_participants.user_id', $participants['users']);
                 }
 
-                if (isset($participants['persons'])) {
-                    $query->orWhereIn('activity_participants.person_id', $participants['persons']);
+                if (isset($participants['employees'])) {
+                    $query->orWhereIn('activity_participants.employee_id', $participants['employees']);
                 }
             })
             ->groupBy('activities.id');

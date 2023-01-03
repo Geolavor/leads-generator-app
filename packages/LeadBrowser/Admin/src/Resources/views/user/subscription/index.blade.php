@@ -117,7 +117,7 @@
                         <!-- Legend Indicators -->
                         <div class="list-inline">
                             <div class="list-inline-item">
-                                <span class="legend-indicator bg-primary"></span>Personal usage space
+                                <span class="legend-indicator bg-primary"></span>Employeeal usage space
                             </div>
                             <div class="list-inline-item">
                                 <span class="legend-indicator bg-primary opacity"></span>Shared space

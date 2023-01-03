@@ -64,15 +64,15 @@
                             {!! view_render_event('leads.create.form_controls.details.after') !!}
 
 
-                            {!! view_render_event('leads.create.form_controls.contact_person.before') !!}
+                            {!! view_render_event('leads.create.form_controls.contact_employee.before') !!}
 
-                            <tab name="{{ __('admin::app.leads.contact-person') }}">
+                            <tab name="{{ __('admin::app.leads.contact-employee') }}">
                                 @include('admin::leads.common.contact')
 
-                                <contact-component :data='@json(old('person'))'></contact-component>
+                                <contact-component :data='@json(old('employee'))'></contact-component>
                             </tab>
 
-                            {!! view_render_event('leads.create.form_controls.contact_person.after') !!}
+                            {!! view_render_event('leads.create.form_controls.contact_employee.after') !!}
 
 
                             {!! view_render_event('leads.create.form_controls.products.before') !!} 

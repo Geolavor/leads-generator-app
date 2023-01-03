@@ -90,11 +90,11 @@
                 {!! view_render_event('leads.view.informations.details.after', ['lead' => $lead]) !!}
 
 
-                {!! view_render_event('leads.view.informations.contact_person.before', ['lead' => $lead]) !!}
+                {!! view_render_event('leads.view.informations.contact_employee.before', ['lead' => $lead]) !!}
 
                 <div class="panel">
                     <div class="panel-header">
-                        {{ __('admin::app.leads.contact-person') }}
+                        {{ __('admin::app.leads.contact-employee') }}
                     </div>
 
                     <div class="panel-body custom-attribute-view">
@@ -103,8 +103,8 @@
                             <div class="label">Name</div>
 
                             <div class="value">
-                                <a href="{{ route('persons.edit', $lead->person->id) }}" target="_blank">
-                                    {{ $lead->person->name }}
+                                <a href="{{ route('employees.edit', $lead->employee->id) }}" target="_blank">
+                                    {{ $lead->employee->name }}
                                 </a>
                             </div>
                         </div>
@@ -113,7 +113,7 @@
                             <div class="label">Email</div>
 
                             <div class="value">
-                                @include ('admin::common.custom-attributes.view.email', ['value' => $lead->person->emails])
+                                @include ('admin::common.custom-attributes.view.email', ['value' => $lead->employee->emails])
                             </div>
                         </div>
 
@@ -121,7 +121,7 @@
                             <div class="label">Contact Numbers</div>
 
                             <div class="value">
-                                @include ('admin::common.custom-attributes.view.phone', ['value' => $lead->person->contact_numbers])
+                                @include ('admin::common.custom-attributes.view.phone', ['value' => $lead->employee->contact_numbers])
                             </div>
                         </div>
 
@@ -129,9 +129,9 @@
                             <div class="label">Organization</div>
 
                             <div class="value">
-                                @if ($lead->person->organization)
-                                    <a href="{{ route('organizations.edit', $lead->person->organization->id) }}" target="_blank">
-                                        {{ $lead->person->organization->title }}
+                                @if ($lead->employee->organization)
+                                    <a href="{{ route('organizations.edit', $lead->employee->organization->id) }}" target="_blank">
+                                        {{ $lead->employee->organization->title }}
                                     </a>
                                 @else
                                     {{ __('admin::app.common.not-available') }}
@@ -141,7 +141,7 @@
                     </div>
                 </div>
 
-                {!! view_render_event('leads.view.informations.contact_person.after', ['lead' => $lead]) !!}
+                {!! view_render_event('leads.view.informations.contact_employee.after', ['lead' => $lead]) !!}
 
 
                 {!! view_render_event('leads.view.informations.products.before', ['lead' => $lead]) !!}
@@ -273,15 +273,15 @@
                         {!! view_render_event('leads.view.edit.form_controls.details.after', ['lead' => $lead]) !!}
 
 
-                        {!! view_render_event('leads.view.edit.form_controls.contact_person.before', ['lead' => $lead]) !!}
+                        {!! view_render_event('leads.view.edit.form_controls.contact_employee.before', ['lead' => $lead]) !!}
 
-                        <tab name="{{ __('admin::app.leads.contact-person') }}">
+                        <tab name="{{ __('admin::app.leads.contact-employee') }}">
                             @include('admin::leads.common.contact')
 
-                            <contact-component :data='@json(old('person') ?: $lead->person)'></contact-component>
+                            <contact-component :data='@json(old('employee') ?: $lead->employee)'></contact-component>
                         </tab>
 
-                        {!! view_render_event('leads.view.edit.form_controls.contact_person.after', ['lead' => $lead]) !!}
+                        {!! view_render_event('leads.view.edit.form_controls.contact_employee.after', ['lead' => $lead]) !!}
 
 
                         {!! view_render_event('leads.view.edit.form_controls.products.before', ['lead' => $lead]) !!}

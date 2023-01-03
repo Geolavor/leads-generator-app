@@ -467,7 +467,7 @@
                     <tab name="{{ __('admin::app.organizations.employees') }}" :selected="false">
                         <div>
 
-                            @for ($i = 0; $i < count($organization->persons); $i++)
+                            @for ($i = 0; $i < count($organization->employees); $i++)
                                 <div class="col">
                                     <div class="card card-transition h-100">
                                         <div class="card-body">

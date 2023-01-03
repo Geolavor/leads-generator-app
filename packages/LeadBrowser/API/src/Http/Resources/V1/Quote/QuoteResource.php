@@ -3,7 +3,7 @@
 namespace LeadBrowser\API\Http\Resources\V1\Quote;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-use LeadBrowser\API\Http\Resources\V1\Organization\PersonResource;
+use LeadBrowser\API\Http\Resources\V1\Organization\EmployeeResource;
 use LeadBrowser\API\Http\Resources\V1\Setting\UserResource;
 
 class QuoteResource extends JsonResource
@@ -21,7 +21,7 @@ class QuoteResource extends JsonResource
             'description'       => $this->description,
             'expired_at'        => $this->expired_at,
             'subject'           => $this->subject,
-            'person'            => new PersonResource($this->person),
+            'employee'            => new EmployeeResource($this->employee),
             'user'              => new UserResource($this->user),
             'billing_address'   => $this->billing_address,
             'shipping_address'  => $this->shipping_address,

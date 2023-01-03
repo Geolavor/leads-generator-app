@@ -5,7 +5,7 @@ namespace LeadBrowser\Quote\Models;
 use Illuminate\Database\Eloquent\Model;
 use LeadBrowser\Attribute\Traits\CustomAttribute;
 use LeadBrowser\User\Models\UserProxy;
-use LeadBrowser\Organization\Models\PersonProxy;
+use LeadBrowser\Organization\Models\EmployeeProxy;
 use LeadBrowser\Lead\Models\LeadProxy;
 use LeadBrowser\Quote\Contracts\Quote as QuoteContract;
 
@@ -37,7 +37,7 @@ class Quote extends Model implements QuoteContract
         'grand_total',
         'expired_at',
         'user_id',
-        'person_id',
+        'employee_id',
     ];
 
     /**
@@ -57,11 +57,11 @@ class Quote extends Model implements QuoteContract
     }
 
     /**
-     * Get the person that owns the quote.
+     * Get the employee that owns the quote.
      */
-    public function person()
+    public function employee()
     {
-        return $this->belongsTo(PersonProxy::modelClass());
+        return $this->belongsTo(EmployeeProxy::modelClass());
     }
 
     /**

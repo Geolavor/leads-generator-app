@@ -4,7 +4,7 @@ namespace LeadBrowser\Activity\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use LeadBrowser\User\Models\UserProxy;
-use LeadBrowser\Organization\Models\PersonProxy;
+use LeadBrowser\Organization\Models\EmployeeProxy;
 use LeadBrowser\Activity\Contracts\Participant as ParticipantContract;
 
 class Participant extends Model implements ParticipantContract
@@ -13,7 +13,7 @@ class Participant extends Model implements ParticipantContract
 
     protected $table = 'activity_participants';
 
-    protected $with = ['user', 'person'];
+    protected $with = ['user', 'employee'];
 
     /**
      * The attributes that are mass assignable.
@@ -23,7 +23,7 @@ class Participant extends Model implements ParticipantContract
     protected $fillable = [
         'activity_id',
         'user_id',
-        'person_id',
+        'employee_id',
     ];
     
     /**
@@ -43,10 +43,10 @@ class Participant extends Model implements ParticipantContract
    }
     
    /**
-    * Get the person that owns the participant.
+    * Get the employee that owns the participant.
     */
-   public function person()
+   public function employee()
    {
-       return $this->belongsTo(PersonProxy::modelClass());
+       return $this->belongsTo(EmployeeProxy::modelClass());
    }
 }

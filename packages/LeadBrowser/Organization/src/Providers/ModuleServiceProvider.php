@@ -8,6 +8,6 @@ class ModuleServiceProvider extends BaseModuleServiceProvider
 {
     protected $models = [
         \LeadBrowser\Organization\Models\Organization::class,
-        \LeadBrowser\Organization\Models\Person::class,
+        \LeadBrowser\Organization\Models\Employee::class,
     ];
 }

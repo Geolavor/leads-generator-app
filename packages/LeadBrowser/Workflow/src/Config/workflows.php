@@ -55,18 +55,18 @@ return [
             ]
         ],
         
-        'persons' => [
-            'name'   => 'Persons',
-            'class'  => 'LeadBrowser\Workflow\Helpers\Entity\Person',
+        'employees' => [
+            'name'   => 'Employees',
+            'class'  => 'LeadBrowser\Workflow\Helpers\Entity\Employee',
             'events' => [
                 [
-                    'event' => 'person.create.after',
+                    'event' => 'employee.create.after',
                     'name'  => 'Created',  
                 ], [
-                    'event' => 'person.update.after',
+                    'event' => 'employee.update.after',
                     'name'  => 'Updated',  
                 ], [
-                    'event' => 'person.delete.before',
+                    'event' => 'employee.delete.before',
                     'name'  => 'Deleted',  
                 ],
             ]

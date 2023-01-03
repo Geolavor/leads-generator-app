@@ -62,10 +62,10 @@ class LeadForm extends FormRequest
      */
     public function rules()
     {
-        foreach (['leads', 'persons'] as $key => $entityType) {
+        foreach (['leads', 'employees'] as $key => $entityType) {
             $attributes = $this->attributeRepository->scopeQuery(function($query) use($entityType) {
-                $attributeCodes = $entityType == 'persons'
-                    ? array_keys(request('person') ?? [])
+                $attributeCodes = $entityType == 'employees'
+                    ? array_keys(request('employee') ?? [])
                     : array_keys(request()->all());
 
                 $query = $query->whereIn('code', $attributeCodes)
@@ -79,8 +79,8 @@ class LeadForm extends FormRequest
             })->get();
 
             foreach ($attributes as $attribute) {
-                if ($entityType == 'persons') {
-                    $attribute->code = 'person.' . $attribute->code;
+                if ($entityType == 'employees') {
+                    $attribute->code = 'employee.' . $attribute->code;
                 }
 
 
@@ -134,7 +134,7 @@ class LeadForm extends FormRequest
                         : $attribute->code
                     ], function ($field, $value, $fail) use ($attribute, $entityType) {
                         if (! $this->attributeValueRepository->isValueUnique(
-                                $entityType == 'persons' ? request('person.id') : $this->id,
+                                $entityType == 'employees' ? request('employee.id') : $this->id,
                                 $attribute->entity_type,
                                 $attribute,
                                 request($field)

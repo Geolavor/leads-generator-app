@@ -10,9 +10,9 @@
 
         if (isset($lead)) {
             $quote->fill([
-                'person_id'       => $lead->person_id,
+                'employee_id'       => $lead->employee_id,
                 'user_id'         => $lead->user_id,
-                'billing_address' => $lead->person->organization ? $lead->person->organization->address : null
+                'billing_address' => $lead->employee->organization ? $lead->employee->organization->address : null
             ]);
         }
     @endphp
@@ -70,7 +70,7 @@
                                                         'subject',
                                                         'description',
                                                         'expired_at',
-                                                        'person_id',
+                                                        'employee_id',
                                                     ]);
                                             })->get(),
                                         'customValidations'      => [

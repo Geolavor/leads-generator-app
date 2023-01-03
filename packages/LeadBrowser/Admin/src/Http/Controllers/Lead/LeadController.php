@@ -245,7 +245,7 @@ class LeadController extends Controller
     }
 
     /**
-     * Search person results.
+     * Search employee results.
      *
      * @return \Illuminate\Http\Response
      */

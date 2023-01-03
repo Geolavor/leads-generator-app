@@ -176,8 +176,8 @@
   background-image: url("../images/organization-icon.svg");
 }
 
-.person-icon {
-  background-image: url("../images/person-icon.svg");
+.employee-icon {
+  background-image: url("../images/employee-icon.svg");
 }
 
 .product-icon {
@@ -3925,11 +3925,11 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
   content: "\f377";
 }
 
-.bi-file-earmark-person-fill::before {
+.bi-file-earmark-employee-fill::before {
   content: "\f378";
 }
 
-.bi-file-earmark-person::before {
+.bi-file-earmark-employee::before {
   content: "\f379";
 }
 
@@ -4109,11 +4109,11 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
   content: "\f3a5";
 }
 
-.bi-file-person-fill::before {
+.bi-file-employee-fill::before {
   content: "\f3a6";
 }
 
-.bi-file-person::before {
+.bi-file-employee::before {
   content: "\f3a7";
 }
 
@@ -5309,67 +5309,67 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
   content: "\f4d1";
 }
 
-.bi-person-badge-fill::before {
+.bi-employee-badge-fill::before {
   content: "\f4d2";
 }
 
-.bi-person-badge::before {
+.bi-employee-badge::before {
   content: "\f4d3";
 }
 
-.bi-person-bounding-box::before {
+.bi-employee-bounding-box::before {
   content: "\f4d4";
 }
 
-.bi-person-check-fill::before {
+.bi-employee-check-fill::before {
   content: "\f4d5";
 }
 
-.bi-person-check::before {
+.bi-employee-check::before {
   content: "\f4d6";
 }
 
-.bi-person-circle::before {
+.bi-employee-circle::before {
   content: "\f4d7";
 }
 
-.bi-person-dash-fill::before {
+.bi-employee-dash-fill::before {
   content: "\f4d8";
 }
 
-.bi-person-dash::before {
+.bi-employee-dash::before {
   content: "\f4d9";
 }
 
-.bi-person-fill::before {
+.bi-employee-fill::before {
   content: "\f4da";
 }
 
-.bi-person-lines-fill::before {
+.bi-employee-lines-fill::before {
   content: "\f4db";
 }
 
-.bi-person-plus-fill::before {
+.bi-employee-plus-fill::before {
   content: "\f4dc";
 }
 
-.bi-person-plus::before {
+.bi-employee-plus::before {
   content: "\f4dd";
 }
 
-.bi-person-square::before {
+.bi-employee-square::before {
   content: "\f4de";
 }
 
-.bi-person-x-fill::before {
+.bi-employee-x-fill::before {
   content: "\f4df";
 }
 
-.bi-person-x::before {
+.bi-employee-x::before {
   content: "\f4e0";
 }
 
-.bi-person::before {
+.bi-employee::before {
   content: "\f4e1";
 }
 
@@ -6989,23 +6989,23 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
   content: "\f675";
 }
 
-.bi-person-rolodex::before {
+.bi-employee-rolodex::before {
   content: "\f676";
 }
 
-.bi-person-video::before {
+.bi-employee-video::before {
   content: "\f677";
 }
 
-.bi-person-video2::before {
+.bi-employee-video2::before {
   content: "\f678";
 }
 
-.bi-person-video3::before {
+.bi-employee-video3::before {
   content: "\f679";
 }
 
-.bi-person-workspace::before {
+.bi-employee-workspace::before {
   content: "\f67a";
 }
 
@@ -8025,11 +8025,11 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
   content: "\f779";
 }
 
-.bi-person-heart::before {
+.bi-employee-heart::before {
   content: "\f77a";
 }
 
-.bi-person-hearts::before {
+.bi-employee-hearts::before {
   content: "\f77b";
 }
 

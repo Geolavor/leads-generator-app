@@ -293,7 +293,7 @@
                         'email': "{{ __('admin::app.leads.emails') }}",
                     },
 
-                    quotes: @json($lead->quotes()->with(['person', 'user'])->get())
+                    quotes: @json($lead->quotes()->with(['employee', 'user'])->get())
                 }
             },
 

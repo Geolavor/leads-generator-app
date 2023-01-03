@@ -113,15 +113,15 @@ class LeadDataGrid extends DataGrid
                 'lead_pipeline_stages.name as stage',
                 'lead_tags.tag_id as tag_id',
                 'users.id as user_id',
-                'users.name as sales_person',
-                'persons.id as person_id',
-                'persons.name as person_name',
+                'users.name as sales_employee',
+                'employees.id as employee_id',
+                'employees.name as employee_name',
                 'tags.name as tag_name',
                 'lead_pipelines.rotten_days as pipeline_rotten_days',
                 'lead_pipeline_stages.code as stage_code',
             )
             ->leftJoin('users', 'leads.user_id', '=', 'users.id')
-            ->leftJoin('persons', 'leads.person_id', '=', 'persons.id')
+            ->leftJoin('employees', 'leads.employee_id', '=', 'employees.id')
             ->leftJoin('lead_types', 'leads.lead_type_id', '=', 'lead_types.id')
             ->leftJoin('lead_pipeline_stages', 'leads.lead_pipeline_stage_id', '=', 'lead_pipeline_stages.id')
             ->leftJoin('lead_sources', 'leads.lead_source_id', '=', 'lead_sources.id')
@@ -143,8 +143,8 @@ class LeadDataGrid extends DataGrid
 
         $this->addFilter('id', 'leads.id');
         $this->addFilter('user', 'leads.user_id');
-        $this->addFilter('sales_person', 'leads.user_id');
-        $this->addFilter('person_name', 'persons.name');
+        $this->addFilter('sales_employee', 'leads.user_id');
+        $this->addFilter('employee_name', 'employees.name');
         $this->addFilter('type', 'lead_pipeline_stages.code');
         $this->addFilter('stage', 'lead_pipeline_stages.name');
         $this->addFilter('tag_name', 'tags.name');
@@ -169,8 +169,8 @@ class LeadDataGrid extends DataGrid
         ]);
 
         $this->addColumn([
-            'index'            => 'sales_person',
-            'label'            => trans('admin::app.datagrid.sales-person'),
+            'index'            => 'sales_employee',
+            'label'            => trans('admin::app.datagrid.sales-employee'),
             'type'             => 'dropdown',
             'dropdown_options' => $this->getUserDropdownOptions(),
             'searchable'       => false,
@@ -178,7 +178,7 @@ class LeadDataGrid extends DataGrid
             'closure'          => function ($row) {
                 $route = urldecode(route('settings.users.index', ['id[eq]' => $row->user_id]));
 
-                return "<a href='" . $route . "'>" . $row->sales_person . "</a>";
+                return "<a href='" . $route . "'>" . $row->sales_employee . "</a>";
             },
         ]);
 
@@ -207,15 +207,15 @@ class LeadDataGrid extends DataGrid
         ]);
 
         $this->addColumn([
-            'index'      => 'person_name',
-            'label'      => trans('admin::app.datagrid.contact_person'),
+            'index'      => 'employee_name',
+            'label'      => trans('admin::app.datagrid.contact_employee'),
             'type'       => 'string',
             'searchable' => false,
             'sortable'   => false,
             'closure'    => function ($row) {
-                $route = urldecode(route('persons.index', ['id[eq]' => $row->person_id]));
+                $route = urldecode(route('employees.index', ['id[eq]' => $row->employee_id]));
 
-                return "<a href='" . $route . "'>" . $row->person_name . "</a>";
+                return "<a href='" . $route . "'>" . $row->employee_name . "</a>";
             },
         ]);
 
@@ -309,7 +309,7 @@ class LeadDataGrid extends DataGrid
             'title'        => trans('ui::app.datagrid.delete'),
             'method'       => 'DELETE',
             'route'        => 'leads.delete',
-            'confirm_text' => trans('ui::app.datagrid.massaction.delete', ['resource' => trans('admin::app.persons.person')]),
+            'confirm_text' => trans('ui::app.datagrid.massaction.delete', ['resource' => trans('admin::app.employees.employee')]),
             'icon'         => 'trash-icon',
         ]);
     }

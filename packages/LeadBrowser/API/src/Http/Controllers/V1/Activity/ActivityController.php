@@ -129,10 +129,10 @@ class ActivityController extends Controller
                 }
             }
 
-            if (is_array(request('participants.persons'))) {
-                foreach (request('participants.persons') as $personId) {
+            if (is_array(request('participants.employees'))) {
+                foreach (request('participants.employees') as $employeeId) {
                     $activity->participants()->create([
-                        'person_id' => $personId,
+                        'employee_id' => $employeeId,
                     ]);
                 }
             }
@@ -175,10 +175,10 @@ class ActivityController extends Controller
                 }
             }
 
-            if (is_array(request('participants.persons'))) {
-                foreach (request('participants.persons') as $personId) {
+            if (is_array(request('participants.employees'))) {
+                foreach (request('participants.employees') as $employeeId) {
                     $activity->participants()->create([
-                        'person_id' => $personId,
+                        'employee_id' => $employeeId,
                     ]);
                 }
             }

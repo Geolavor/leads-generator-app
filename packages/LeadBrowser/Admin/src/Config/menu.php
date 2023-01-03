@@ -43,7 +43,7 @@ return [
         'key'        => 'search.database.people',
         'name'       => 'admin::app.layouts.people-title',
         'info'       => 'admin::app.layouts.database-info',
-        'route'      => 'persons.index',
+        'route'      => 'employees.index',
         'sort'       => 2,
         'icon-class' => 'bi-people',
     ], [
@@ -323,7 +323,7 @@ return [
         'info'       => 'admin::app.layouts.roles-info',
         'route'      => 'settings.roles.index',
         'sort'       => 2,
-        'icon-class' => 'bi-person-check',
+        'icon-class' => 'bi-employee-check',
     ], [
         'key'        => 'settings.user.users',
         'name'       => 'admin::app.layouts.users',

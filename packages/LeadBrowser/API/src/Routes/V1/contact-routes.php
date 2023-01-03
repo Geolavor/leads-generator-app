@@ -2,28 +2,28 @@
 
 use Illuminate\Support\Facades\Route;
 use LeadBrowser\API\Http\Controllers\V1\Organization\OrganizationController;
-use LeadBrowser\API\Http\Controllers\V1\Organization\PersonController;
+use LeadBrowser\API\Http\Controllers\V1\Organization\EmployeeController;
 
 Route::group([
     'prefix'     => 'contacts',
     'middleware' => 'auth:sanctum',
 ], function () {
     /**
-     * Person routes.
+     * Employee routes.
      */
-    Route::get('persons', [PersonController::class, 'index']);
+    Route::get('employees', [EmployeeController::class, 'index']);
 
-    Route::get('persons/{id}', [PersonController::class, 'show']);
+    Route::get('employees/{id}', [EmployeeController::class, 'show']);
 
-    Route::get('persons/search', [PersonController::class, 'search']);
+    Route::get('employees/search', [EmployeeController::class, 'search']);
 
-    Route::post('persons', [PersonController::class, 'store']);
+    Route::post('employees', [EmployeeController::class, 'store']);
 
-    Route::put('persons/{id}', [PersonController::class, 'update']);
+    Route::put('employees/{id}', [EmployeeController::class, 'update']);
 
-    Route::delete('persons/{id}', [PersonController::class, 'destroy']);
+    Route::delete('employees/{id}', [EmployeeController::class, 'destroy']);
 
-    Route::post('persons/mass-destroy', [PersonController::class, 'massDestroy']);
+    Route::post('employees/mass-destroy', [EmployeeController::class, 'massDestroy']);
 
     /**
      * Organization routes.

@@ -8,7 +8,7 @@ use LeadBrowser\Attribute\Repositories\AttributeRepository;
 use LeadBrowser\EmailTemplate\Repositories\EmailTemplateRepository;
 use LeadBrowser\Quote\Repositories\QuoteRepository;
 use LeadBrowser\Lead\Repositories\LeadRepository;
-use LeadBrowser\Organization\Repositories\PersonRepository;
+use LeadBrowser\Organization\Repositories\EmployeeRepository;
 
 class Quote extends AbstractEntity
 {
@@ -46,11 +46,11 @@ class Quote extends AbstractEntity
     protected $leadRepository;
 
     /**
-     * PersonRepository object
+     * EmployeeRepository object
      *
-     * @var \LeadBrowser\Organization\Repositories\PersonRepository
+     * @var \LeadBrowser\Organization\Repositories\EmployeeRepository
      */
-    protected $personRepository;
+    protected $employeeRepository;
 
     /**
      * Attributes to be sorted
@@ -66,7 +66,7 @@ class Quote extends AbstractEntity
      * @param  \LeadBrowser\EmailTemplate\Repositories\EmailTemplateRepository  $emailTemplateRepository
      * @param  \LeadBrowser\Lead\Repositories\LeadRepository  $leadRepository
      * @param  \LeadBrowser\Quote\Repositories\QuoteRepository  $quoteRepository
-     * @param \LeadBrowser\Organization\Repositories\PersonRepository  $personRepository
+     * @param \LeadBrowser\Organization\Repositories\EmployeeRepository  $employeeRepository
      * @return void
      */
     public function __construct(
@@ -74,7 +74,7 @@ class Quote extends AbstractEntity
         EmailTemplateRepository $emailTemplateRepository,
         QuoteRepository $quoteRepository,
         LeadRepository $leadRepository,
-        PersonRepository $personRepository
+        EmployeeRepository $employeeRepository
     )
     {
         $this->attributeRepository = $attributeRepository;
@@ -85,7 +85,7 @@ class Quote extends AbstractEntity
 
         $this->leadRepository = $leadRepository;
 
-        $this->personRepository = $personRepository;
+        $this->employeeRepository = $employeeRepository;
     }
 
     /**
@@ -118,16 +118,16 @@ class Quote extends AbstractEntity
                 'name'       => __('admin::app.settings.workflows.update-quote'),
                 'attributes' => $this->getAttributes('quotes'),
             ], [
-                'id'         => 'update_person',
-                'name'       => __('admin::app.settings.workflows.update-person'),
-                'attributes' => $this->getAttributes('persons'),
+                'id'         => 'update_employee',
+                'name'       => __('admin::app.settings.workflows.update-employee'),
+                'attributes' => $this->getAttributes('employees'),
             ], [
                 'id'         => 'update_related_leads',
                 'name'       => __('admin::app.settings.workflows.update-related-leads'),
                 'attributes' => $this->getAttributes('leads'),
             ], [
-                'id'      => 'send_email_to_person',
-                'name'    => __('admin::app.settings.workflows.send-email-to-person'),
+                'id'      => 'send_email_to_employee',
+                'name'    => __('admin::app.settings.workflows.send-email-to-employee'),
                 'options' => $emailTemplates,
             ], [
                 'id'      => 'send_email_to_sales_owner',
@@ -156,11 +156,11 @@ class Quote extends AbstractEntity
 
                     break;
                 
-                case 'update_person':
-                    $this->personRepository->update([
-                        'entity_type'        => 'persons',
+                case 'update_employee':
+                    $this->employeeRepository->update([
+                        'entity_type'        => 'employees',
                         $action['attribute'] => $action['value'],
-                    ], $quote->person_id);
+                    ], $quote->employee_id);
 
                     break;
                 
@@ -174,7 +174,7 @@ class Quote extends AbstractEntity
 
                     break;
             
-                case 'send_email_to_person':
+                case 'send_email_to_employee':
                     $emailTemplate = $this->emailTemplateRepository->find($action['value']);
 
                     if (! $emailTemplate) {
@@ -183,7 +183,7 @@ class Quote extends AbstractEntity
 
                     try {
                         Mail::queue(new Common([
-                            'to'      => data_get($quote->person->emails, '*.value'),
+                            'to'      => data_get($quote->employee->emails, '*.value'),
                             'subject' => $this->replacePlaceholders($quote, $emailTemplate->subject),
                             'body'    => $this->replacePlaceholders($quote, $emailTemplate->content),
                         ]));

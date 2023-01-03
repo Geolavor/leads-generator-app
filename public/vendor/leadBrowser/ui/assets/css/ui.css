@@ -423,11 +423,11 @@ ul.drag-inner-list {
 .drag-item .lead-block .lead-cost {
   color: #263238;
 }
-.drag-item .lead-block .lead-person,
+.drag-item .lead-block .lead-employee,
 .drag-item .lead-block .lead-cost {
   font-size: 14px;
 }
-.drag-item .lead-block .lead-person .icon,
+.drag-item .lead-block .lead-employee .icon,
 .drag-item .lead-block .lead-cost .icon {
   margin-right: 5px;
   vertical-align: middle;
@@ -6337,11 +6337,11 @@ body.top-banner .banner {
   content: "\f377";
 }
 
-.bi-file-earmark-person-fill::before {
+.bi-file-earmark-employee-fill::before {
   content: "\f378";
 }
 
-.bi-file-earmark-person::before {
+.bi-file-earmark-employee::before {
   content: "\f379";
 }
 
@@ -6521,11 +6521,11 @@ body.top-banner .banner {
   content: "\f3a5";
 }
 
-.bi-file-person-fill::before {
+.bi-file-employee-fill::before {
   content: "\f3a6";
 }
 
-.bi-file-person::before {
+.bi-file-employee::before {
   content: "\f3a7";
 }
 
@@ -7721,67 +7721,67 @@ body.top-banner .banner {
   content: "\f4d1";
 }
 
-.bi-person-badge-fill::before {
+.bi-employee-badge-fill::before {
   content: "\f4d2";
 }
 
-.bi-person-badge::before {
+.bi-employee-badge::before {
   content: "\f4d3";
 }
 
-.bi-person-bounding-box::before {
+.bi-employee-bounding-box::before {
   content: "\f4d4";
 }
 
-.bi-person-check-fill::before {
+.bi-employee-check-fill::before {
   content: "\f4d5";
 }
 
-.bi-person-check::before {
+.bi-employee-check::before {
   content: "\f4d6";
 }
 
-.bi-person-circle::before {
+.bi-employee-circle::before {
   content: "\f4d7";
 }
 
-.bi-person-dash-fill::before {
+.bi-employee-dash-fill::before {
   content: "\f4d8";
 }
 
-.bi-person-dash::before {
+.bi-employee-dash::before {
   content: "\f4d9";
 }
 
-.bi-person-fill::before {
+.bi-employee-fill::before {
   content: "\f4da";
 }
 
-.bi-person-lines-fill::before {
+.bi-employee-lines-fill::before {
   content: "\f4db";
 }
 
-.bi-person-plus-fill::before {
+.bi-employee-plus-fill::before {
   content: "\f4dc";
 }
 
-.bi-person-plus::before {
+.bi-employee-plus::before {
   content: "\f4dd";
 }
 
-.bi-person-square::before {
+.bi-employee-square::before {
   content: "\f4de";
 }
 
-.bi-person-x-fill::before {
+.bi-employee-x-fill::before {
   content: "\f4df";
 }
 
-.bi-person-x::before {
+.bi-employee-x::before {
   content: "\f4e0";
 }
 
-.bi-person::before {
+.bi-employee::before {
   content: "\f4e1";
 }
 
@@ -9401,23 +9401,23 @@ body.top-banner .banner {
   content: "\f675";
 }
 
-.bi-person-rolodex::before {
+.bi-employee-rolodex::before {
   content: "\f676";
 }
 
-.bi-person-video::before {
+.bi-employee-video::before {
   content: "\f677";
 }
 
-.bi-person-video2::before {
+.bi-employee-video2::before {
   content: "\f678";
 }
 
-.bi-person-video3::before {
+.bi-employee-video3::before {
   content: "\f679";
 }
 
-.bi-person-workspace::before {
+.bi-employee-workspace::before {
   content: "\f67a";
 }
 
@@ -10437,11 +10437,11 @@ body.top-banner .banner {
   content: "\f779";
 }
 
-.bi-person-heart::before {
+.bi-employee-heart::before {
   content: "\f77a";
 }
 
-.bi-person-hearts::before {
+.bi-employee-hearts::before {
   content: "\f77b";
 }
 
@@ -11589,71 +11589,71 @@ body.top-banner .banner {
   content: "\f899";
 }
 
-.bi-person-add::before {
+.bi-employee-add::before {
   content: "\f89a";
 }
 
-.bi-person-down::before {
+.bi-employee-down::before {
   content: "\f89b";
 }
 
-.bi-person-exclamation::before {
+.bi-employee-exclamation::before {
   content: "\f89c";
 }
 
-.bi-person-fill-add::before {
+.bi-employee-fill-add::before {
   content: "\f89d";
 }
 
-.bi-person-fill-check::before {
+.bi-employee-fill-check::before {
   content: "\f89e";
 }
 
-.bi-person-fill-dash::before {
+.bi-employee-fill-dash::before {
   content: "\f89f";
 }
 
-.bi-person-fill-down::before {
+.bi-employee-fill-down::before {
   content: "\f8a0";
 }
 
-.bi-person-fill-exclamation::before {
+.bi-employee-fill-exclamation::before {
   content: "\f8a1";
 }
 
-.bi-person-fill-gear::before {
+.bi-employee-fill-gear::before {
   content: "\f8a2";
 }
 
-.bi-person-fill-lock::before {
+.bi-employee-fill-lock::before {
   content: "\f8a3";
 }
 
-.bi-person-fill-slash::before {
+.bi-employee-fill-slash::before {
   content: "\f8a4";
 }
 
-.bi-person-fill-up::before {
+.bi-employee-fill-up::before {
   content: "\f8a5";
 }
 
-.bi-person-fill-x::before {
+.bi-employee-fill-x::before {
   content: "\f8a6";
 }
 
-.bi-person-gear::before {
+.bi-employee-gear::before {
   content: "\f8a7";
 }
 
-.bi-person-lock::before {
+.bi-employee-lock::before {
   content: "\f8a8";
 }
 
-.bi-person-slash::before {
+.bi-employee-slash::before {
   content: "\f8a9";
 }
 
-.bi-person-up::before {
+.bi-employee-up::before {
   content: "\f8aa";
 }
 
@@ -11773,11 +11773,11 @@ body.top-banner .banner {
   content: "\f8c7";
 }
 
-.bi-person-vcard-fill::before {
+.bi-employee-vcard-fill::before {
   content: "\f8c8";
 }
 
-.bi-person-vcard::before {
+.bi-employee-vcard::before {
   content: "\f8c9";
 }
 

@@ -23,8 +23,8 @@
             $email->lead = app('\LeadBrowser\Lead\Repositories\LeadRepository')->getModel()->fill(['title' => $email->subject]);
         }
 
-        if (! $email->person) {
-            $email->person = app('\LeadBrowser\Organization\Repositories\PersonRepository')->getModel()->fill(['emails' => [['value' => $email->from, 'label' => 'work']], 'name' => $email->name]);
+        if (! $email->employee) {
+            $email->employee = app('\LeadBrowser\Organization\Repositories\EmployeeRepository')->getModel()->fill(['emails' => [['value' => $email->from, 'label' => 'work']], 'name' => $email->name]);
         }
     @endphp
 
@@ -65,31 +65,31 @@
     </div>
 
     <form
-        action="{{ route('persons.store') }}"
+        action="{{ route('employees.store') }}"
         method="post"
-        data-vv-scope="person-form"
-        @submit.prevent="onSubmit($event, 'person-form')"
+        data-vv-scope="employee-form"
+        @submit.prevent="onSubmit($event, 'employee-form')"
     >
 
-        <modal id="addPersonModal" :is-open="modalIds.addPersonModal">
-            <h3 slot="header-title">{{ __('admin::app.persons.create-title') }}</h3>
+        <modal id="addEmployeeModal" :is-open="modalIds.addEmployeeModal">
+            <h3 slot="header-title">{{ __('admin::app.employees.create-title') }}</h3>
             
             <div slot="header-actions">
-                {!! view_render_event('mail.view.actions.persons.create.form_buttons.before', ['email' => $email]) !!}
+                {!! view_render_event('mail.view.actions.employees.create.form_buttons.before', ['email' => $email]) !!}
 
-                <button class="btn btn-sm btn-secondary-outline" @click="closeModal('addPersonModal')">
-                    {{ __('admin::app.persons.cancel') }}
+                <button class="btn btn-sm btn-secondary-outline" @click="closeModal('addEmployeeModal')">
+                    {{ __('admin::app.employees.cancel') }}
                 </button>
 
                 <button class="btn btn-sm btn-primary">
-                    {{ __('admin::app.persons.save-btn-title') }}
+                    {{ __('admin::app.employees.save-btn-title') }}
                 </button>
 
-                {!! view_render_event('mail.view.actions.persons.create.form_buttons.after', ['email' => $email]) !!}
+                {!! view_render_event('mail.view.actions.employees.create.form_buttons.after', ['email' => $email]) !!}
             </div>
 
             <div slot="body">
-                {!! view_render_event('mail.view.actions.persons.create.form_controls.before', ['email' => $email]) !!}
+                {!! view_render_event('mail.view.actions.employees.create.form_controls.before', ['email' => $email]) !!}
 
                 @csrf()
                 
@@ -99,14 +99,14 @@
 
                 @include('admin::common.custom-attributes.edit', [
                     'customAttributes' => app('LeadBrowser\Attribute\Repositories\AttributeRepository')->findWhere([
-                        'entity_type' => 'persons',
+                        'entity_type' => 'employees',
                         'quick_add'   => 1
                     ]),
-                    'entity'           => $email->person,
-                    'formScope'        => 'person-form.',
+                    'entity'           => $email->employee,
+                    'formScope'        => 'employee-form.',
                 ])
 
-                {!! view_render_event('mail.view.actions.persons.create.form_controls.after', ['email' => $email]) !!}
+                {!! view_render_event('mail.view.actions.employees.create.form_controls.after', ['email' => $email]) !!}
             </div>
         </modal>
 
@@ -165,15 +165,15 @@
                     {!! view_render_event('mail.view.actions.leads.create.form_controls.details.after', ['email' => $email]) !!}
 
 
-                    {!! view_render_event('mail.view.actions.leads.create.form_controls.contact_person.before', ['email' => $email]) !!}
+                    {!! view_render_event('mail.view.actions.leads.create.form_controls.contact_employee.before', ['email' => $email]) !!}
 
-                    <tab name="{{ __('admin::app.leads.contact-person') }}">
+                    <tab name="{{ __('admin::app.leads.contact-employee') }}">
                         @include('admin::leads.common.contact', ['formScope' => 'lead-form.'])
 
-                        <contact-component :data='@json(old('person'))'></contact-component>
+                        <contact-component :data='@json(old('employee'))'></contact-component>
                     </tab>
 
-                    {!! view_render_event('mail.view.actions.leads.create.form_controls.contact_person.after', ['email' => $email]) !!}
+                    {!! view_render_event('mail.view.actions.leads.create.form_controls.contact_employee.after', ['email' => $email]) !!}
 
 
                     {!! view_render_event('mail.view.actions.leads.create.form_controls.products.before', ['email' => $email]) !!}
@@ -218,17 +218,17 @@
                 </header>
 
                 <div class="email-action-content">
-                    {!! view_render_event('mail.view.actions.link_person.before', ['email' => $email]) !!}
+                    {!! view_render_event('mail.view.actions.link_employee.before', ['email' => $email]) !!}
 
                     <div class="panel">
-                        <div class="link-lead" v-if="! email.person_id">
+                        <div class="link-lead" v-if="! email.employee_id">
                             <h3>{{ __('admin::app.mail.link-mail') }}</h3>
 
                             <div class="btn-group">
                                 <button
                                     class="btn btn-sm btn-primary-outline"
-                                    @click="enabled_search.person = true"
-                                    v-if="! enabled_search.person"
+                                    @click="enabled_search.employee = true"
+                                    v-if="! enabled_search.employee"
                                 >
                                     {{ __('admin::app.mail.add-to-existing-contact') }}
                                 </button>
@@ -236,29 +236,29 @@
                                 <div class="form-group" v-else>
                                     <input
                                         class="control"
-                                        v-model="search_term.person"
+                                        v-model="search_term.employee"
                                         placeholder="{{ __('admin::app.mail.search-contact') }}"
-                                        v-on:keyup="search('person')"
+                                        v-on:keyup="search('employee')"
                                     />
 
-                                    <div class="lookup-results" v-if="search_term.person.length">
+                                    <div class="lookup-results" v-if="search_term.employee.length">
                                         <ul>
-                                            <li v-for='(result, index) in search_results.person' @click="link('person', result)">
+                                            <li v-for='(result, index) in search_results.employee' @click="link('employee', result)">
                                                 <span>@{{ result.name }}</span>
                                             </li>
                 
-                                            <li v-if='! search_results.person.length && search_term.person.length && ! is_searching.person'>
+                                            <li v-if='! search_results.employee.length && search_term.employee.length && ! is_searching.employee'>
                                                 <span>{{ __('admin::app.common.no-result-found') }}</span>
                                             </li>
                                         </ul>
                                     </div>
 
-                                    <i class="icon close-icon"  v-if="! is_searching.person" @click="enabled_search.person = false; reset('person')"></i>
+                                    <i class="icon close-icon"  v-if="! is_searching.employee" @click="enabled_search.employee = false; reset('employee')"></i>
 
-                                    <i class="icon loader-active-icon" v-if="is_searching.person"></i>
+                                    <i class="icon loader-active-icon" v-if="is_searching.employee"></i>
                                 </div>
 
-                                <button class="btn btn-sm btn-primary" @click="$root.openModal('addPersonModal')">
+                                <button class="btn btn-sm btn-primary" @click="$root.openModal('addEmployeeModal')">
                                     {{ __('admin::app.mail.create-new-contact') }}
                                 </button>
                             </div>
@@ -269,26 +269,26 @@
                                 {{ __('admin::app.mail.linked-contact') }}
 
                                 <span class="links">
-                                    <a :href="'{{ route('persons.edit') }}/' + email.person_id" target="_blank">
+                                    <a :href="'{{ route('employees.edit') }}/' + email.employee_id" target="_blank">
                                         <i class="icon external-link-icon"></i>
                                     </a>
 
-                                    <i class="icon close-icon" @click="unlink('person')"></i>
+                                    <i class="icon close-icon" @click="unlink('employee')"></i>
                                 </span>
                             </div>
 
                             <div class="contact-details">
-                                <div class="name">@{{ email.person.name }}</div>
+                                <div class="name">@{{ email.employee.name }}</div>
 
                                 <div class="email">
                                     <i class="icon emails-icon"></i>
-                                    @{{ email.person.name }}
+                                    @{{ email.employee.name }}
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    {!! view_render_event('mail.view.actions.link_person.after', ['email' => $email]) !!}
+                    {!! view_render_event('mail.view.actions.link_employee.after', ['email' => $email]) !!}
 
 
                     {!! view_render_event('mail.view.actions.link_lead.before', ['email' => $email]) !!}
@@ -690,31 +690,31 @@
                     html: `{!! $html !!}`,
 
                     is_searching: {
-                        person: false,
+                        employee: false,
 
                         lead: false
                     },
 
                     search_term: {
-                        person: '',
+                        employee: '',
 
                         lead: '',
                     },
 
                     search_routes: {
-                        person: "{{ route('persons.search') }}",
+                        employee: "{{ route('employees.search') }}",
 
                         lead: "{{ route('leads.search') }}",
                     },
 
                     search_results: {
-                        person: [],
+                        employee: [],
 
                         lead: [],
                     },
 
                     enabled_search: {
-                        person: false,
+                        employee: false,
 
                         lead: false,
                     }
@@ -722,8 +722,8 @@
             },
 
             created: function() {
-                @if ($email->person)
-                    this.email.person = @json($email->person);
+                @if ($email->employee)
+                    this.email.employee = @json($email->employee);
                 @endif
             },
 
@@ -738,10 +738,10 @@
                             self.$root.addServerErrors('lead-form');
                         });
                     } else {
-                        this.$root.openModal('addPersonModal');
+                        this.$root.openModal('addEmployeeModal');
 
                         setTimeout(() => {
-                            self.$root.addServerErrors('person-form');
+                            self.$root.addServerErrors('employee-form');
                         });
                     }
                 }
@@ -773,7 +773,7 @@
                 link: function(type, entity) {
                     var self = this;
 
-                    var data = (type == 'person') ? {'person_id': entity.id} : {'lead_id': entity.id};
+                    var data = (type == 'employee') ? {'employee_id': entity.id} : {'lead_id': entity.id};
 
                     this.$http.put("{{ route('mail.update', $email->id) }}", data)
                         .then (response => {
@@ -797,7 +797,7 @@
                 unlink: function(type) {
                     var self = this;
 
-                    var data = (type == 'person') ? {'person_id': null} : {'lead_id': null};
+                    var data = (type == 'employee') ? {'employee_id': null} : {'lead_id': null};
 
                     this.$http.put("{{ route('mail.update', $email->id) }}", data)
                         .then (response => {

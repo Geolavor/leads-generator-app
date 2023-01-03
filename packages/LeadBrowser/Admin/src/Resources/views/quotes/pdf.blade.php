@@ -123,7 +123,7 @@
                 </div>
 
                 <div class="row">
-                    <span class="label">{{ __('admin::app.quotes.sales-person') }} -</span>
+                    <span class="label">{{ __('admin::app.quotes.sales-employee') }} -</span>
                     <span class="value">{{ $quote->user->name }}</span>
                 </div>
 

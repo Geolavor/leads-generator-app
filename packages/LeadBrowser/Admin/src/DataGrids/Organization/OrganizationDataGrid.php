@@ -5,7 +5,7 @@ namespace LeadBrowser\Admin\DataGrids\Organization;
 use Carbon\Carbon;
 use LeadBrowser\Organization\Models\Email;
 use LeadBrowser\Organization\Models\Organization;
-use LeadBrowser\Organization\Repositories\PersonRepository;
+use LeadBrowser\Organization\Repositories\EmployeeRepository;
 use LeadBrowser\UI\DataGrid\DataGrid;
 use Illuminate\Support\Facades\DB;
 
@@ -19,22 +19,22 @@ class OrganizationDataGrid extends DataGrid
     protected $export;
 
    /**
-     * Person repository instance.
+     * Employee repository instance.
      *
-     * @var \LeadBrowser\Organization\Repositories\PersonRepository
+     * @var \LeadBrowser\Organization\Repositories\EmployeeRepository
      */
-    protected $personRepository;
+    protected $employeeRepository;
 
     /**
      * Create datagrid instance.
      *
      * @return void
      */
-    public function __construct(PersonRepository $personRepository)
+    public function __construct(EmployeeRepository $employeeRepository)
     {
         parent::__construct();
 
-        $this->personRepository = $personRepository;
+        $this->employeeRepository = $employeeRepository;
     }
 
     /**
@@ -204,18 +204,18 @@ class OrganizationDataGrid extends DataGrid
         ]);
 
         $this->addColumn([
-            'index'      => 'persons_count',
-            'label'      => trans('admin::app.datagrid.persons_count'),
+            'index'      => 'employees_count',
+            'label'      => trans('admin::app.datagrid.employees_count'),
             'type'       => 'string',
             'searchable' => false,
             'sortable'   => false,
             'filterable' => false,
             'closure'    => function ($row) {
-                $personsCount = $this->personRepository->findWhere(['organization_id' => $row->id])->count();
+                $employeesCount = $this->employeeRepository->findWhere(['organization_id' => $row->id])->count();
 
-                $route = urldecode(route('persons.index', ['organization[in]' => $row->id]));
+                $route = urldecode(route('employees.index', ['organization[in]' => $row->id]));
 
-                return "<a href='" . $route . "'>" . $personsCount . "</a>";
+                return "<a href='" . $route . "'>" . $employeesCount . "</a>";
             },
         ]);
 

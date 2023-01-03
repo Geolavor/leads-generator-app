@@ -549,8 +549,6 @@
 
                     var self = this;
 
-                    console.log(this.conditions);
-
                     matchedAttribute = this.conditions[this.entityType].filter(function (attribute) {
                         return attribute.id == self.condition.attribute;
                     });

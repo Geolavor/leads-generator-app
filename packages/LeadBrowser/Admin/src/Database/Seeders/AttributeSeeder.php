@@ -806,6 +806,24 @@ class AttributeSeeder extends Seeder
                 'is_visible'      => '2',
                 'created_at'      => $now,
                 'updated_at'      => $now,
+            ], [
+                'id'              => '45',
+                'code'            => 'website',
+                'name'            => 'Website',
+                'info'            => '',
+                'type'            => 'checkbox',
+                'entity_type'     => 'search_locations',
+                'lookup_type'     => NULL,
+                'validation'      => NULL,
+                'sort_order'      => '4',
+                'is_required'     => '',
+                'is_unique'       => '0',
+                'quick_add'       => '1',
+                'is_user_defined' => '0',
+                'class'           => 'col-sm-12 col-md-6',
+                'is_visible'      => '2',
+                'created_at'      => $now,
+                'updated_at'      => $now,
             ]
         ]);
     }

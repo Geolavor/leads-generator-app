@@ -6337,11 +6337,11 @@ body.top-banner .banner {
   content: "\f377";
 }
 
-.bi-file-earmark-employee-fill::before {
+.bi-file-earmark-person-fill::before {
   content: "\f378";
 }
 
-.bi-file-earmark-employee::before {
+.bi-file-earmark-person::before {
   content: "\f379";
 }
 
@@ -6521,11 +6521,11 @@ body.top-banner .banner {
   content: "\f3a5";
 }
 
-.bi-file-employee-fill::before {
+.bi-file-person-fill::before {
   content: "\f3a6";
 }
 
-.bi-file-employee::before {
+.bi-file-person::before {
   content: "\f3a7";
 }
 
@@ -7721,67 +7721,67 @@ body.top-banner .banner {
   content: "\f4d1";
 }
 
-.bi-employee-badge-fill::before {
+.bi-person-badge-fill::before {
   content: "\f4d2";
 }
 
-.bi-employee-badge::before {
+.bi-person-badge::before {
   content: "\f4d3";
 }
 
-.bi-employee-bounding-box::before {
+.bi-person-bounding-box::before {
   content: "\f4d4";
 }
 
-.bi-employee-check-fill::before {
+.bi-person-check-fill::before {
   content: "\f4d5";
 }
 
-.bi-employee-check::before {
+.bi-person-check::before {
   content: "\f4d6";
 }
 
-.bi-employee-circle::before {
+.bi-person-circle::before {
   content: "\f4d7";
 }
 
-.bi-employee-dash-fill::before {
+.bi-person-dash-fill::before {
   content: "\f4d8";
 }
 
-.bi-employee-dash::before {
+.bi-person-dash::before {
   content: "\f4d9";
 }
 
-.bi-employee-fill::before {
+.bi-person-fill::before {
   content: "\f4da";
 }
 
-.bi-employee-lines-fill::before {
+.bi-person-lines-fill::before {
   content: "\f4db";
 }
 
-.bi-employee-plus-fill::before {
+.bi-person-plus-fill::before {
   content: "\f4dc";
 }
 
-.bi-employee-plus::before {
+.bi-person-plus::before {
   content: "\f4dd";
 }
 
-.bi-employee-square::before {
+.bi-person-square::before {
   content: "\f4de";
 }
 
-.bi-employee-x-fill::before {
+.bi-person-x-fill::before {
   content: "\f4df";
 }
 
-.bi-employee-x::before {
+.bi-person-x::before {
   content: "\f4e0";
 }
 
-.bi-employee::before {
+.bi-person::before {
   content: "\f4e1";
 }
 
@@ -9401,23 +9401,23 @@ body.top-banner .banner {
   content: "\f675";
 }
 
-.bi-employee-rolodex::before {
+.bi-person-rolodex::before {
   content: "\f676";
 }
 
-.bi-employee-video::before {
+.bi-person-video::before {
   content: "\f677";
 }
 
-.bi-employee-video2::before {
+.bi-person-video2::before {
   content: "\f678";
 }
 
-.bi-employee-video3::before {
+.bi-person-video3::before {
   content: "\f679";
 }
 
-.bi-employee-workspace::before {
+.bi-person-workspace::before {
   content: "\f67a";
 }
 
@@ -10437,11 +10437,11 @@ body.top-banner .banner {
   content: "\f779";
 }
 
-.bi-employee-heart::before {
+.bi-person-heart::before {
   content: "\f77a";
 }
 
-.bi-employee-hearts::before {
+.bi-person-hearts::before {
   content: "\f77b";
 }
 
@@ -11589,71 +11589,71 @@ body.top-banner .banner {
   content: "\f899";
 }
 
-.bi-employee-add::before {
+.bi-person-add::before {
   content: "\f89a";
 }
 
-.bi-employee-down::before {
+.bi-person-down::before {
   content: "\f89b";
 }
 
-.bi-employee-exclamation::before {
+.bi-person-exclamation::before {
   content: "\f89c";
 }
 
-.bi-employee-fill-add::before {
+.bi-person-fill-add::before {
   content: "\f89d";
 }
 
-.bi-employee-fill-check::before {
+.bi-person-fill-check::before {
   content: "\f89e";
 }
 
-.bi-employee-fill-dash::before {
+.bi-person-fill-dash::before {
   content: "\f89f";
 }
 
-.bi-employee-fill-down::before {
+.bi-person-fill-down::before {
   content: "\f8a0";
 }
 
-.bi-employee-fill-exclamation::before {
+.bi-person-fill-exclamation::before {
   content: "\f8a1";
 }
 
-.bi-employee-fill-gear::before {
+.bi-person-fill-gear::before {
   content: "\f8a2";
 }
 
-.bi-employee-fill-lock::before {
+.bi-person-fill-lock::before {
   content: "\f8a3";
 }
 
-.bi-employee-fill-slash::before {
+.bi-person-fill-slash::before {
   content: "\f8a4";
 }
 
-.bi-employee-fill-up::before {
+.bi-person-fill-up::before {
   content: "\f8a5";
 }
 
-.bi-employee-fill-x::before {
+.bi-person-fill-x::before {
   content: "\f8a6";
 }
 
-.bi-employee-gear::before {
+.bi-person-gear::before {
   content: "\f8a7";
 }
 
-.bi-employee-lock::before {
+.bi-person-lock::before {
   content: "\f8a8";
 }
 
-.bi-employee-slash::before {
+.bi-person-slash::before {
   content: "\f8a9";
 }
 
-.bi-employee-up::before {
+.bi-person-up::before {
   content: "\f8aa";
 }
 
@@ -11773,11 +11773,11 @@ body.top-banner .banner {
   content: "\f8c7";
 }
 
-.bi-employee-vcard-fill::before {
+.bi-person-vcard-fill::before {
   content: "\f8c8";
 }
 
-.bi-employee-vcard::before {
+.bi-person-vcard::before {
   content: "\f8c9";
 }
 

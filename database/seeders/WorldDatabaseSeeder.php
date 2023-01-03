@@ -11,8 +11,12 @@ class WorldDatabaseSeeder extends Seeder
 	{
 		ini_set('memory_limit', '152M');
 
-		$path = public_path('/database/world.sql');
-        $sql = file_get_contents($path);
-        DB::unprepared($sql);
+		$tables = ['world.sql', 'cities.sql'];
+
+		foreach ($tables as $key => $table) {
+			$path = public_path('/database/' . $table);
+			$sql = file_get_contents($path);
+			DB::unprepared($sql);
+		}
 	}
 }

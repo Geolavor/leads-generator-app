@@ -58,7 +58,7 @@ return [
         'is-done'               => 'Is Done',
         'role'                  => 'Role',
         'risk-value'            => 'Risk value',
-        'workers'               => 'Workers',
+        'employees'               => 'Employees',
         'size'                  => 'Size',
         'filter'                => [
             'remove_all'    => 'Remove All',

@@ -213,7 +213,7 @@ class Organization extends Model implements ContractsOrganization
         return $t1->diff($t2);
     }
 
-    public function getPreparedCountWorkersAttribute()
+    public function getPreparedCountEmployeesAttribute()
     {
         $persons = $this->persons()->count();
 
@@ -223,7 +223,7 @@ class Organization extends Model implements ContractsOrganization
     }
 
 
-    public function getCountWorkersAttribute()
+    public function getCountEmployeesAttribute()
     {
         return $this->persons()->count();
     }

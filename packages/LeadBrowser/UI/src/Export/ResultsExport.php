@@ -44,7 +44,7 @@ class ResultsExport implements FromQuery, WithMapping, WithHeadings
             'Phone',
             'Emails',
             'Taxs',
-            'Workers',
+            'Employees',
             'Socials',
             'Technology',
             'Domain created',
@@ -60,17 +60,17 @@ class ResultsExport implements FromQuery, WithMapping, WithHeadings
     */
     public function map($result): array
     {
-        $workers = Person::where('organization_id', $result->organization_id)->get();
-        $workers_data = [];
-        foreach ($workers as $item) {
+        $employees = Person::where('organization_id', $result->organization_id)->get();
+        $employees_data = [];
+        foreach ($employees as $item) {
             $w_emails = [];
             foreach ($item->emails as $e) {
                 array_push($w_emails, $e['value']);
             }
             $w_emails_data = implode('| ', $w_emails);
-            array_push($workers_data, $item->name . '|' . $item->role . '|' . $w_emails_data);
+            array_push($employees_data, $item->name . '|' . $item->role . '|' . $w_emails_data);
         }
-        $workers_data = implode(', ', $workers_data);
+        $employees_data = implode(', ', $employees_data);
 
         $emails = Email::where('organization_id', $result->organization_id)->get();
         $emails_data = [];
@@ -128,7 +128,7 @@ class ResultsExport implements FromQuery, WithMapping, WithHeadings
             $result->organization->formatted_phone_number,
             $emails_data,
             $tax_list,
-            $workers_data,
+            $employees_data,
             $socials_data,
             $technologies_data,
             $result->organization->domain_created,

@@ -13,7 +13,7 @@ use LeadBrowser\Admin\Http\Controllers\Controller;
 use LeadBrowser\Core\Models\City;
 use LeadBrowser\Core\Models\Country;
 use LeadBrowser\Extractor\Services\Extractor;
-use LeadBrowser\Extractor\Traits\Email\LinkedinExtractor;
+use LeadBrowser\Extractor\Traits\LinkedinExtractor;
 use LeadBrowser\Payment\Models\Plan;
 use LeadBrowser\Extractor\Services\Crawler;
 use LeadBrowser\Organization\Models\Organization;
@@ -38,6 +38,29 @@ class SystemController extends Controller
     {
         ini_set('memory_limit', '1512M');
         ini_set('max_execution_time', '18880');
+
+        // Population
+        $row = 1;
+        if (($handle = fopen("/Users/mariusz/Desktop/leadbrowser/app/public/database/worldcities.csv", "r")) !== FALSE) {
+            while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+
+                $position = $data;
+
+                if ($position[9]) {
+                    $city = City::where('name', $position[0])->first();
+                    if ($city && !$city->population) {
+                        $city->population = $position[9];
+                        $city->save();
+
+                        echo "City: " . $row;
+                    }
+                }
+
+                $row++;
+            }
+            fclose($handle);
+        }
+        return;
 
         $row = 1;
         if (($handle = fopen("/Users/mariusz/Desktop/0.csv", "r")) !== FALSE) {

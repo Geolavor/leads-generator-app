@@ -196,14 +196,14 @@ class ResultDataGrid extends DataGrid
         ]);
 
         $this->addColumn([
-            'index'    => 'workers',
-            'label'    => trans('admin::app.datagrid.workers'),
+            'index'    => 'employees',
+            'label'    => trans('admin::app.datagrid.employees'),
             'type'     => 'string',
             'sortable' => true,
             'closure'  => function ($row) {
                 $organization = Organization::findOrFail($row->organization_id);
 
-                return $organization->prepared_count_workers;
+                return $organization->prepared_count_employees;
             }
         ]);
 

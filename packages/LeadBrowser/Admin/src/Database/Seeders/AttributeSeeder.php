@@ -790,8 +790,8 @@ class AttributeSeeder extends Seeder
                 'updated_at'      => $now,
             ], [
                 'id'              => '44',
-                'code'            => 'workers',
-                'name'            => 'Workers',
+                'code'            => 'employees',
+                'name'            => 'Employees',
                 'info'            => '',
                 'type'            => 'checkbox',
                 'entity_type'     => 'search_locations',

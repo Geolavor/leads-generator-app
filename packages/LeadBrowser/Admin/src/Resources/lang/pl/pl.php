@@ -134,7 +134,7 @@
             'details'        => 'Szczegóły',
             'reviews'        => 'Opinie',
             'similar'        => 'Podobne firmy',
-            'workers'        => 'Pracownicy',
+            'employees'        => 'Pracownicy',
             'technology'     => 'Technologie',
             'news'           => 'Wiadomości',
             'timeline'       => 'Oś czasu',
@@ -190,7 +190,7 @@
             'details'                  => 'Details',
             'reviews'                  => 'Reviews',
             'similar'                  => 'Similar companies',
-            'workers'                  => 'Workers'
+            'employees'                  => 'Employees'
         ],
 
         'leads' => [
@@ -876,7 +876,7 @@
             'role'                => 'Role',
             'location'            => 'Location',
             'risk-value'          => 'Risk value',
-            'workers'             => 'Workers',
+            'employees'             => 'Employees',
             'size_range'          => 'Size range',
             'size'                => 'Size',
             'filters'             => [

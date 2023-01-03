@@ -99,12 +99,12 @@
             <!-- Card -->
             <div class="card h-100">
                 <div class="card-body">
-                    <h6 class="card-subtitle mb-2">Total workers</h6>
+                    <h6 class="card-subtitle mb-2">Total employees</h6>
 
                     <div class="row align-items-center gx-2">
                         <div class="col">
                             <span class="js-counter display-4 text-dark"
-                                data-value="24">{{ $result->organization->count_workers }}</span>
+                                data-value="24">{{ $result->organization->count_employees }}</span>
                             <!-- <span class="text-body fs-5 ms-1">from 22</span> -->
                         </div>
                         <!-- End Col -->
@@ -458,7 +458,7 @@
                         </div>
                     </tab>
 
-                    <tab name="{{ __('admin::app.organizations.workers') }}" :selected="false">
+                    <tab name="{{ __('admin::app.organizations.employees') }}" :selected="false">
                         <div class="row row-cols-1 row-cols-md-2 g-4">
                             @foreach ($result->organization->persons as $person)
                             <div class="col">

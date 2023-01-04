@@ -16,6 +16,8 @@ class CreateNamesTable extends Migration
         Schema::create('names', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->json('synonyms');
+            $table->integer('score_synonym');
             $table->timestamps();
         });
     }

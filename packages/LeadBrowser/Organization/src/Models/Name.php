@@ -11,7 +11,7 @@ class Name extends Model implements NameContract
     protected $table = 'names';
 
     protected $fillable = [
-        'id', 'name'
+        'id', 'name', 'synonyms', 'score_synonym'
     ];
 
     protected $casts = [

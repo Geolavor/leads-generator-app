@@ -219,6 +219,7 @@ class Organization extends Model implements ContractsOrganization
 
         $text = '+' . $employees;
 
+        // return '<div class="col-auto"><div class="flex-shrink-0"><div class="avatar-group avatar-group-xs"><div class="avatar avatar-xs avatar-circle"><img src="https://htmlstream.com/front/assets/img/160x160/img1.jpg" alt="Image Description" class="avatar-img"></div> <div class="avatar avatar-xs avatar-circle"><img src="https://htmlstream.com/front/assets/img/160x160/img1.jpg" alt="Image Description" class="avatar-img"></div></div></div></div>';
         return $employees ? "<span class='badge badge-primary'><small>" . $text . "</small></span>" : null;
     }
 

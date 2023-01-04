@@ -23,8 +23,18 @@
                         v-validate="validations"
                         data-vv-as="&quot;{{ __('admin::app.common.city') }}&quot;"
                     />
+                    <div class="list dropdown-menu navbar-dropdown-menu-borderless w-100 overflow-auto" style="max-height: 16rem; display: block; opacity: 1.03;">
+                        <div class="dropdown-item">
+                            <a class="d-block link" href="./offcanvas.html">
+                            <span class="category d-block fw-normal text-muted mb-1">Components</span>
+                            <span class="component text-dark">Offcanvas</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <span>Or search by select</span>
 
             <div class="row">
 

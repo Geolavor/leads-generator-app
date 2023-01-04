@@ -21,6 +21,7 @@ use LeadBrowser\Search\Models\SearchLocations;
 use LeadBrowser\Search\Services\SearchService;
 use Illuminate\Support\Facades\DB;
 use Symfony\Component\DomCrawler\Crawler as DomCrawler;
+use LeadBrowser\Extractor\Classes\Browser;
 
 class SystemController extends Controller
 {
@@ -36,6 +37,10 @@ class SystemController extends Controller
 
     public function index()
     {
+        $browser = new Browser;
+        $c = $browser->fetch('test');
+        dd($c);
+
         ini_set('memory_limit', '1512M');
         ini_set('max_execution_time', '18880');
 

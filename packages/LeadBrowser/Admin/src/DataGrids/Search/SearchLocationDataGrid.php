@@ -106,7 +106,7 @@ class SearchLocationDataGrid extends DataGrid
                 }
 
                 if(isset($location->city)) {
-                    $value = City::findOrFail($location->city);
+                    $value = City::where('name', $location->city)->first();
                 }
 
                 if ($value) {

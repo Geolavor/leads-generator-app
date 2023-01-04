@@ -157,28 +157,6 @@ return [
         'route' => ['search.websites.delete', 'search.websites.mass_delete'],
         'sort'  => 4,
     ],
-    
-    [
-        'key'   => 'search.analyze',
-        'name'  => 'admin::app.acl.analyze',
-        'route' => 'analyze.email.create',
-        'sort'  => 3,
-    ], [
-        'key'   => 'search.analyze.email',
-        'name'  => 'admin::app.acl.email',
-        'route' => ['analyze.email.create', 'analyze.email.store'],
-        'sort'  => 1,
-    ], [
-        'key'   => 'search.analyze.website',
-        'name'  => 'admin::app.acl.website',
-        'route' => ['analyze.website.create', 'analyze.website.store'],
-        'sort'  => 1,
-    ], [
-        'key'   => 'search.analyze.phone',
-        'name'  => 'admin::app.acl.phone',
-        'route' => ['analyze.phone.create', 'analyze.phone.store'],
-        'sort'  => 1,
-    ],
     /*
     |--------------------------------------------------------------------------
     | Results

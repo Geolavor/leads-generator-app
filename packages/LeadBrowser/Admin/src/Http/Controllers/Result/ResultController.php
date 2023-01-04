@@ -90,7 +90,7 @@ class ResultController extends Controller
             'organization.reviews', 'organization.employees'
         ])->findOrFail($id);
 
-        $result->archive = $result->organization->archive;
+        $result->archive = $result->organization->archive ?? [];
 
         $emails = Email::where('organization_id', $result->organization_id)->get();
 

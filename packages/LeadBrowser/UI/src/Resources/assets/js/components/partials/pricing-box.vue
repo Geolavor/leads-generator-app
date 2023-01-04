@@ -25,15 +25,15 @@
                         class="btn-check"
                         name="btnradio"
                         id="btnradio2"
-                        :check="checkValue('analyze')"
+                        :check="checkValue('database')"
                     >
 
                     <label
-                        @click="active = 'analyze'"
+                        @click="active = 'database'"
                         class="btn btn-sm"
                         for="btnradio2"
                     >
-                    Analyze data
+                    Database data
                     </label>
                 </div>
             </div>
@@ -48,7 +48,7 @@
                         <span>per one data pack*</span>
                     </span>
                 </div>
-                <div class="flex-grow-0 ms-3" v-if="active === 'analyze'">
+                <div class="flex-grow-0 ms-3" v-if="active === 'database'">
                     <span class="text-dark">
                         <span class="fs-5 align-top text-dark fw-semi-bold">$</span>
                         <span class="display-3 text-dark fw-semi-bold">0,000</span>

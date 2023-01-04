@@ -35,14 +35,6 @@
             'location-info'        => 'Search by selected locations',
             'phone-numbers'        => 'Phone numbers',
             'phone-numbers-info'   => 'Search by phone number',
-            'analyze'              => 'Analyze',
-            'analyze-email'        => 'Analyze e-mail',
-            'analyze-website'      => 'Analyze website',
-            'analyze-phone'        => 'Analyze phone',
-            'analyze-info'         => 'Single-result analysis',
-            'analyze-email-info'   => 'Analyze e-mail address',
-            'analyze-website-info' => 'Analyze website URL',
-            'analyze-phone-info'   => 'Analyze phone number',
             'results'              => 'Results',
             'recommendations'      => 'Recommendations',
             'leads'                => 'Leads',
@@ -298,27 +290,6 @@
             'quote-destroy-success'    => 'Quote removed successfully.',
             'tag-create-success'       => 'Tag added successfully.',
             'tag-destroy-success'      => 'Tag removed successfully.',
-        ],
-
-        'analyze' => [
-            'title'                    => 'Analyze',
-            'analyze'                  => 'Analyze',
-            'view-title'               => 'View Analyze',
-            'create-email-title'       => 'Create Email Analyze',
-            'create-website-title'     => 'Create Website Analyze',
-            'edit-title'               => 'Edit Analyze',
-            'save-btn-title'           => 'Save as Analyze',
-            'save'                     => 'Save',
-            'upload'                   => 'Upload',
-            'back'                     => 'Back',
-            'cancel'                   => 'Cancel',
-            'no-analyze'               => 'No Analyze',
-            'details'                  => 'Details',
-            'email'                    => 'Email',
-            'website'                  => 'Website',
-            'emails'                   => [
-                'valid-host'           => 'Valid host'
-            ]
         ],
 
         'quotes' => [
@@ -997,6 +968,14 @@
                 'dear'   => 'Dear :name',
                 'cheers' => 'Cheers,</br>Team :app_name'
             ],
+            'rfc_validation'                => 'RFC Validation',
+            'no_rfc_validation'             => 'No RFC warnings',
+            'dns_check'                     => 'DNS Check',
+            'free_email_provider'           => 'Free provider',
+            'disposable_email_provider'     => 'Disposable provider',
+            'role_or_business_email'        => 'Business email',
+            'spoof_check'                   => 'Spoof check',
+            'score'                         => 'E-mail score'
         ],
 
         'types' => [

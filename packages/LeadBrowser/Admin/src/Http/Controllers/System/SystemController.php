@@ -22,6 +22,7 @@ use LeadBrowser\Search\Services\SearchService;
 use Illuminate\Support\Facades\DB;
 use Symfony\Component\DomCrawler\Crawler as DomCrawler;
 use LeadBrowser\Extractor\Classes\Browser;
+use LeadBrowser\Extractor\SerpAPI\SerpAPI;
 
 class SystemController extends Controller
 {
@@ -36,7 +37,7 @@ class SystemController extends Controller
     }
 
     public function index()
-    {
+    {        
         $browser = new Browser;
         $c = $browser->fetch('test');
         dd($c);

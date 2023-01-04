@@ -329,51 +329,6 @@ Route::group(['middleware' => ['web']], function () {
 
         });
 
-
-        // Analyze Routes
-        Route::group([
-            'prefix'    => 'analyze',
-            'namespace' => 'LeadBrowser\Admin\Http\Controllers\Analyze'
-        ], function () {  
-
-            // Email Routes
-            Route::prefix('email')->group(function () {
-
-                Route::get('create/{id?}', 'AnalyzeEmailController@create')->name('analyze.email.create');
-
-                Route::post('create', 'AnalyzeEmailController@store')->name('analyze.email.store');
-
-                Route::get('view', 'AnalyzeEmailController@view')->name('analyze.email.view');
-
-                Route::post('transfer', 'AnalyzeEmailController@transfer')->name('analyze.email.transfer');
-            
-            });
-
-            // Website Routes
-            Route::prefix('website')->group(function () {
-
-                Route::get('create/{id?}', 'AnalyzeWebsiteController@create')->name('analyze.website.create');
-
-                Route::post('create', 'AnalyzeWebsiteController@store')->name('analyze.website.store');
-
-                // Route::get('view', 'AnalyzeWebsiteController@view')->name('analyze.website.view');
-
-                Route::post('transfer', 'AnalyzeWebsiteController@transfer')->name('analyze.website.transfer');
-            });
-
-            // Phone Routes
-            Route::prefix('phone')->group(function () {
-
-                Route::get('create/{id?}', 'AnalyzePhoneController@create')->name('analyze.phone.create');
-
-                Route::post('create', 'AnalyzePhoneController@store')->name('analyze.phone.store');
-
-                Route::get('view', 'AnalyzePhoneController@view')->name('analyze.phone.view');
-            
-            });
-
-        });
-
         // Leads Routes
         Route::group([
             'prefix'    => 'quotes',

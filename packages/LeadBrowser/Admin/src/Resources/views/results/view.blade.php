@@ -334,22 +334,22 @@
 
                                                 <template #popper>
                                                     <ul class="list-unstyled list-py-1 mb-0 p-2">
-                                                        <li>{{ __('admin::app.analyze.emails.rfc_validation') }}?
+                                                        <li>{{ __('admin::app.emails.rfc_validation') }}?
                                                             {{ $item['rfc_validation'] == 1 ? 'Yes' : 'No' }} </li>
-                                                        <li>{{ __('admin::app.analyze.emails.no_rfc_validation') }}?
+                                                        <li>{{ __('admin::app.emails.no_rfc_validation') }}?
                                                             {{ $item['no_rfc_validation'] == 1 ? 'Yes' : 'No' }}</li>
-                                                        <li>{{ __('admin::app.analyze.emails.dns_check') }}?
+                                                        <li>{{ __('admin::app.emails.dns_check') }}?
                                                             {{ $item['dns_check'] == 1 ? 'Yes' : 'No' }}
                                                         </li>
-                                                        <li>{{ __('admin::app.analyze.emails.free_email_provider') }}?
+                                                        <li>{{ __('admin::app.emails.free_email_provider') }}?
                                                             {{ $item['free_email_provider'] == 1 ? 'Yes' : 'No' }}</li>
-                                                        <li>{{ __('admin::app.analyze.emails.disposable_email_provider') }}?
+                                                        <li>{{ __('admin::app.emails.disposable_email_provider') }}?
                                                             {{ $item['disposable_email_provider'] == 1 ? 'Yes' : 'No' }}
                                                         </li>
-                                                        <li>{{ __('admin::app.analyze.emails.role_or_business_email') }}?
+                                                        <li>{{ __('admin::app.emails.role_or_business_email') }}?
                                                             {{ $item['role_or_business_email'] == 1 ? 'Yes' : 'No' }}
                                                         </li>
-                                                        <li>{{ __('admin::app.analyze.emails.spoof_check') }}?
+                                                        <li>{{ __('admin::app.emails.spoof_check') }}?
                                                             <b>{{ $item['spoof_check'] == 1 ? 'Yes' : 'No' }}</b></li>
                                                     </ul>
                                                 </template>
@@ -518,18 +518,18 @@
 
                                                     <template #popper>
                                                         <ul class="list-unstyled list-py-1 mb-0 p-2">
-                                                            <li>{{ __('admin::app.analyze.emails.rfc_validation') }}? Yes</li>
-                                                            <li>{{ __('admin::app.analyze.emails.no_rfc_validation') }}? Yes
+                                                            <li>{{ __('admin::app.emails.rfc_validation') }}? Yes</li>
+                                                            <li>{{ __('admin::app.emails.no_rfc_validation') }}? Yes
                                                             </li>
-                                                            <li>{{ __('admin::app.analyze.emails.dns_check') }}?
+                                                            <li>{{ __('admin::app.emails.dns_check') }}?
                                                                 Yes</li>
-                                                            <li>{{ __('admin::app.analyze.emails.free_email_provider') }}?
+                                                            <li>{{ __('admin::app.emails.free_email_provider') }}?
                                                                 Yes</li>
-                                                            <li>{{ __('admin::app.analyze.emails.disposable_email_provider') }}?
+                                                            <li>{{ __('admin::app.emails.disposable_email_provider') }}?
                                                                 Yes</li>
-                                                            <li>{{ __('admin::app.analyze.emails.role_or_business_email') }}?
+                                                            <li>{{ __('admin::app.emails.role_or_business_email') }}?
                                                                 Yes</li>
-                                                            <li>{{ __('admin::app.analyze.emails.spoof_check') }}? Yes</li>
+                                                            <li>{{ __('admin::app.emails.spoof_check') }}? Yes</li>
                                                         </ul>
                                                     </template>
                                                 </v-menu>

@@ -36,14 +36,6 @@
             'phone-numbers-info'   => 'Bulk search data by companies phone numbers',
             'websites'             => 'Websites',
             'websites-info'        => 'Bulk search data in websites',
-            'analyze'              => 'Analyze',
-            'analyze-email'        => 'Analyze e-mail',
-            'analyze-website'      => 'Analyze website',
-            'analyze-phone'        => 'Analyze phone',
-            'analyze-info'         => 'Single-result analysis in real-time',
-            'analyze-email-info'   => 'Analyze e-mail address',
-            'analyze-website-info' => 'Analyze website data',
-            'analyze-phone-info'   => 'Analyze phone number',
             'results'              => 'Results',
             'recommendations'      => 'Recommendations',
             'crm'                  => 'CRM',
@@ -330,36 +322,6 @@
             'quote-destroy-success'    => 'Quote removed successfully.',
             'tag-create-success'       => 'Tag added successfully.',
             'tag-destroy-success'      => 'Tag removed successfully.',
-        ],
-
-        'analyze' => [
-            'title'                    => 'Analyze',
-            'analyze'                  => 'Analyze',
-            'view-title'               => 'View Analyze',
-            'create-email-title'       => 'Create Email Analyze',
-            'create-website-title'     => 'Create Website Analyze',
-            'create-phone-title'       => 'Create Phone Analyze',
-            'edit-title'               => 'Edit Analyze',
-            'save-btn-title'           => 'Save as Analyze',
-            'save'                     => 'Save',
-            'upload'                   => 'Upload',
-            'back'                     => 'Back',
-            'cancel'                   => 'Cancel',
-            'no-analyze'               => 'No Analyze',
-            'details'                  => 'Details',
-            'email'                    => 'Email',
-            'website'                  => 'Website',
-            'emails'                   => [
-                'rfc_validation'                => 'RFC Validation',
-                'no_rfc_validation'             => 'No RFC warnings',
-                'dns_check'                     => 'DNS Check',
-                'free_email_provider'           => 'Free provider',
-                'disposable_email_provider'     => 'Disposable provider',
-                'role_or_business_email'        => 'Business email',
-                'spoof_check'                   => 'Spoof check',
-                'score'                         => 'E-mail score'
-            ],
-            'phone'                    => 'Phone'
         ],
 
         'quotes' => [
@@ -1171,7 +1133,6 @@
             'export'            => 'Export',
             'buy-mass'          => 'Buy selected',
             'mass-delete'       => 'Mass Delete',
-            'analyze'                  => 'Analyze',
             'search'                   => 'Search',
             'sales'                    => 'Sales',
             'cancel'                   => 'Cancel',
@@ -1282,6 +1243,14 @@
                 'dear'   => 'Dear :name',
                 'cheers' => 'Cheers,</br>Team :app_name'
             ],
+            'rfc_validation'                => 'RFC Validation',
+            'no_rfc_validation'             => 'No RFC warnings',
+            'dns_check'                     => 'DNS Check',
+            'free_email_provider'           => 'Free provider',
+            'disposable_email_provider'     => 'Disposable provider',
+            'role_or_business_email'        => 'Business email',
+            'spoof_check'                   => 'Spoof check',
+            'score'                         => 'E-mail score'
         ],
 
         'types' => [

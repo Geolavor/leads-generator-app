@@ -32,3 +32,4 @@ package-lock.json
 /vendor
 /packages/LeadBrowser/Search/
 /packages/LeadBrowser/Extractor/
+/packages/LeadBrowser/QLinkedin/

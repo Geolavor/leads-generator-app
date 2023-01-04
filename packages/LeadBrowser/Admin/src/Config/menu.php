@@ -77,37 +77,6 @@ return [
         'sort'       => 2,
         'icon-class' => 'bi-phone',
     ], [
-        'key'        => 'search.analyze',
-        'name'       => 'admin::app.layouts.analyze',
-        'info'       => 'admin::app.layouts.analyze-info',
-        'route'      => 'analyze.email.create',
-        'sort'       => 3,
-        'icon-class' => 'bi-diagram-2',
-    ], [
-        'key'        => 'search.analyze.email',
-        'name'       => 'admin::app.layouts.email',
-        'info'       => 'admin::app.layouts.analyze-email-info',
-        'route'      => 'analyze.email.create',
-        'sort'       => 3,
-        'icon-class' => 'bi-envelope-check',
-        'free'       => true
-    ],  [
-        'key'        => 'search.analyze.website',
-        'name'       => 'admin::app.layouts.website',
-        'info'       => 'admin::app.layouts.analyze-website-info',
-        'route'      => 'analyze.website.create',
-        'sort'       => 3,
-        'icon-class' => 'bi-file-medical',
-        'free'       => true
-    ], [
-        'key'        => 'search.analyze.phone',
-        'name'       => 'admin::app.layouts.phone',
-        'info'       => 'admin::app.layouts.analyze-phone-info',
-        'route'      => 'analyze.phone.create',
-        'sort'       => 3,
-        'icon-class' => 'bi-telephone',
-    ],
-    [
         'key'        => 'results',
         'name'       => 'admin::app.layouts.results',
         'route'      => 'results.index',

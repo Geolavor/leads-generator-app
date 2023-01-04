@@ -5,6 +5,7 @@
 @stop
 
 @section('content-wrapper')
+
     <div class="content full-page dashboard">
         <h1>{{ __('admin::app.dashboard.title') }}</h1>
 
@@ -13,6 +14,48 @@
         <selected-cards-filter></selected-cards-filter>
 
         {!! view_render_event('dashboard.index.filter.after') !!}
+
+        <div class="card" style="background: azure;">
+            <div class="card-body">
+                <div class="row col-md-divider align-items-md-center">
+                    <div class="col-md-9">
+                        <h3>Bonus for you</h3>
+                        <p>With each search, you will also get it completely free of charge if the data is available online.</p>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <!-- List Checked -->
+                                <ul class="list-checked list-checked-bg-success list-checked-sm mb-0">
+                                    <li class="list-checked-item">E-mails verification</li>
+                                    <li class="list-checked-item">Company rating</li>
+                                </ul>
+                                <!-- End List Checked -->
+                            </div>
+                            <!-- End Col -->
+
+                            <div class="col-sm-6">
+                                <!-- List Checked -->
+                                <ul class="list-checked list-checked-bg-success list-checked-sm mb-0">
+                                    <li class="list-checked-item">Employes data <span
+                                            class="badge bg-soft-secondary text-dark rounded-pill ms-1">Beta</span></li>
+                                    <li class="list-checked-item">Risk value</li>
+                                </ul>
+                                <!-- End List Checked -->
+                            </div>
+                            <!-- End Col -->
+                        </div>
+                        <!-- End Row -->
+                    </div>
+                    <div class="col-md-3">
+                        <div class="ps-md-2">
+                            <h4>API</h4>
+                            <p>You can use this functionality through our API.</p>
+                            <a class="link" href="https://mariuszmalek.notion.site/API-v1-5a61fbeb57f54b72adc81b4f9af62acd" target="_blank">Get Started <i class="bi-chevron-right small ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
         {!! view_render_event('dashboard.index.cards.before') !!}

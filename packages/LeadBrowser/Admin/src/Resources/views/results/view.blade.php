@@ -650,7 +650,7 @@
                             <div class="card card-bordered h-100">
                                 <div class="card-body">
                                     <ul class="list-comment">
-                                        @if(isset($result->archive))
+                                        @if(isset($result->archive) && is_array($result->archive) && count($result->archive) >= 1)
                                             @foreach ($result->archive as $item)
                                                 <li class="list-comment-item">
                                                     <!-- Media -->

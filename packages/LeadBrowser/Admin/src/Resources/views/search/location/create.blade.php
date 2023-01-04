@@ -20,48 +20,6 @@
 
         {!! view_render_event('search.location.create.header.after') !!}
 
-        <div class="card" style="background: azure;">
-            <div class="card-body">
-                <div class="row col-md-divider align-items-md-center">
-                    <div class="col-md-9">
-                        <h3>Bonus for you</h3>
-                        <p>With each search, you will also get it completely free of charge if the data is available online.</p>
-
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <!-- List Checked -->
-                                <ul class="list-checked list-checked-bg-success list-checked-sm mb-0">
-                                    <li class="list-checked-item">E-mails verification</li>
-                                    <li class="list-checked-item">Company rating</li>
-                                </ul>
-                                <!-- End List Checked -->
-                            </div>
-                            <!-- End Col -->
-
-                            <div class="col-sm-6">
-                                <!-- List Checked -->
-                                <ul class="list-checked list-checked-bg-success list-checked-sm mb-0">
-                                    <li class="list-checked-item">Employes data <span
-                                            class="badge bg-soft-secondary text-dark rounded-pill ms-1">Beta</span></li>
-                                    <li class="list-checked-item">Risk value</li>
-                                </ul>
-                                <!-- End List Checked -->
-                            </div>
-                            <!-- End Col -->
-                        </div>
-                        <!-- End Row -->
-                    </div>
-                    <div class="col-md-3">
-                        <div class="ps-md-2">
-                            <h4>API</h4>
-                            <p>You can use this functionality through our API.</p>
-                            <a class="link" href="https://mariuszmalek.notion.site/API-v1-5a61fbeb57f54b72adc81b4f9af62acd" target="_blank">Get Started <i class="bi-chevron-right small ms-1"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <form id="form" method="POST" action="{{ route('search.location.store') }}" @submit.prevent="onSubmit" enctype="multipart/form-data">
 
             <div class="page-content">
@@ -71,30 +29,35 @@
 
                         <div class="panel-body">
 
-                            @csrf()
+                            <div class="row">
+                                <div class="col-6 col-sm-12 col-md-6 col-lg-6">
+                                    @csrf()
 
-                            @include('admin::common.custom-attributes.edit', [
-                                'customAttributes' => app('LeadBrowser\Attribute\Repositories\AttributeRepository')->findWhere([
-                                    'entity_type' => 'search_locations',
-                                ]),
-                            ])
+                                    @include('admin::common.custom-attributes.edit', [
+                                        'customAttributes' => app('LeadBrowser\Attribute\Repositories\AttributeRepository')->findWhere([
+                                            'entity_type' => 'search_locations',
+                                        ]),
+                                    ])
 
-                            <workflow-component></workflow-component>
+                                    <workflow-component></workflow-component>
 
-                            <div class="collapse navbar-collapse" id="collapseExample">
-                                <div class="card card-body">
-                                    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                                    <div class="collapse navbar-collapse" id="collapseExample">
+                                        <div class="card card-body">
+                                            Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="row text-center">
-                                <div class="col-12">
-                                    <calculator-component></calculator-component>
-                                </div>
-                                <div class="col-12 pt-3">
-                                    <small>
-                                        <a href="{{ route('search.location.index') }}">Show search history</a>
-                                    </small>
+                                <div class="col-6 col-sm-12 col-md-6 col-lg-6">
+                                    <div class="row text-center">
+                                        <div class="col-12">
+                                            <calculator-component></calculator-component>
+                                        </div>
+                                        <div class="col-12 pt-3">
+                                            <small>
+                                                <a href="{{ route('search.location.index') }}">Show search history</a>
+                                            </small>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -249,7 +212,7 @@
                 </div>
             </td>
 
-            <td class="actions">
+            <td class="actions" style="width: 15% !important;">
                 <i class="icon trash-icon" @click="removeCondition" style="float: right;"></i>
             </td>
         </tr>

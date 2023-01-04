@@ -11,58 +11,28 @@
     <script type="text/x-template" id="address-component-template">
         <div :class="[errors.has(attribute['code'] + '[country]') || errors.has(attribute['code'] + '[state]') ? 'has-error' : '']">
 
-
             <div class="row">
-                <div class="col-12">
+
+                <div class="col-4">
                     <input
                         type="text"
-                        :name="attribute['code'] + '[city]'"
+                        :name="attribute['code'] + '[country]'"
                         class="control"
-                        v-model="city"
-                        placeholder="{{ __('admin::app.common.city') }}"
+                        v-model="country_search"
+                        placeholder="{{ __('admin::app.common.country') }}"
                         v-validate="validations"
-                        data-vv-as="&quot;{{ __('admin::app.common.city') }}&quot;"
+                        data-vv-as="&quot;{{ __('admin::app.common.country') }}&quot;"
                     />
-                    <div class="list dropdown-menu navbar-dropdown-menu-borderless w-100 overflow-auto" style="max-height: 16rem; display: block; opacity: 1.03;">
-                        <div class="dropdown-item">
-                            <a class="d-block link" href="./offcanvas.html">
-                            <span class="category d-block fw-normal text-muted mb-1">Components</span>
-                            <span class="component text-dark">Offcanvas</span>
+                    <div v-if="country_search && open_country_dropdown" class="list dropdown-menu navbar-dropdown-menu-borderless w-100 overflow-auto" style="max-height: 16rem; display: block; opacity: 1.03;">
+                        <div v-for="(country, index) in searchCountry()" :key="index" class="dropdown-item">
+                            <a class="d-block link" href="#" @click="selectCountry(country)">
+                                <span class="component text-dark">@{{ country.name }}</span>
                             </a>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <span>Or search by select</span>
-
-            <div class="row">
-
-                <div class="col-12" v-if="haveStates()">
-                    <span class="badge badge-primary" @click="toggleState" style="cursor:pointer">
-                        <small>@{{ toggle_state ? 'Only in country' : 'Add state' }}</small>
-                    </span>
-                </div>
-
-                <div :class="toggle_state ? 'col-6' : 'col-12'">
-                    <select
-                        :name="attribute['code'] + '[country]'"
-                        class="control"
-                        v-model="country"
-                        v-validate="validations"
-                        data-vv-as="&quot;{{ __('admin::app.common.country') }}&quot;"
-                    >
-                        <option value="">{{ __('admin::app.common.select-country') }}</option>
-
-                        @foreach (core()->countries() as $country)
-
-                            <option value="{{ $country->code }}">{{ $country->name }}</option>
-
-                        @endforeach
-                    </select>
-                </div>
-
-                <div class="col-6" v-if="toggle_state">
+                <div class="col-4" v-if="toggle_state">
                     <select
                         :name="attribute['code'] + '[state]'"
                         class="control"
@@ -71,28 +41,44 @@
                         data-vv-as="&quot;{{ __('admin::app.common.state') }}&quot;"
                         v-if="haveStates()"
                     >
-
                         <option value="">{{ __('admin::app.common.select-state') }}</option>
 
-                        <option v-for='(state, index) in countryStates[country]' :value="state.id">
+                        <option v-for='(state, index) in countryStates[country.code]' :value="state.id">
                             @{{ state.name }}
                         </option>
 
                     </select>
-
-                    <input
-                        type="text"
-                        :name="attribute['code'] + '[state]'"
-                        class="control"
-                        v-model="state"
-                        placeholder="{{ __('admin::app.common.state') }}"
-                        v-validate="validations"
-                        data-vv-as="&quot;{{ __('admin::app.common.state') }}&quot;"
-                        v-else
-                    />
                 </div>
 
+                <div class="col-3" v-if="haveCities()">
+                    <select
+                        :name="attribute['code'] + '[city]'"
+                        class="control"
+                        v-model="city"
+                        v-validate="validations"
+                        data-vv-as="&quot;{{ __('admin::app.common.city') }}&quot;"
+                    >
+                        <option value="">{{ __('admin::app.common.select-state') }}</option>
+
+                        <option v-for='(city, index) in stateCities[state.id]' :value="city.id">
+                            @{{ state.name }}
+                        </option>
+
+                    </select>
+                </div>
+
+                <div class="col-1" v-if="haveStates() && !toggle_city" style="display:flex;align-self: center;">
+                    <div v-if="step > 1" @click="toggleState(false)" style="cursor:pointer;margin-top: 10px;">
+                        <i class="icon arrow-left-icon"></i>
+                    </div>
+                    <div v-if="step < 3" @click="toggleState(true)" style="margin-left:10px;cursor:pointer;margin-top: 10px;">
+                        <i class="icon arrow-right-icon"></i>
+                    </div>
+                </div>
+                
             </div>
+
+            @{{ stateCities[state.id] }}
 
             <span class="control-error" v-if="errors.has(attribute['code']) || errors.has(attribute['code'] + '[country]') || errors.has(attribute['code'] + '[state]') || errors.has(attribute['code'])">
                 {{ __('admin::app.common.address-validation') }}
@@ -108,11 +94,17 @@
             inject: ['$validator'],
             data: function () {
                 return {
+                    step: 1,
+                    open_country_dropdown: true,
                     country: this.data ? this.data['country'] : '',
+                    country_search: '',
+                    countries: @json(core()->countries()),
                     toggle_state: false,
                     state: this.data ? this.data['state'] : '',
                     countryStates: @json(core()->groupedStatesByCountries()),
-                    city: this.data ? this.data['city'] : ''
+                    toggle_city: false,
+                    city: this.data ? this.data['city'] : '',
+                    stateCities: @json(core()->groupedCitiesByState()),
                 }
             },
             methods: {
@@ -124,10 +116,31 @@
                     }
                 },
                 haveStates: function () {
-                    if (this.countryStates[this.country] && this.countryStates[this.country].length) {
+                    if (this.countryStates[this.country.code] && this.countryStates[this.country.code].length) {
                         return true;
                     }
                     return false;
+                },
+                haveCities: function () {
+                    if (this.stateCities[this.state.id] && this.stateCities[this.state.id].length) {
+                        return true;
+                    }
+                    return false;
+                },
+                toggleCountryDropdown() {
+                    this.open_country_dropdown = !this.open_country_dropdown
+                },
+                selectCountry: function(country) {
+                    this.country_search = country.name;
+                    this.country = country;
+                    this.toggleCountryDropdown();
+
+                    this.step = 2;
+                },
+                searchCountry() {
+                    return this.countries.filter(item => {
+                        return item.name.toLowerCase().indexOf(this.country.toLowerCase()) > -1
+                    })
                 }
             }
         });

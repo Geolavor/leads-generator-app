@@ -11,6 +11,7 @@ use LeadBrowser\Core\Repositories\CityRepository;
 use LeadBrowser\Core\Repositories\LocaleRepository;
 use LeadBrowser\Mailbox\Helpers\Charset;
 use LeadBrowser\Search\Models\Type;
+use Illuminate\Support\Facades\DB;
 
 class Core
 {
@@ -235,6 +236,24 @@ class Core
         }
 
         return $collection;
+    }
+
+    /**
+     * Retrieve all grouped cities by state code.
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    public function groupedCitiesByState()
+    {
+        return DB::table('cities')->groupBy('state_id')->get();
+
+        // $collection = [];
+
+        // foreach ($this->cityRepository->all() as $city) {
+        //     $collection[$city->state_id][] = $city->toArray();
+        // }
+
+        // return $collection;
     }
 
     /**

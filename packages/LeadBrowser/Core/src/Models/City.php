@@ -13,7 +13,7 @@ class City extends Model implements CityContract
     public $timestamps = false;
 
     protected $fillable = [
-        'name'
+        'name', 'state_id'
     ];
 
     /**

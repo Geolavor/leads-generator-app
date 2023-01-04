@@ -26,27 +26,27 @@
                     <div class="col-12 mb-3">
                         <span>Who you are?</span>
                         <div class="input-group input-group-md-down-break">
-                            <label class="form-control" for="genderTypeRadio1">
+                            <label class="form-control" for="whoSeller">
                                 <span class="form-check">
-                                    <input type="radio" class="form-check-input" name="genderTypeRadio" id="genderTypeRadio1">
+                                    <input type="radio" class="form-check-input" name="whoYouAreRadio" id="whoSeller">
                                     <span class="form-check-label">Seller</span>
                                 </span>
                             </label>
-                            <label class="form-control" for="genderTypeRadio2">
+                            <label class="form-control" for="whoEngineer">
                                 <span class="form-check">
-                                    <input type="radio" class="form-check-input" name="genderTypeRadio" id="genderTypeRadio2" checked="">
+                                    <input type="radio" class="form-check-input" name="whoYouAreRadio" id="whoEngineer" checked="">
                                     <span class="form-check-label">Engineer</span>
                                 </span>
                             </label>
-                            <label class="form-control" for="genderTypeRadio3">
+                            <label class="form-control" for="whoCeo">
                                 <span class="form-check">
-                                    <input type="radio" class="form-check-input" name="genderTypeRadio" id="genderTypeRadio3">
+                                    <input type="radio" class="form-check-input" name="whoYouAreRadio" id="whoCeo">
                                     <span class="form-check-label">CEO</span>
                                 </span>
                             </label>
-                            <label class="form-control" for="genderTypeRadio4">
+                            <label class="form-control" for="whoOther">
                                 <span class="form-check">
-                                    <input type="radio" class="form-check-input" name="genderTypeRadio" id="genderTypeRadio4">
+                                    <input type="radio" class="form-check-input" name="whoYouAreRadio" id="whoOther">
                                     <span class="form-check-label">Other</span>
                                 </span>
                             </label>
@@ -67,21 +67,21 @@
                     <div class="col-12 mb-3">
                         <span>What would you like to get out of LeadBrowser?</span>
                         <div class="input-group input-group-md-down-break">
-                            <label class="form-control" for="genderTypeRadio1">
+                            <label class="form-control" for="discover">
                                 <span class="form-check">
-                                    <input type="radio" class="form-check-input" name="genderTypeRadio" id="genderTypeRadio1">
+                                    <input type="radio" class="form-check-input" name="typeRadio" id="discover">
                                     <span class="form-check-label">Discover and scout companies</span>
                                 </span>
                             </label>
-                            <label class="form-control" for="genderTypeRadio3">
+                            <label class="form-control" for="ecosystem">
                                 <span class="form-check">
-                                    <input type="radio" class="form-check-input" name="genderTypeRadio" id="genderTypeRadio3">
+                                    <input type="radio" class="form-check-input" name="typeRadio" id="ecosystem">
                                     <span class="form-check-label">Measure your own tech ecosystem</span>
                                 </span>
                             </label>
-                            <label class="form-control" for="genderTypeRadio4">
+                            <label class="form-control" for="other">
                                 <span class="form-check">
-                                    <input type="radio" class="form-check-input" name="genderTypeRadio" id="genderTypeRadio4">
+                                    <input type="radio" class="form-check-input" name="typeRadio" id="other">
                                     <span class="form-check-label">Other</span>
                                 </span>
                             </label>

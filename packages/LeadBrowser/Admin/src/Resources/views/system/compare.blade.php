@@ -88,21 +88,7 @@
         </tr>
 
         <tr>
-          <th scope="row" class="text-dark">Price per email*</th>
-          <td class="table-text-center">$0.0133</td>
-          <td class="table-text-center">$0.0085</td>
-          <td class="table-text-center">$0</td>
-        </tr>
-
-        <tr>
           <th scope="row" class="text-dark">Tax numbers search*</th>
-          <td class="table-text-center"><i class="bi-x-circle text-warning"></i></td>
-          <td class="table-text-center"><i class="bi-x-circle text-warning"></i></td>
-          <td class="table-text-center"><i class="bi-check-circle text-success"></i></td>
-        </tr>
-
-        <tr>
-          <th scope="row" class="text-dark">Free email verification</th>
           <td class="table-text-center"><i class="bi-x-circle text-warning"></i></td>
           <td class="table-text-center"><i class="bi-x-circle text-warning"></i></td>
           <td class="table-text-center"><i class="bi-check-circle text-success"></i></td>

@@ -118,6 +118,10 @@ export default {
     props: {
         dataSrc: {
             type: String
+        },
+        dataType: {
+            type: String,
+            default: null
         }
     },
 
@@ -192,6 +196,13 @@ export default {
                     Object.keys(window.params).forEach(paramKey => {
                         url += `&${paramKey}=${window.params[paramKey]}`;
                     });
+                }
+
+                // TODO
+                // Additional param
+                if (self.dataType) {
+                    console.log(self.dataType);
+                    url += `&type=${self.dataType}`;
                 }
 
                 self.$http

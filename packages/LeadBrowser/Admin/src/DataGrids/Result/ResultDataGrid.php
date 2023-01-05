@@ -28,24 +28,6 @@ class ResultDataGrid extends DataGrid
         // $this->export = bouncer()->hasPermission('results.export') ? true : false;
     }
 
-    // /**
-    //  * Place your datagrid extra settings here.
-    //  *
-    //  * @return void
-    //  */
-    // public function init()
-    // {
-    //     $this->setRowProperties([
-    //         'backgroundColor' => '#ffd0d6',
-    //         'condition' => function ($row) {
-    //             if ($row->staus_id > 1) {
-    //                 return false;
-    //             }
-    //             return true;
-    //         }
-    //     ]);
-    // }
-
     /**
      * Prepare query builder.
      *
@@ -67,7 +49,6 @@ class ResultDataGrid extends DataGrid
                 'results.risk_value',
                 'organizations.icon as organization_icon',
                 'organizations.title as organization_name',
-                // 'organizations.description as organization_description',
                 'organizations.rating as organization_rating',
                 'organizations.types as organization_types',
                 'organizations.website as organization_website',
@@ -95,11 +76,10 @@ class ResultDataGrid extends DataGrid
         if ($id) {
             $queryBuilder->where('results.searchable_id', $id);
         }
-
-        // $type = request('type');
-        // if($type) {
-        //     $queryBuilder->where('results.searchable_type', $type);
-        // }
+        $type = request('type');
+        if($type) {
+            $queryBuilder->where('results.searchable_type', $type);
+        }
    
         $this->addFilter('id', 'results.id', 'results.searchable_id');
         $this->addFilter('id', 'results.id', 'results.stage_id');

@@ -203,7 +203,7 @@
         @else
 
         <!-- Results -->
-        <table-component data-src="{{ route('results.index', ['type' => 'LeadBrowser\Search\Models\SearchLocations', 'd' => 1]) }}" class="mt-5">
+        <table-component data-src="{{ route('results.index') }}" data-type="LeadBrowser\Search\Models\SearchLocations" class="mt-5">
             <template v-slot:table-header>
                 <div class="panel-header">
                     {!! view_render_event('results.index.header.before') !!}

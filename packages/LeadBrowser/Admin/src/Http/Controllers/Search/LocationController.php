@@ -74,7 +74,7 @@ class LocationController extends Controller
 
         $search['market_size'] = $search->location_market_size;
 
-        // $batch = Bus::findBatch($search->batch_id);
+        // dd($search);
 
         return view('admin::search.location.view', compact('search'));
     }

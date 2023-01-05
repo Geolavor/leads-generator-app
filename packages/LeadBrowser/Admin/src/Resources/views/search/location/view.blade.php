@@ -202,18 +202,17 @@
         
         @else
 
-        <!-- Results -->
-        <table-component data-src="{{ route('results.index') }}" data-type="LeadBrowser\Search\Models\SearchLocations" class="mt-5">
-            <template v-slot:table-header>
-                <div class="panel-header">
-                    {!! view_render_event('results.index.header.before') !!}
+            <table-component data-src="{{ route('results.index') }}" data-type="LeadBrowser\Search\Models\SearchLocations" class="mt-5">
+                <template v-slot:table-header>
+                    <div class="panel-header">
+                        {!! view_render_event('results.index.header.before') !!}
 
-                    {{ __('admin::app.results.title') }}
+                        {{ __('admin::app.results.title') }}
 
-                    {!! view_render_event('results.index.header.after') !!}
-                </div>
-            </template>
-        <table-component>
+                        {!! view_render_event('results.index.header.after') !!}
+                    </div>
+                </template>
+            <table-component>
 
         @endif
 

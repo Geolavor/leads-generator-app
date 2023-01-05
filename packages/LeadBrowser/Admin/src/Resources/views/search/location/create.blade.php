@@ -76,7 +76,6 @@
 @stop
 
 @push('scripts')
-    @parent
 
     <script type="text/x-template" id="calculator-template">
         <div>

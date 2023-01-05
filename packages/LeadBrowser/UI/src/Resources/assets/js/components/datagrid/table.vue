@@ -196,14 +196,17 @@ export default {
                     Object.keys(window.params).forEach(paramKey => {
                         url += `&${paramKey}=${window.params[paramKey]}`;
                     });
+                    // Additional param
+                    if (self.dataType) {
+                        url += `&type=${self.dataType}`;
+                    }
                 }
 
-                // TODO
-                // Additional param
-                if (self.dataType) {
-                    console.log(self.dataType);
-                    url += `&type=${self.dataType}`;
-                }
+                // // Additional param
+                // if (self.dataType) {
+                //     prefix = url.includes('?') ? '&' : '?';
+                //     url += `${prefix}type=${self.dataType}`;
+                // }
 
                 self.$http
                     .get(url)

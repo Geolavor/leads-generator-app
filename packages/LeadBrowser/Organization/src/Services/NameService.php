@@ -2,6 +2,8 @@
 
 namespace LeadBrowser\Organization\Services;
 
+use LeadBrowser\Organization\Models\Name;
+
 class NameServices
 {
     /**
@@ -11,21 +13,9 @@ class NameServices
      */
     protected function cleanName(string $email): bool
     {
-        $result = false;
-
-        $email = explode('@', $email);
-        $prefix = $email[0];
-
-        /**
-         * If dot (.) exist in prefix
-         */
+        $prefix = explode('@', $email)[0];
         $words = str_contains($prefix, '.') ? explode('.', $prefix) : [$prefix];
 
-        foreach ($words as $key => $word) {
-            $exist = Name::where('name', $word)->first();
-            if ($exist) return true;
-        }
-
-        return $result;
+        return Name::whereIn('name', $words)->exists() || strlen(reset($words)) <= 2;
     }
 }

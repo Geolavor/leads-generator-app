@@ -14,6 +14,41 @@ class Email extends Model
         'rfc_validation', 'no_rfc_validation', 'dns_check',
         'free_email_provider', 'disposable_email_provider',
         'role_or_business_email', 'spoof_check', 'is_correct', 'description'
+
+        // NEW: TODO
+        // "blacklisted": false,
+        // "malicious_activity": false,
+        // "malicious_activity_recent": false,
+        // "credentials_leaked": false,
+        // "credentials_leaked_recent": false,
+        // "data_breach": false,
+        // "first_seen": "never",
+        // "last_seen": "never",
+        // "domain_exists": true,
+        // "domain_reputation": "low",
+        // "new_domain": true,
+        // "days_since_domain_creation": 54,
+        // "suspicious_tld": false,
+        // "spam": false,
+        // "free_provider": false,
+        // "disposable": false,
+        // "deliverable": false,
+        // "accept_all": false,
+        // "valid_mx": true,
+        // "primary_mx": "smtp.secureserver.net",
+        // "spoofable": true,
+        // "spf_strict": false,
+        // "dmarc_enforced": false,
+        // "profiles": [
+            // "myspace",
+            // "spotify",
+            // "twitter",
+            // "pinterest",
+            // "flickr",
+            // "linkedin",
+            // "vimeo",
+            // "angellist"
+        // ]
     ];
 
     protected $casts = [

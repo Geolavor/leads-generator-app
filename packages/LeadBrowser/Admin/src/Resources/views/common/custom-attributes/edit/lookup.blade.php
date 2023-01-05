@@ -38,7 +38,7 @@
                     <div class="lookup-results" v-if="state == ''">
                         <ul>
                             <li v-for='(result, index) in results' @click="addLookUp(result)">
-                                <span>@{{ result.name }}</span>
+                                <span>@{{ result.name || result.title }}</span>
                             </li>
 
                             <li v-if='! results.length && search_term.length && ! is_searching'>

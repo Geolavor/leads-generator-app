@@ -32,14 +32,13 @@
                     </div>
                 </div>
 
-                <div class="col-4" v-if="toggle_state">
+                <div class="col-4" v-if="haveStates() && step >= 2">
                     <select
                         :name="attribute['code'] + '[state]'"
                         class="control"
                         v-model="state"
                         v-validate="validations"
                         data-vv-as="&quot;{{ __('admin::app.common.state') }}&quot;"
-                        v-if="haveStates()"
                     >
                         <option value="">{{ __('admin::app.common.select-state') }}</option>
 
@@ -50,7 +49,7 @@
                     </select>
                 </div>
 
-                <div class="col-3" v-if="haveCities()">
+                <div class="col-3" v-if="haveCities() && step == 3">
                     <select
                         :name="attribute['code'] + '[city]'"
                         class="control"
@@ -67,7 +66,7 @@
                     </select>
                 </div>
 
-                <div class="col-1" v-if="haveStates() && !toggle_city" style="display:flex;align-self: center;">
+                <div class="col-1" v-if="haveStates()" style="display:flex;align-self: center;">
                     <div v-if="step > 1" @click="toggleState(false)" style="cursor:pointer;margin-top: 10px;">
                         <i class="icon arrow-left-icon"></i>
                     </div>
@@ -97,20 +96,22 @@
                     country: this.data ? this.data['country'] : '',
                     country_search: '',
                     countries: @json(core()->countries()),
-                    toggle_state: false,
                     state: this.data ? this.data['state'] : '',
                     countryStates: @json(core()->groupedStatesByCountries()),
-                    toggle_city: false,
                     city: this.data ? this.data['city'] : '',
                     stateCities: @json(core()->groupedCitiesByState()),
                 }
             },
             methods: {
-                toggleState() {
-                    this.toggle_state = !this.toggle_state
+                toggleState(value) {
+                    value ? this.step++ : this.step--
 
-                    if(this.toggle_state == false) {
-                        this.state = false
+                    if (!value && this.step == 1) {
+                        this.state = null
+                    }
+
+                    if (!value && this.step == 2) {
+                        this.city = null
                     }
                 },
                 haveStates: function () {
@@ -132,8 +133,6 @@
                     this.country_search = country.name;
                     this.country = country;
                     this.toggleCountryDropdown();
-
-                    this.step = 2;
                 },
                 searchCountry() {
                     return this.countries.filter(item => {

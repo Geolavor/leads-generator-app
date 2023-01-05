@@ -20,5 +20,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CoreDatabaseSeeder::class);
         $this->call(UserDatabaseSeeder::class);
         $this->call(WorldDatabaseSeeder::class);
+        $this->call(NamesDatabaseSeeder::class);
     }
 }

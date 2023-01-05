@@ -4,14 +4,14 @@ namespace LeadBrowser\Organization\Services;
 
 use LeadBrowser\Organization\Models\Name;
 
-class NameServices
+class NameService
 {
     /**
      * @param string $email
      * 
      * @return bool
      */
-    protected function cleanName(string $email): bool
+    public function cleanName(string $email): bool
     {
         $prefix = explode('@', $email)[0];
         $words = str_contains($prefix, '.') ? explode('.', $prefix) : [$prefix];

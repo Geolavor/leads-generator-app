@@ -40,7 +40,7 @@
                     <form method="POST" action="{{ route('results.export', ['class' => 'LeadBrowser\Search\Models\SearchWebsites', 'search_id' => $search->id]) }}" @submit.prevent="onSubmit" enctype="multipart/form-data">
                         @csrf()
                         <div class="page-action" style="display: inline-flex;">
-                            <button class="btn btn-primary btn-lg">Export results</button>
+                            <button class="btn btn-lg"> <i class="icon export-icon" style="vertical-align: middle;"></i> Export results</button>
                         </div>
                     </form>
 

@@ -245,15 +245,7 @@ class Core
      */
     public function groupedCitiesByState()
     {
-        return DB::table('cities')->groupBy('state_id')->get();
-
-        // $collection = [];
-
-        // foreach ($this->cityRepository->all() as $city) {
-        //     $collection[$city->state_id][] = $city->toArray();
-        // }
-
-        // return $collection;
+        return DB::table('cities')->get()->groupBy('state_id')->toArray();
     }
 
     /**

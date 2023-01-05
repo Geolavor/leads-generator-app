@@ -17,13 +17,13 @@
                     <input
                         type="text"
                         :name="attribute['code'] + '[country]'"
-                        class="control"
+                        class="control dropdown-toggle"
                         v-model="country_search"
                         placeholder="{{ __('admin::app.common.country') }}"
                         v-validate="validations"
                         data-vv-as="&quot;{{ __('admin::app.common.country') }}&quot;"
                     />
-                    <div v-if="country_search && open_country_dropdown" class="list dropdown-menu navbar-dropdown-menu-borderless w-100 overflow-auto" style="max-height: 16rem; display: block; opacity: 1.03;">
+                    <div v-if="country_search" class="dropdown-list list dropdown-menu navbar-dropdown-menu-borderless w-100 overflow-auto" style="max-height: 16rem; display: block; opacity: 1.03;">
                         <div v-for="(country, index) in searchCountry()" :key="index" class="dropdown-item">
                             <a class="d-block link" href="#" @click="selectCountry(country)">
                                 <span class="component text-dark">@{{ country.name }}</span>
@@ -58,10 +58,10 @@
                         v-validate="validations"
                         data-vv-as="&quot;{{ __('admin::app.common.city') }}&quot;"
                     >
-                        <option value="">{{ __('admin::app.common.select-state') }}</option>
+                        <option value="">{{ __('admin::app.common.select-city') }}</option>
 
-                        <option v-for='(city, index) in stateCities[state.id]' :value="city.id">
-                            @{{ state.name }}
+                        <option v-for='(city, index) in stateCities[state]' :value="city.id">
+                            @{{ city.name }}
                         </option>
 
                     </select>
@@ -77,8 +77,6 @@
                 </div>
                 
             </div>
-
-            @{{ stateCities[state.id] }}
 
             <span class="control-error" v-if="errors.has(attribute['code']) || errors.has(attribute['code'] + '[country]') || errors.has(attribute['code'] + '[state]') || errors.has(attribute['code'])">
                 {{ __('admin::app.common.address-validation') }}
@@ -122,7 +120,7 @@
                     return false;
                 },
                 haveCities: function () {
-                    if (this.stateCities[this.state.id] && this.stateCities[this.state.id].length) {
+                    if (this.stateCities[this.state] && this.stateCities[this.state].length) {
                         return true;
                     }
                     return false;
@@ -139,7 +137,7 @@
                 },
                 searchCountry() {
                     return this.countries.filter(item => {
-                        return item.name.toLowerCase().indexOf(this.country.toLowerCase()) > -1
+                        return item.name.toLowerCase().indexOf(this.country_search.toLowerCase()) > -1
                     })
                 }
             }

@@ -74,7 +74,7 @@ class LocationController extends Controller
 
         $search['market_size'] = $search->location_market_size;
 
-        // dd($search);
+        // dd($search->cities);
 
         return view('admin::search.location.view', compact('search'));
     }

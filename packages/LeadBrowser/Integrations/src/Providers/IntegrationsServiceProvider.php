@@ -15,6 +15,8 @@ class IntegrationsServiceProvider extends ServiceProvider
      */
     public function boot(Router $router)
     {
+        $this->app->register(EventServiceProvider::class);
+
         $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
     }
 

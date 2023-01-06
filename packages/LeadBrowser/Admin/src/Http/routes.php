@@ -178,6 +178,9 @@ Route::group(['middleware' => ['web']], function () {
 
             Route::get('api', 'ApiController@index')->name('user.account.api.index');
 
+            Route::get('integrations', 'IntegrationController@index')->name('user.account.integrations.index');
+            Route::post('integrations/{integration}', 'IntegrationController@toggle')->name('user.account.integrations.toggle');
+
             Route::post('delete', 'AccountController@delete')->name('user.account.delete');
 
             Route::post('delete-card', 'AccountController@deleteCreditCard')->name('user.account.delete-card');

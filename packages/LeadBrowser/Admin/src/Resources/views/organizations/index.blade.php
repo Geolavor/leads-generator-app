@@ -1,7 +1,7 @@
 @extends('admin::layouts.master')
 
 @section('page_title')
-    {{ __('admin::app.organizations.name') }}
+    {{ __('admin::app.organizations.title') }}
 @stop
 
 @section('content-wrapper')
@@ -13,7 +13,7 @@
 
                     {{ Breadcrumbs::render('organizations') }}
 
-                    {{ __('admin::app.organizations.name') }}
+                    {{ __('admin::app.organizations.title') }}
 
                     {!! view_render_event('organizations.index.header.after') !!}
                 </h1>

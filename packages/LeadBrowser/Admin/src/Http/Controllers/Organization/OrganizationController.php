@@ -285,7 +285,7 @@ class OrganizationController extends Controller
         }
 
         return response()->json([
-            'message' => trans('admin::app.response.destroy-success', ['name' => trans('admin::app.organizations.name')]),
+            'message' => trans('admin::app.response.destroy-success', ['name' => trans('admin::app.organizations.title')]),
         ]);
     }
 
@@ -331,7 +331,7 @@ class OrganizationController extends Controller
         }
 
         return response()->json([
-            'message' => trans('admin::app.response.destroy-success', ['name' => trans('admin::app.organizations.name')]),
+            'message' => trans('admin::app.response.destroy-success', ['name' => trans('admin::app.organizations.title')]),
         ]);
     }
 

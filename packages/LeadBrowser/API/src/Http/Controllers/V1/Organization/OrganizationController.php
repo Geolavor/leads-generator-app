@@ -137,7 +137,7 @@ class OrganizationController extends Controller
         }
 
         return response([
-            'message' => __('admin::app.response.destroy-success', ['name' => __('admin::app.organizations.name')]),
+            'message' => __('admin::app.response.destroy-success', ['name' => __('admin::app.organizations.title')]),
         ]);
     }
 }

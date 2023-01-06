@@ -1,10 +1,10 @@
 {
-    "name": "konstelacja/laravel-cms",
+    "name": "leadbrowser/laravel",
     "license": "MIT",
     "authors": [
         {
-            "name": "Prashant Singh",
-            "email": "prashant.singh852@leadbrowser.co"
+            "name": "Mariusz Malek",
+            "email": "mariuszmalek.dev@leadbrowser.co"
         }
     ],
     "require": {},

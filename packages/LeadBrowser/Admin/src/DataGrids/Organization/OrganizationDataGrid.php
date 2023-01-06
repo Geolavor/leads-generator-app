@@ -100,7 +100,7 @@ class OrganizationDataGrid extends DataGrid
             }
         }
    
-        $this->addFilter('title', 'organizations.name');
+        $this->addFilter('name', 'organizations.name');
         $this->addFilter('rating', 'organizations.rating');
         $this->addFilter('types', 'organizations.types');
         $this->addFilter('country', 'organizations.country');
@@ -128,7 +128,7 @@ class OrganizationDataGrid extends DataGrid
         ]);
 
         $this->addColumn([
-            'index'    => 'title',
+            'index'    => 'name',
             'label'    => trans('admin::app.datagrid.name'),
             'type'     => 'string',
             'sortable' => true,

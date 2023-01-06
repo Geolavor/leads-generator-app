@@ -78,7 +78,7 @@ class OrganizationController extends Controller
     {
         // $organization = $this->organizationRepository->findOrFail($id);
         $organization = Organization::select(
-            'id', 'icon', 'title', 'description',
+            'id', 'icon', 'name', 'description',
             'types', 'country', 'city', 'website', 'archive',
             'international_phone_number', 'size_range', 'year_founded'
         )->with(['employees'])->findOrFail($id);
@@ -236,7 +236,7 @@ class OrganizationController extends Controller
     public function search()
     {
         $organizations = $this->organizationRepository->findWhere([
-            ['title', 'like', '%' . urldecode(request()->input('query')) . '%']
+            ['name', 'like', '%' . urldecode(request()->input('query')) . '%']
         ]);
 
         return response()->json($organizations);
@@ -346,14 +346,14 @@ class OrganizationController extends Controller
         /**
          * Check if company is already saved in the organization
          */
-        $organization = Organization::where('user_id', auth()->guard('user')->user()->id)->where('title', $organization->title)->first();
+        $organization = Organization::where('user_id', auth()->guard('user')->user()->id)->where('name', $organization->name)->first();
         if($organization) {
             return redirect()->back()->with('message','You already added this company to contact!');
         }
 
         $organization = $this->organizationRepository->create([
             'entity_type' => 'organizations',
-            'title' => $organization->title,
+            'name' => $organization->name,
             'address' => $organization->country,
             'user_id' => auth()->guard('user')->user()->id
         ]);

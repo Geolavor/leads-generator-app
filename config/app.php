@@ -245,7 +245,8 @@ return [
         LeadBrowser\Payment\Providers\PaymentServiceProvider::class,
         LeadBrowser\Sales\Providers\SalesServiceProvider::class,
         // LeadBrowser\Notification\Providers\NotificationServiceProvider::class
-        LeadBrowser\CMS\Providers\CMSServiceProvider::class
+        LeadBrowser\CMS\Providers\CMSServiceProvider::class,
+        LeadBrowser\Integrations\Providers\IntegrationsServiceProvider::class
     ],
 
     /*

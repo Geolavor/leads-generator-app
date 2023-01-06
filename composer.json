@@ -92,7 +92,8 @@
             "LeadBrowser\\Result\\": "packages/LeadBrowser/Result/src",
             "LeadBrowser\\Payment\\": "packages/LeadBrowser/Payment/src",
             "LeadBrowser\\Sales\\": "packages/LeadBrowser/Sales/src",
-            "LeadBrowser\\CMS\\": "packages/LeadBrowser/CMS/src"
+            "LeadBrowser\\CMS\\": "packages/LeadBrowser/CMS/src",
+            "LeadBrowser\\Integrations\\": "packages/LeadBrowser/Integrations/src"
         }
     },
     "autoload-dev": {

@@ -1,4 +1,4 @@
-@extends('admin::layouts.master')
+@extends('admin::layouts.dashboard')
 
 @section('page_title')
     {{ __('admin::app.sales.transactions.view-title', ['transaction_id' => $transaction->id]) }}

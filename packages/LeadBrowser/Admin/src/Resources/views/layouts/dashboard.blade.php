@@ -58,7 +58,7 @@
 
             {!! view_render_event('layout.nav-left.before') !!}
 
-            @include ('admin::layouts.nav-left')
+            <x-core.dashboard.sidebar />
 
             {!! view_render_event('layout.nav-left.after') !!}
 
@@ -66,13 +66,13 @@
 
                 {!! view_render_event('layout.nav-top.before') !!}
 
-                @include ('admin::layouts.nav-top')
+                <x-core.dashboard.navbar />
 
                 {!! view_render_event('layout.nav-top.after') !!}
 
                 <div class="content content-dashboard container-fluid" v-bind:class="{'navbar-vertical-aside-mini-mode': isMenuOpen}">
 
-                    <!-- <div class="alert alert-primary mt-5" role="alert">
+                    <div class="alert alert-primary mt-5" role="alert">
                         <div class="d-flex">
                             <div class="flex-shrink-0">
                                 <i class="bi-stars" style="font-size: 30px;"></i>
@@ -82,7 +82,7 @@
                                 <br>Thanks to this, the received data is always up-to-date. <a href="#" style="color:#e0e0e0">More information about our technology.</a>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
 
                     {!! view_render_event('layout.content.before') !!}
 
@@ -92,7 +92,7 @@
 
                     {!! view_render_event('layout.footer.before') !!}
 
-                    @include ('admin::layouts.footer')
+                    <x-core.dashboard.footer />
 
                     {!! view_render_event('layout.footer.after') !!}
                 </div>

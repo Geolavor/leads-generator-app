@@ -1,4 +1,4 @@
-@component('admin::emails.layouts.master')
+@component('admin::emails.layouts.dashboard')
     @slot('header')
         <div>
             <a href="{{ config('app.url') }}">

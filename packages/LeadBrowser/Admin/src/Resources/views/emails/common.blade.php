@@ -1,4 +1,4 @@
-@component('admin::emails.layouts.master')
+@component('admin::emails.layouts.dashboard')
     <div style="text-align: center;">
         <a href="{{ config('app.url') }}">
             <img src="{{ asset('vendor/leadBrowser/admin/assets/images/mini-black.png') }}" alt="{{ config('app.name') }}"/>

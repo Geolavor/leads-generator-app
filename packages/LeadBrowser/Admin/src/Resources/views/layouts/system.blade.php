@@ -42,7 +42,7 @@
 
     {!! view_render_event('layout.nav-landing-top.before') !!}
 
-    @include ('admin::layouts.nav-landing-top')
+    <x-core.landing.navbar />
 
     {!! view_render_event('layout.nav-landing-top.after') !!}
 
@@ -106,7 +106,7 @@
 
     {!! view_render_event('layout.footer-landing.before') !!}
 
-    @include ('admin::layouts.footer-landing')
+    <x-core.landing.footer />
 
     {!! view_render_event('layout.footer-landing.after') !!}
 

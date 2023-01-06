@@ -1,4 +1,4 @@
-@extends('admin::layouts.master')
+@extends('admin::layouts.dashboard')
 
 @section('page_title')
     {{ __('admin::app.sales.orders.view-title', ['order_id' => $order->increment_id]) }}

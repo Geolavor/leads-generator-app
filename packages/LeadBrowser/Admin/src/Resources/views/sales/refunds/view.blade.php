@@ -1,4 +1,4 @@
-@extends('admin::layouts.master')
+@extends('admin::layouts.dashboard')
 
 @section('page_title')
     {{ __('admin::app.sales.refunds.view-title', ['refund_id' => $refund->id]) }}

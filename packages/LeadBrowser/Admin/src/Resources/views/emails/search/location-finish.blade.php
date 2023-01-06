@@ -1,4 +1,4 @@
-@component('admin::emails.layouts.master')
+@component('admin::emails.layouts.dashboard')
     @slot('header')
         <div style="text-align: center;">
             <a href="{{ config('app.url') }}">

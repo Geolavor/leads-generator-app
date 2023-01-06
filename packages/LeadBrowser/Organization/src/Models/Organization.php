@@ -217,10 +217,18 @@ class Organization extends Model implements ContractsOrganization
     {
         $employees = $this->employees()->count();
 
-        $text = '+' . $employees;
+        $text = $employees == 0 ? '0' : '+' . $employees;
 
-        // return '<div class="col-auto"><div class="flex-shrink-0"><div class="avatar-group avatar-group-xs"><div class="avatar avatar-xs avatar-circle"><img src="https://htmlstream.com/front/assets/img/160x160/img1.jpg" alt="Image Description" class="avatar-img"></div> <div class="avatar avatar-xs avatar-circle"><img src="https://htmlstream.com/front/assets/img/160x160/img1.jpg" alt="Image Description" class="avatar-img"></div></div></div></div>';
-        return $employees ? "<span class='badge badge-primary'><small>" . $text . "</small></span>" : null;
+        return '
+        <div class="flex-shrink-0">
+            <div class="avatar-group avatar-group-xs">
+                <div class="avatar avatar-xs avatar-circle" style="border:none">
+                    <img src="https://htmlstream.com/front/assets/img/160x160/img1.jpg" alt="Image Description" class="avatar-img">
+                </div>
+                <small>' . $text . '</small>
+            </div>
+        </div>
+        ';
     }
 
 

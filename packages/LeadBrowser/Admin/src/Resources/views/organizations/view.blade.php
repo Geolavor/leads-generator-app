@@ -201,33 +201,17 @@
             <div class="card h-100">
                 <div class="card-body">
                     <h6 class="card-subtitle mb-2">Risk value</h6>
-
-                    @if ($organization->risk_value)
-                    <?php
-                        if ($organization->risk_value > 8) {
-                            $badge = 'warning';
-                            $text = 'High';
-                        } else if ($organization->risk_value > 5) {
-                            $badge = 'primary';
-                            $text = 'Medium';
-                        } else {
-                            $badge = 'success';
-                            $text = 'Low';
-                        }
-                    ?>
-
                     <div class="row align-items-center gx-2">
-                        <div class="col">
+                        <div class="col blur-text">
                             <span class="js-counter display-4 text-dark" data-value="28">28</span>
                             <span class="display-4 text-dark">%</span>
                             <span class="text-body fs-5 ms-1">matching</span>
                         </div>
 
                         <div class="col-auto">
-                            <span class="badge badge-{{$badge}} p-1">{{ $text }}</span>
+                            <span class="badge badge-success p-1 blur-text">Low</span>
                         </div>
                     </div>
-                    @endif
                     <!-- End Row -->
                 </div>
             </div>

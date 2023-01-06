@@ -194,31 +194,31 @@
                 <div class="card-body">
                     <h6 class="card-subtitle mb-2">Risk value</h6>
 
-                    @if ($result->organization->risk_value)
-                    <?php
-                        if ($result->organization->risk_value > 8) {
-                            $badge = 'warning';
-                            $text = 'High';
-                        } else if ($result->organization->risk_value > 5) {
-                            $badge = 'primary';
-                            $text = 'Medium';
-                        } else {
-                            $badge = 'success';
-                            $text = 'Low';
-                        }
-                    ?>
+                    @if ($result->risk_value)
+                        <?php
+                            if ($result->risk_value > 8) {
+                                $badge = 'warning';
+                                $text = 'High';
+                            } else if ($result->risk_value > 5) {
+                                $badge = 'primary';
+                                $text = 'Medium';
+                            } else {
+                                $badge = 'success';
+                                $text = 'Low';
+                            }
+                        ?>
 
-                    <div class="row align-items-center gx-2">
-                        <div class="col">
-                            <span class="js-counter display-4 text-dark" data-value="28">28</span>
-                            <span class="display-4 text-dark">%</span>
-                            <span class="text-body fs-5 ms-1">matching</span>
-                        </div>
+                        <div class="row align-items-center gx-2">
+                            <div class="col">
+                                <span class="js-counter display-4 text-dark" data-value="28">28</span>
+                                <span class="display-4 text-dark">%</span>
+                                <span class="text-body fs-5 ms-1">matching</span>
+                            </div>
 
-                        <div class="col-auto">
-                            <span class="badge badge-{{$badge}} p-1">{{ $text }}</span>
+                            <div class="col-auto">
+                                <span class="badge badge-{{$badge}} p-1">{{ $text }}</span>
+                            </div>
                         </div>
-                    </div>
                     @endif
                     <!-- End Row -->
                 </div>

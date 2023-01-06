@@ -12,7 +12,7 @@ use LeadBrowser\Core\Models\BlackList;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Mail;
 
-class OrganizationFormController extends Controller
+class ContactFormController extends Controller
 {
      /**
      *

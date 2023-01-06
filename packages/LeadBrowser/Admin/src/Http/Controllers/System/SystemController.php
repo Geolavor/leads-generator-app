@@ -38,6 +38,9 @@ class SystemController extends Controller
 
     public function index()
     {        
+        // $s = Organization::where('website', '')->first();
+        // dd($s);
+
         $browser = new Browser;
         $c = $browser->fetch('test');
         dd($c);

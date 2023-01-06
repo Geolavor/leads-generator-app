@@ -115,7 +115,7 @@ class ResultController extends Controller
         ->addSelect(
             'organizations.id',
             'organizations.icon',
-            'organizations.title',
+            'organizations.name',
             'organizations.description',
             'organizations.types',
             'organizations.website',

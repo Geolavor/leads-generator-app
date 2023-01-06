@@ -48,7 +48,7 @@ class ResultDataGrid extends DataGrid
                 'results.price',
                 'results.risk_value',
                 'organizations.icon as organization_icon',
-                'organizations.title as organization_name',
+                'organizations.name as organization_name',
                 'organizations.rating as organization_rating',
                 'organizations.types as organization_types',
                 'organizations.website as organization_website',

@@ -43,7 +43,7 @@ class EmployeeDataGrid extends DataGrid
                 'employees.emails',
                 'employees.contact_numbers',
                 'employees.social_media',
-                'organizations.title as organization',
+                'organizations.name as organization',
                 'employees.role as role'
             )
             ->leftJoin('organizations', 'employees.organization_id', '=', 'organizations.id');

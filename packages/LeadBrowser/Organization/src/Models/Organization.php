@@ -22,7 +22,7 @@ class Organization extends Model implements ContractsOrganization
      */
     protected $fillable = [
         'id',
-        'title',
+        'name',
         'number',
         'slug',
         'rating',

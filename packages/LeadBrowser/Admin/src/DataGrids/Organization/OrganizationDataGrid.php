@@ -68,7 +68,7 @@ class OrganizationDataGrid extends DataGrid
             ->addSelect(
                 'organizations.id',
                 'organizations.icon',
-                'organizations.title',
+                'organizations.name',
                 // 'organizations.description',
                 'organizations.rating',
                 'organizations.types',
@@ -100,7 +100,7 @@ class OrganizationDataGrid extends DataGrid
             }
         }
    
-        $this->addFilter('title', 'organizations.title');
+        $this->addFilter('title', 'organizations.name');
         $this->addFilter('rating', 'organizations.rating');
         $this->addFilter('types', 'organizations.types');
         $this->addFilter('country', 'organizations.country');

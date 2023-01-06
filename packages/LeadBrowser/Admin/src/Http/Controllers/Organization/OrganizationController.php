@@ -87,7 +87,7 @@ class OrganizationController extends Controller
         ->addSelect(
             'organizations.id',
             'organizations.icon',
-            'organizations.title',
+            'organizations.name',
             'organizations.description',
             'organizations.types',
             'organizations.website',
@@ -285,7 +285,7 @@ class OrganizationController extends Controller
         }
 
         return response()->json([
-            'message' => trans('admin::app.response.destroy-success', ['name' => trans('admin::app.organizations.title')]),
+            'message' => trans('admin::app.response.destroy-success', ['name' => trans('admin::app.organizations.name')]),
         ]);
     }
 
@@ -331,7 +331,7 @@ class OrganizationController extends Controller
         }
 
         return response()->json([
-            'message' => trans('admin::app.response.destroy-success', ['name' => trans('admin::app.organizations.title')]),
+            'message' => trans('admin::app.response.destroy-success', ['name' => trans('admin::app.organizations.name')]),
         ]);
     }
 

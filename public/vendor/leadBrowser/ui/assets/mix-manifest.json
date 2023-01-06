@@ -69,5 +69,15 @@
     "/css/ui.css": "/css/ui.css",
     "/images/controls.svg": "/images/controls.svg",
     "/images/favicon.ico": "/images/favicon.ico",
-    "/fonts/bootstrap-icons.woff2": "/fonts/bootstrap-icons.woff2"
+    "/fonts/bootstrap-icons.woff2": "/fonts/bootstrap-icons.woff2",
+    "/images/integrations/gmail.png": "/images/integrations/gmail.png",
+    "/images/integrations/hubspot.svg": "/images/integrations/hubspot.svg",
+    "/images/integrations/integromat.png": "/images/integrations/integromat.png",
+    "/images/integrations/intercom.svg": "/images/integrations/intercom.svg",
+    "/images/integrations/pipedrive.svg": "/images/integrations/pipedrive.svg",
+    "/images/integrations/salesforce.svg": "/images/integrations/salesforce.svg",
+    "/images/integrations/slack.svg": "/images/integrations/slack.svg",
+    "/images/integrations/trello.svg": "/images/integrations/trello.svg",
+    "/images/integrations/zapier.svg": "/images/integrations/zapier.svg",
+    "/images/integrations/zoho.svg": "/images/integrations/zoho.svg"
 }

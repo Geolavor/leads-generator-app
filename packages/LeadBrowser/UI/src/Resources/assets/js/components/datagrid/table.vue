@@ -198,15 +198,10 @@ export default {
                     });
                     // Additional param
                     if (self.dataType) {
-                        url += `&type=${self.dataType}`;
+                        var prefix = url.includes('?') ? '&' : '?';
+                        url += `${prefix}type=${self.dataType}`;
                     }
                 }
-
-                // // Additional param
-                // if (self.dataType) {
-                //     prefix = url.includes('?') ? '&' : '?';
-                //     url += `${prefix}type=${self.dataType}`;
-                // }
 
                 self.$http
                     .get(url)

@@ -19,22 +19,7 @@
 <div class="content full-page adjacent-center">
     <div class="row">
         <div class="col-3">
-            <div id="navbarVerticalNavMenuEg2">
-                <ul id="navbarSettingsEg2" class="js-sticky-block js-scrollspy nav nav-tabs nav-link-gray nav-vertical">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('user.account.edit') }}">Account</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{ route('user.account.billing.index') }}">Billing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('user.account.current-plan.index') }}">Current plan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('user.account.api.index') }}">API</a>
-                    </li>
-                </ul>
-            </div>
+            <x-core.account.sidebar />
         </div>
         <div class="col-9">
             <div class="d-grid gap-3 gap-lg-5">

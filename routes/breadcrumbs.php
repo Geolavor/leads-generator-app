@@ -173,7 +173,7 @@ Breadcrumbs::for('organizations', function (BreadcrumbTrail $trail) {
 // Dashboard > Organizations > View
 Breadcrumbs::for('organizations.view', function (BreadcrumbTrail $trail, $organization) {
     $trail->parent('search');
-    $trail->push($organization->title, route('organizations.view', $organization->id));
+    $trail->push($organization->name, route('organizations.view', $organization->id));
 });
 
 // Dashboard > Organizations > Create

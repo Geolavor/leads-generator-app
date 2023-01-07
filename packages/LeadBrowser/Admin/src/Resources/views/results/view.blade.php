@@ -1,7 +1,7 @@
 @extends('admin::layouts.dashboard')
 
 @section('page_title')
-{{ $result->organization->title }}
+{{ $result->organization->name }}
 @stop
 
 @section('css')
@@ -44,7 +44,7 @@
             <div class="flex-grow-1 ms-4">
                 <div class="row">
                     <div class="col-lg mb-3 mb-lg-0">
-                        <h1 class="page-header-title">{{ $result->organization->title }}</h1>
+                        <h1 class="page-header-title">{{ $result->organization->name }}</h1>
 
                         <!-- <img class="avatar avatar-xss ms-1"
                 src="{{ asset('vendor/leadBrowser/admin/assets/images/top-vendor.svg') }}" alt="Top rating"
@@ -569,7 +569,7 @@
                                                 <div class="flex-shrink-0">
                                                     <img class="avatar avatar-sm avatar-4x3"
                                                         src="{{ $result->organization->icon }}"
-                                                        alt="{{ $result->organization->title }}">
+                                                        alt="{{ $result->organization->name }}">
                                                 </div>
                                                 @endif
 
@@ -577,7 +577,7 @@
                                                     class="flex-grow-1 <?php echo $result->organization->icon ? 'ms-3' : '' ?>">
                                                     <h6 class="card-title">
                                                         <a class="text-dark"
-                                                            href="/organizations/view/{{ $result->organization->id }}">{{ $result->organization->title }}</a>
+                                                            href="/organizations/view/{{ $result->organization->id }}">{{ $result->organization->name }}</a>
                                                         <img class="avatar avatar-xss ms-1"
                                                             src="{{ asset('vendor/leadBrowser/admin/assets/images/top-vendor.svg') }}"
                                                             alt="Top rating" data-toggle="tooltip"
@@ -603,7 +603,7 @@
 
                                     <h3 class="card-title">
                                         <a class="text-dark"
-                                            href="/organizations/view/{{ $result->organization->id }}">{{ $result->organization->title }}</a>
+                                            href="/organizations/view/{{ $result->organization->id }}">{{ $result->organization->name }}</a>
                                     </h3>
 
                                     <span class="d-block small text-body mb-1">

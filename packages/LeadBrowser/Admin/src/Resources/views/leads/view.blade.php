@@ -131,7 +131,7 @@
                             <div class="value">
                                 @if ($lead->employee->organization)
                                     <a href="{{ route('organizations.edit', $lead->employee->organization->id) }}" target="_blank">
-                                        {{ $lead->employee->organization->title }}
+                                        {{ $lead->employee->organization->name }}
                                     </a>
                                 @else
                                     {{ __('admin::app.common.not-available') }}

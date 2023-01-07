@@ -1,7 +1,7 @@
 @extends('admin::layouts.dashboard')
 
 @section('page_title')
-    {{ $organization->title }}
+    {{ $organization->name }}
 @stop
 
 @section('css')
@@ -30,7 +30,7 @@
 
             <div class="page-title">
                 <h1>
-                    {{ $organization->title }}
+                    {{ $organization->name }}
                 </h1>
             </div>
 

@@ -115,7 +115,7 @@ class ResultsExport implements FromQuery, WithMapping, WithHeadings
 
         return [
             $result->organization->icon,
-            $result->organization->title,
+            $result->organization->name,
             $result->organization->description,
             $result->organization->rating,
             $result->organization->types,

@@ -72,7 +72,7 @@
 
                 <div class="content content-dashboard container-fluid" v-bind:class="{'navbar-vertical-aside-mini-mode': isMenuOpen}">
 
-                    <div class="alert alert-primary mt-5" role="alert">
+                    <div class="alert alert-primary mt-5" role="alert" v-if="false">
                         <div class="d-flex">
                             <div class="flex-shrink-0">
                                 <i class="bi-stars" style="font-size: 30px;"></i>

@@ -278,14 +278,14 @@ class ResultController extends Controller
             /**
              * Check if company is already saved in the organization
              */
-            $organization = Organization::where('user_id', auth()->guard('user')->user()->id)->where('name', $result->organization->title)->first();
+            $organization = Organization::where('user_id', auth()->guard('user')->user()->id)->where('name', $result->organization->name)->first();
             if($organization) {
                 return redirect()->back()->with('message','You already added this company to contact!');
             }
 
             $organization = $this->organizationRepository->create([
                 'entity_type' => 'organizations',
-                'name' => $result->organization->title,
+                'name' => $result->organization->name,
                 'address' => $result->organization->location,
                 'user_id' => auth()->guard('user')->user()->id
             ]);
@@ -330,14 +330,14 @@ class ResultController extends Controller
         /**
          * Check if company is already saved in the organization
          */
-        $organization = Organization::where('user_id', auth()->guard('user')->user()->id)->where('name', $result->organization->title)->first();
+        $organization = Organization::where('user_id', auth()->guard('user')->user()->id)->where('name', $result->organization->name)->first();
         if($organization) {
             return redirect()->back()->with('message','You already added this company to contact!');
         }
 
         $organization = $this->organizationRepository->create([
             'entity_type' => 'organizations',
-            'name' => $result->organization->title,
+            'name' => $result->organization->name,
             'address' => $result->organization->location,
             'user_id' => auth()->guard('user')->user()->id
         ]);

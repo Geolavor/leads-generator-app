@@ -6,6 +6,7 @@
 
 @section('content-wrapper')
     <div class="content full-page">
+        
         <table-component data-src="{{ route('organizations.index') }}">
             <template v-slot:table-header>
                 <h1>

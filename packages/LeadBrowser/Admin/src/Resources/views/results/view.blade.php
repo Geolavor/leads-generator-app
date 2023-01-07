@@ -194,7 +194,6 @@
                 <div class="card-body">
                     <h6 class="card-subtitle mb-2">Risk value</h6>
 
-                    @if ($result->risk_value)
                         <?php
                             if ($result->risk_value > 8) {
                                 $badge = 'warning';
@@ -219,8 +218,7 @@
                                 <span class="badge badge-{{$badge}} p-1">{{ $text }}</span>
                             </div>
                         </div>
-                    @endif
-                    <!-- End Row -->
+
                 </div>
             </div>
             <!-- End Card -->

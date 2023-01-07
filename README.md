@@ -137,6 +137,95 @@ php artisan route:clear
 php artisan serve
 ```
 
+##### Docker:
+
+All docker commands are abstracted into [Makefile](./Makefile) instructions.
+
+They are very simple and often just instead of the `docker-compose` command you need to write `make` in your terminal.
+
+Of course, you can still use the `docker-compose` commands in the terminal, but you should remember that development and production environments rely on different docker-compose files. 
+
+Example:
+```
+# Make command
+make up
+
+# Full command
+docker-compose -f docker-compose.dev.yml up -d
+```
+
+Because *make* commands are much easier to use than full docker-compose commands, I prefer and recommend using them, so free to explore them and edit according to your needs.
+
+### Start containers
+
+```bash
+# Make command
+make up
+
+# Full command
+docker-compose -f docker-compose.dev.yml up -d
+```
+
+Now you can open [http://localhost:8000](http://localhost:8000) URL in your browser.
+
+### Stop containers
+
+```bash
+# Make command
+make down
+
+# Full command
+docker-compose -f docker-compose.dev.yml down
+```
+
+### Bash aliases
+
+Also, there is a set of [bash aliases](./aliases.sh) which you can apply using the command:
+
+```bash
+source aliases.sh
+```
+
+Now to run any artisan command you can use:
+
+```bash
+artisan make:model Product
+```
+
+### Logs
+
+All laravel logs are forwarded to the docker log collector via the `stderr` channel.
+
+See the latest logs, running the command:
+
+```bash
+docker-compose logs app
+```
+
+### Storage
+
+To use the `public` disk of the Laravel storage system you need to create a symlink.
+
+The symlink should be relative to work properly inside the docker environment and outside it at the same time.
+
+First, you need to install `symfony/filesystem` package which allows generating relative symlinks.
+
+```bash
+docker-compose -f docker-compose.dev.yml exec app composer require symfony/filesystem --dev
+```
+
+Then create the symlink using the command:
+
+```bash
+# Make command
+make storage:link
+
+# Raw command
+docker-compose -f docker-compose.dev.yml exec app php artisan storage:link --relative
+```
+
+On production environment it will be created automatically.
+
 
 **How to log in as admin:**
 

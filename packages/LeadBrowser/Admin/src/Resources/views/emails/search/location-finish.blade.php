@@ -1,11 +1,11 @@
-<!-- @component('admin::emails.layouts.dashboard') -->
-    <!-- @slot('header') -->
+@component('admin::emails.layouts.dashboard')
+    @slot('header')
         <div style="text-align: center;">
             <a href="{{ config('app.url') }}">
                 <img src="{{ asset('vendor/leadBrowser/admin/assets/images/mini-black.png') }}" alt="{{ config('app.name') }}"/>
             </a>
         </div>
-    <!-- @endslot -->
+    @endslot
 
     <div style="padding: 30px;background: white;margin-top: 20px;border-radius: 5px;">
         <div style="font-size: 20px;color: #242424;line-height: 30px;margin-bottom: 34px;">
@@ -18,4 +18,4 @@
             </p>
         </div>
     </div>
-<!-- @endcomponent -->
+@endcomponent

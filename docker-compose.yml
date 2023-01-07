@@ -1,57 +1,63 @@
-version: '3'
+version: '3.7'
+
 services:
-  
-  # PHP Service
-  # app:
-  #   build:
-  #     context: .
-  #     dockerfile: ./docker/7.4/Dockerfile
-  #   image: app
-  #   container_name: app
-  #   restart: unless-stopped
-  #   tty: true
-  #   environment:
-  #     SERVICE_NAME: app
-  #     SERVICE_TAGS: dev
-  #   working_dir: /var/www
-  #   networks:
-  #     - docker_app_network
-
-  # Nginx Service
-  # webserver:
-  #   image: nginx:alpine
-  #   container_name: webserver
-  #   restart: unless-stopped
-  #   tty: true
-  #   ports:
-  #     - "80:80"
-  #     - "443:443"
-  #   networks:
-  #     - app-network
-
-  # MySQL Service
-  database:
-    platform: linux/x86_64
-    image: mysql:8.0.28
-    container_name: mysql-8
-    volumes:
-      - docker_workspace_mysql:/var/lib/mysql
-    networks:
-      - docker_workspace_network
-    environment:
-        MYSQL_DATABASE: ${DB_DATABASE}
-        MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-        MYSQL_PASSWORD: ${DB_PASSWORD}
-        MYSQL_USER: ${DB_USERNAME}
-    ports:
-        - 3307:3306
-
+    app:
+        image: app
+        build:
+            context: .
+            dockerfile: ./docker/Dockerfile
+            args:
+                - PHP_VERSION=${PHP_VERSION:-8.1}
+        volumes:
+            - ./:/var/www/app
+            - /var/www/app/vendor
+        extra_hosts:
+            - "internal.host:host-gateway"
+        networks:
+            - app-net
+    # MySQL Service
+    database:
+      platform: linux/x86_64
+      image: mysql:8.0.28
+      container_name: mysql-8
+      volumes:
+        - docker_workspace_mysql:/var/lib/mysql
+      networks:
+        - docker_workspace_network
+      environment:
+          MYSQL_DATABASE: ${DB_DATABASE}
+          MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+          MYSQL_PASSWORD: ${DB_PASSWORD}
+          MYSQL_USER: ${DB_USERNAME}
+      ports:
+          - 3307:3306
+    nginx:
+        image: nginx:alpine
+        ports:
+            - "${APP_PORT:-8283}:80"
+        volumes:
+            - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:cached
+            # - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf:cached
+            - ./:/var/www/app:cached
+        restart: on-failure
+        depends_on:
+            - app
+        networks:
+            - app-net
+    supervisor:
+        image: app
+        networks:
+            - app-net
+        depends_on:
+            - app
+            - nginx
+        command: supervisord
 # Docker Networks
 volumes:
   docker_workspace_mysql:
     external: false
-
 networks:
-  # docker_app_network:
   docker_workspace_network:
+    driver: bridge
+  app-net:
     driver: bridge

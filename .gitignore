@@ -33,3 +33,7 @@ package-lock.json
 /packages/LeadBrowser/Search/
 /packages/LeadBrowser/Extractor/
 /packages/LeadBrowser/QLinkedin/
+
+# Docker
+.docker/*/db/dbdata
+.docker/*/db/dbdata/*

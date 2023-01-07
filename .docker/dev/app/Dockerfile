@@ -23,6 +23,9 @@ RUN apt-get update \
     zip \
     bcmath
 
+# RUN docker-php-ext-configure gd --with-jpeg --with-webp --with-freetype
+# RUN docker-php-ext-install gd
+
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 

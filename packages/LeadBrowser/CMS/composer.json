@@ -1,0 +1,25 @@
+{
+    "name": "leadbrowser/laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mariusz Malek",
+            "email": "mariuszmalek.dev@leadbrowser.co"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "LeadBrowser\\CMS\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LeadBrowser\\CMS\\Providers\\CMSServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "minimum-stability": "dev"
+}

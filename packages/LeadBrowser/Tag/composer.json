@@ -1,0 +1,28 @@
+{
+    "name": "leadbrowser/laravel-tag",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mariusz Malek",
+            "email": "mariuszmalek.dev@gmail.com"
+        }
+    ],
+    "require": {
+        "leadbrowser/laravel-core": "^1.0",
+        "leadbrowser/laravel-user": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "LeadBrowser\\Tag\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LeadBrowser\\Tag\\Providers\\TagServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "minimum-stability": "dev"
+}

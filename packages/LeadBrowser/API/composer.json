@@ -1,0 +1,27 @@
+{
+    "name": "leadbrowser/laravel-api",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mariusz Malek",
+            "email": "mariuszmalek.dev@gmail.com"
+        }
+    ],
+    "require": {
+        "leadbrowser/laravel-core": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "LeadBrowser\\API\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LeadBrowser\\API\\Providers\\APIServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "minimum-stability": "dev"
+}

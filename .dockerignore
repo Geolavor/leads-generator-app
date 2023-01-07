@@ -28,5 +28,6 @@ Makefile
 !/.docker/*/gateway/nginx.conf
 !/.docker/*/postgres/dumps
 !/.docker/*/schedule/cron.d
-.docker/db/dbdata/*
-.docker/db/dbdata
+
+.docker/*/db/dbdata
+.docker/*/db/dbdata/*
